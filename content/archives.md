@@ -1,8 +1,0 @@
----
-title: "Archive"
-layout: "archives"
-url: "/archives/"
-summary: "All posts by year"
-ShowToc: false
-hidemeta: true
----

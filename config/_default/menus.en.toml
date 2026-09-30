@@ -1,0 +1,12 @@
+# -- Main menu --
+# Two entries only. The post list groups by year, so it doubles as the archive.
+
+[[main]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 20

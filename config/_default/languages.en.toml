@@ -1,0 +1,21 @@
+locale = "en"
+label = "English"
+weight = 1
+title = "Pin Xiong"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Notes on distributed systems, cloud architecture, and AI-assisted engineering — written from real production work."
+  copyright = "© 2026 Pin Xiong"
+
+[params.author]
+  name = "Pin Xiong"
+  headline = "Cloud architecture and distributed systems"
+  bio = "I write up engineering problems I actually hit in production — what broke, how I debugged it, and what I would do differently next time."
+  links = [
+    { github = "https://github.com/pinxiong" },
+    { linkedin = "https://www.linkedin.com/in/pinxiong" },
+  ]

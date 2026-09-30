@@ -5,8 +5,8 @@ draft: true
 summary: ""
 tags: []
 categories: []
-ShowToc: true
-TocOpen: false
+series: []
+showTableOfContents: true
 ---
 
 **Problem.** What was broken, and why it mattered. One paragraph a busy engineer can read in 20 seconds.

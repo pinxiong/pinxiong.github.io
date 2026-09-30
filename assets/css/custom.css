@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Site style overrides
+   --------------------------------------------------------------------------
+   Loaded after the theme's compiled CSS (see themes/blowfish/layouts/
+   partials/head.html), so everything here wins without editing the theme.
+   Safe to replace themes/blowfish wholesale on upgrade.
+
+   Direction: a calm, Medium-like reading experience. Serif body copy, a
+   ~672px measure, sans-serif headings, and code that stays quiet rather than
+   shouting in colour.
+   ========================================================================== */
+
+:root {
+  /* Medium reads in a serif face and keeps the interface sans-serif. */
+  --font-reading: charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text",
+    Cambria, Georgia, "Times New Roman", Times, serif;
+  --reading-size: 1.3125rem; /* 21px — Medium's desktop body size */
+  --reading-measure: 42rem; /* 672px — Medium's column width */
+  --reading-ink: #242424;
+  --reading-ink-muted: #6b6b6b;
+}
+
+.dark {
+  --reading-ink: #dedede;
+  --reading-ink-muted: #a1a1a1;
+}
+
+/* --------------------------------------------------------------------------
+   1. Body copy
+   -------------------------------------------------------------------------- */
+
+.article-content {
+  font-family: var(--font-reading);
+  font-size: var(--reading-size);
+  line-height: 1.62;
+  letter-spacing: -0.003em;
+  color: var(--reading-ink);
+  max-width: var(--reading-measure);
+}
+
+.article-content p,
+.article-content li {
+  font-family: var(--font-reading);
+  font-size: var(--reading-size);
+  line-height: 1.62;
+  letter-spacing: -0.003em;
+}
+
+.article-content p {
+  margin-top: 0;
+  margin-bottom: 1.55em;
+}
+
+/* The opening paragraph sets the tone on Medium; give it a touch more weight. */
+.article-content > p:first-of-type {
+  font-size: 1.375rem;
+  color: var(--reading-ink);
+}
+
+.article-content ul,
+.article-content ol {
+  margin-top: 0;
+  margin-bottom: 1.55em;
+  padding-left: 1.4em;
+}
+
+.article-content li {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.article-content li::marker {
+  color: var(--reading-ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   2. Headings — sans-serif against the serif body, as Medium does
+   -------------------------------------------------------------------------- */
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.25;
+  color: var(--reading-ink);
+  margin-top: 2.1em;
+  margin-bottom: 0.55em;
+}
+
+.article-content h2 {
+  font-size: 1.6rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.article-content h3 {
+  font-size: 1.28rem;
+}
+
+.article-content h4 {
+  font-size: 1.08rem;
+}
+
+/* Keep heading anchors from shifting the text off the left edge. */
+.article-content :is(h2, h3, h4) > a {
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Links — underlined, not coloured, until you hover
+   -------------------------------------------------------------------------- */
+
+.article-content a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+
+.article-content a:hover {
+  color: var(--color-primary-600);
+  text-decoration-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   4. Code — inline pills and quiet blocks
+   -------------------------------------------------------------------------- */
+
+.article-content code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  padding: 0.14em 0.36em;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--reading-ink) 7%, transparent);
+  color: inherit;
+  border: none;
+}
+
+/* One frame, on the outermost wrapper only. Blowfish nests
+   .highlight-wrapper (holds the copy button) > .highlight > pre — styling
+   more than one layer produced nested frames with dead gaps between them. */
+.article-content .highlight-wrapper {
+  position: relative;
+  margin: 1.9em 0;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--reading-ink) 10%, transparent);
+  overflow: hidden;
+}
+
+.article-content .highlight-wrapper .highlight {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.article-content .highlight-wrapper .copy-button {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.article-content pre {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 1.05rem 1.15rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* Inside a block, code is not a pill. */
+.article-content pre code {
+  font-size: 1em;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Chroma writes a table when line numbers are on — keep it borderless. */
+.article-content .highlight table {
+  margin: 0;
+  font-size: 1em;
+  border: none;
+}
+
+.article-content .highlight :is(td, th) {
+  border: none;
+  padding: 0;
+}
+
+.article-content .highlight .lntd:first-child {
+  user-select: none;
+  opacity: 0.45;
+  padding-right: 0.9em;
+}
+
+/* --------------------------------------------------------------------------
+   5. Quotes, tables, dividers
+   -------------------------------------------------------------------------- */
+
+.article-content blockquote {
+  font-family: var(--font-reading);
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--reading-ink-muted);
+  border-inline-start: 3px solid color-mix(in srgb, var(--reading-ink) 22%, transparent);
+  padding-inline-start: 1.15rem;
+  margin: 2em 0;
+}
+
+.article-content blockquote p {
+  font-size: inherit;
+}
+
+/* Callouts (GitHub alert syntax) should read as notes, not as quotes. */
+.article-content blockquote.not-prose,
+.article-content .admonition {
+  font-style: normal;
+}
+
+.article-content table {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  width: 100%;
+  margin: 1.9em 0;
+}
+
+.article-content thead th {
+  font-weight: 600;
+  border-bottom: 1px solid color-mix(in srgb, var(--reading-ink) 24%, transparent);
+  padding: 0.5em 0.7em;
+}
+
+.article-content tbody td {
+  padding: 0.55em 0.7em;
+  border-bottom: 1px solid color-mix(in srgb, var(--reading-ink) 10%, transparent);
+}
+
+.article-content hr {
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--reading-ink) 14%, transparent);
+  margin: 3em auto;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   6. Media — rounded, and captions kept quiet
+   -------------------------------------------------------------------------- */
+
+.article-content :is(img, video, iframe) {
+  border-radius: 8px;
+}
+
+.article-content figure {
+  margin: 2.1em 0;
+}
+
+.article-content figcaption {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--reading-ink-muted);
+  text-align: center;
+  margin-top: 0.75em;
+}
+
+/* --------------------------------------------------------------------------
+   7. Restraint elsewhere — one accent, used sparingly
+   -------------------------------------------------------------------------- */
+
+/* Post title: large and tight, the way Medium sets it. */
+#single_header h1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+/* Drop the heavy double border the theme puts above post titles. */
+#single_header {
+  border-top: none;
+}
+
+/* Homepage: let the name and the one-line intro carry it. */
+.home-profile {
+  border: none;
+}
+
+/* Reading progress bar stays a thin accent line. */
+#reading-progress {
+  height: 2px;
+}

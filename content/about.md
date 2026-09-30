@@ -2,10 +2,9 @@
 title: "About"
 date: 2026-09-30T15:00:00+08:00
 draft: false
-ShowToc: false
-hidemeta: true
-comments: false
-disableShare: true
+showTableOfContents: false
+showAuthor: false
+showRelatedContent: false
 ---
 
 I'm **Pin Xiong** (熊聘). I work on cloud architecture and distributed systems — currently on connectivity and vehicle-cloud platforms, with previous work across multi-region AWS deployments.

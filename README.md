@@ -1,7 +1,7 @@
 # xiongpin.dev
 
 Source for my personal site — engineering write-ups from real production work.
-Built with [Hugo](https://gohugo.io/) + [PaperMod](https://github.com/adityatelange/hugo-PaperMod),
+Built with [Hugo](https://gohugo.io/) + [Blowfish](https://github.com/nunocoracao/blowfish),
 deployed to GitHub Pages at **https://xiongpin.dev** via GitHub Actions.
 
 **This repository is the single source of truth.** Everything required to build the site is
@@ -49,8 +49,9 @@ cd pinxiong.github.io
 ./scripts/install-hugo.sh        # installs exactly the version CI pins; safe to re-run
 ```
 
-On macOS it installs to `~/.local/bin` (no sudo) and tells you if that directory is missing from
-`PATH`. Behind a slow connection, point it at a mirror:
+On macOS it installs to `~/.local/bin` (no sudo). Newer Hugo releases ship a `.pkg` instead of a
+`.tar.gz`; the script extracts the payload with `pkgutil`, so it works on both old and new
+versions. Behind a slow connection, point it at a mirror:
 
 ```bash
 HUGO_RELEASE_BASE=https://gh-proxy.com/https://github.com/gohugoio/hugo/releases/download \
@@ -63,35 +64,47 @@ an SSH key, or a personal access token — after that, `git push` just works.
 ## Layout
 
 ```
-config.yaml              # site config: title, description, baseURL, menus, social links
+config/_default/          # site config, split the way Blowfish expects it:
+  hugo.toml               #   baseURL, taxonomies, outputs, min Hugo version
+  params.toml             #   theme options (colour scheme, homepage, article, list)
+  languages.en.toml       #   title, description, author profile, social links
+  menus.en.toml           #   header menu (Posts, About)
+  markup.toml             #   goldmark + chroma settings the theme requires
 content/
-  posts/                 # articles (one .md per post)
-  about.md               # About page
-  archives.md            # Archive page
-  search.md              # Search page (Fuse.js index)
-archetypes/posts.md      # template every new post starts from
-layouts/                 # site-level overrides — wins over themes/ (see Notes)
-themes/PaperMod/         # vendored theme, pristine upstream v8.0
-static/                  # CNAME, favicon, images — copied verbatim to the site root
-scripts/                 # new-post.sh, publish.sh, install-hugo.sh
-docs/                    # operating manuals (not part of the published site)
-.devcontainer/           # Codespaces / VS Code Dev Containers definition
-.github/workflows/       # build + deploy pipeline
+  _index.md               # homepage intro (shown under the profile header)
+  posts/                  # articles (one .md per post)
+  about.md                # About page
+assets/css/custom.css     # site typography — loaded last, overrides the theme
+archetypes/posts.md       # template every new post starts from
+themes/blowfish/          # vendored theme, pristine upstream (see BLOWFISH_VERSION)
+static/                   # CNAME, favicon, images — copied verbatim to the site root
+scripts/                  # new-post.sh, publish.sh, install-hugo.sh
+docs/                     # operating manuals (not part of the published site)
+.devcontainer/            # Codespaces / VS Code Dev Containers definition
+.github/workflows/        # build + deploy pipeline
 ```
 
 ## Notes
 
-- **The theme is vendored and unmodified.** `themes/PaperMod/` is a byte-for-byte copy of upstream
-  v8.0, committed directly (no submodule, so a plain `git clone` builds). Upgrading means replacing
-  the folder — any local fixes live in `layouts/` instead and survive the swap.
-- **Why `layouts/` has three files.** PaperMod v8.0 calls an internal partial with a legacy
-  `partials/` prefix that Hugo ≥ 0.152 no longer resolves. `layouts/partials/templates/`
-  `{opengraph,twitter_cards,schema_json}.html` are copies with that prefix removed. Site-level
-  layouts take precedence over the theme, so the fix lives outside the vendored tree. Verified both
-  ways: with the override the build passes, without it the build fails.
+- **The theme is vendored and unmodified.** `themes/blowfish/` is a pristine copy of upstream
+  (pinned version in `themes/blowfish/BLOWFISH_VERSION`), committed directly — no submodule, so a
+  plain `git clone` builds, and no Hugo Modules, so no Go toolchain is needed. Upgrading means
+  replacing the folder.
+- **Site look lives in `assets/css/custom.css`.** Blowfish concatenates it *after* its own
+  compiled CSS, so every rule there wins without touching the theme. This is where the
+  Medium-style reading typography comes from: serif body (`charter`/`Georgia` stack), 21px at a
+  ~672px measure, sans-serif headings, quiet code blocks with a single frame on
+  `.highlight-wrapper` (not on `.highlight` or `pre` — Blowfish nests three layers, and framing
+  more than one draws stacked borders).
 - **Hugo version.** CI pins `HUGO_VERSION` in the workflow and `scripts/install-hugo.sh` reads that
-  same value, so local and deployed builds cannot drift. `config.yaml` declares a minimum of
-  extended 0.146.0.
+  same value, so local and deployed builds cannot drift. Blowfish v3.8 uses `site.Language.Locale`,
+  which needs Hugo ≥ 0.162; this repo pins 0.165.0 (the version the theme author tests against),
+  and `config/_default/hugo.toml` declares the same minimum.
+- **Search and archives.** Search is the magnifier in the header (Fuse.js over `index.json`);
+  the post list at `/posts/` groups by year and doubles as the archive. There are no separate
+  `/search/` or `/archives/` pages.
+- **Videos.** Use the theme's shortcodes: `{{</* youtubeLite id="VIDEO_ID" */>}}` for a fast
+  YouTube embed, `{{</* video src="clip.mp4" */>}}` for self-hosted files.
 - **Name.** The byline everywhere on the site is **Pin Xiong** — given name first, so English
   readers parse the surname correctly. Use **Xiong, Pin** only in indexed/formal contexts
   (citations, speaker rosters) where the surname must be unambiguous.

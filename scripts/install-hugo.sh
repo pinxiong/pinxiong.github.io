@@ -9,6 +9,10 @@
 # Used both by the dev container (postCreateCommand) and on a fresh laptop.
 # Safe to re-run; it exits early when the pinned version is already present.
 #
+# Note on macOS packaging: up to ~0.152 Hugo published a .tar.gz for macOS and
+# has since moved to a .pkg only. This script handles both, and extracts the
+# .pkg with pkgutil so no sudo and no installer step is needed.
+#
 # In China, GitHub release downloads are slow. Point the script at any mirror:
 #   HUGO_RELEASE_BASE=https://gh-proxy.com/https://github.com/gohugoio/hugo/releases/download \
 #     ./scripts/install-hugo.sh
@@ -56,13 +60,37 @@ INSTALLED=""
 
 case "$(uname -s)" in
   Darwin)
-    FILE="hugo_extended_${HUGO_VERSION}_darwin-universal.tar.gz"
     TARGET_DIR="${HOME}/.local/bin"
-    echo "Downloading ${FILE} ..."
     mkdir -p "${TARGET_DIR}"
-    curl -fSL --retry 3 -o "${TMP_DIR}/hugo.tgz" "${BASE}/${FILE}"
-    tar xzf "${TMP_DIR}/hugo.tgz" -C "${TMP_DIR}"
-    install -m 0755 "${TMP_DIR}/hugo" "${TARGET_DIR}/hugo"
+
+    # Preferred: .tar.gz (Hugo <= ~0.152). Falls back to the .pkg that newer
+    # releases ship instead.
+    TGZ="hugo_extended_${HUGO_VERSION}_darwin-universal.tar.gz"
+    PKG="hugo_extended_${HUGO_VERSION}_darwin-universal.pkg"
+
+    if curl -fSL --retry 2 -o "${TMP_DIR}/hugo.tgz" "${BASE}/${TGZ}" 2>/dev/null; then
+      echo "Downloaded ${TGZ}"
+      tar xzf "${TMP_DIR}/hugo.tgz" -C "${TMP_DIR}"
+      install -m 0755 "${TMP_DIR}/hugo" "${TARGET_DIR}/hugo"
+    else
+      echo "No macOS tarball for ${HUGO_VERSION}; downloading ${PKG} ..."
+      curl -fSL --retry 3 -o "${TMP_DIR}/hugo.pkg" "${BASE}/${PKG}"
+
+      if ! pkgutil --expand-full "${TMP_DIR}/hugo.pkg" "${TMP_DIR}/pkg" 2>/dev/null; then
+        # Older macOS: expand, then unpack the payload by hand.
+        pkgutil --expand "${TMP_DIR}/hugo.pkg" "${TMP_DIR}/pkg"
+        ( cd "${TMP_DIR}/pkg" && cat Payload | tar xf - )
+      fi
+
+      PAYLOAD="$(find "${TMP_DIR}/pkg" -type f -name hugo -size +5M | head -1)"
+      if [ -z "${PAYLOAD}" ]; then
+        echo "error: could not locate the hugo binary inside ${PKG}" >&2
+        exit 1
+      fi
+      xattr -d com.apple.quarantine "${PAYLOAD}" 2>/dev/null || true
+      install -m 0755 "${PAYLOAD}" "${TARGET_DIR}/hugo"
+    fi
+
     INSTALLED="${TARGET_DIR}/hugo"
     echo "Installed: ${INSTALLED}"
     case ":${PATH}:" in

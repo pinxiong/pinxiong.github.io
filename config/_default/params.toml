@@ -1,0 +1,92 @@
+# -- Theme options --
+# Docs: https://blowfish.page/docs/configuration/#theme-parameters
+#
+# Kept deliberately small: this site is a quiet place to publish engineering
+# notes. Anything not listed here falls back to the theme default.
+
+colorScheme = "blowfish" # calm blue accent
+defaultAppearance = "light"
+autoSwitchAppearance = true # follow the OS setting, and let readers toggle
+
+enableA11y = true
+enableSearch = true
+enableCodeCopy = true
+enableStructuredBreadcrumbs = false
+
+mainSections = ["posts"]
+
+fingerprintAlgorithm = "sha512"
+
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "profile"
+  showRecent = true
+  showRecentItems = 10
+  showMoreLink = true
+  showMoreLinkDest = "/posts/"
+  cardView = false
+  cardViewScreenWidth = false
+
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = true
+  showAuthorBottom = true
+  showHero = false
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showEdit = true
+  editURL = "https://github.com/pinxiong/pinxiong.github.io/tree/master/content/"
+  editAppendPath = true
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showReadingProgress = false
+  showTableOfContents = true
+  showRelatedContent = true
+  relatedContentLimit = 3
+  showTaxonomies = true
+  showCategories = false
+  showTags = true
+  showWordCount = true
+  showZenMode = false
+  sharingLinks = ["linkedin", "x-twitter", "email"]
+
+[list]
+  showHero = false
+  showBreadcrumbs = false
+  showSummary = false
+  showTableOfContents = false
+  showCards = false
+  groupByYear = true
+  cardView = false
+  cardViewScreenWidth = false
+  constrainItemsWidth = false
+
+[sitemap]
+  excludedKinds = ["taxonomy", "term"]
+
+[taxonomy]
+  showTermCount = true
+  showHero = false
+  showBreadcrumbs = false
+  showTableOfContents = false
+  cardView = false
+
+[term]
+  showHero = false
+  showBreadcrumbs = false
+  showTableOfContents = false
+  groupByYear = false
+  cardView = false
+
+[seo]

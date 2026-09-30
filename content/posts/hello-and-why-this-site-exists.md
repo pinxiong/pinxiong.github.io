@@ -5,8 +5,7 @@ draft: false
 summary: "A short note on what I plan to write here, and how I will write it."
 tags: ["meta"]
 categories: ["Meta"]
-ShowToc: false
-TocOpen: false
+showTableOfContents: false
 ---
 
 **Problem.** Most engineering writing is either too abstract to use or too specific to reuse. I want to write the kind that sits in between: real problems from real systems, written up so someone else can act on them.
