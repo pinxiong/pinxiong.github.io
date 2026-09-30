@@ -59,9 +59,8 @@ fingerprintAlgorithm = "sha512"
   showTags = true
   showWordCount = true
   showZenMode = false
-  # 阅读量/点赞开关：等 [firebase] 填入真实配置后再置 true 并部署
-  showViews = false
-  showLikes = false
+  showViews = true
+  showLikes = true
   sharingLinks = ["linkedin", "x-twitter", "email"]
 
 [list]
@@ -95,13 +94,13 @@ fingerprintAlgorithm = "sha512"
 [seo]
 
 # 阅读量/点赞后端（Blowfish 原生支持，Firebase Firestore + 匿名登录）
-# 用户在 Firebase 控制台拿到以下 7 个值后填入，然后把上面 [article] 里的
-# showViews / showLikes 改为 true 并重新部署即可生效。
+# 数据存在 Firestore 的两个集合里：views / likes，文档 ID = 文章路径。
+# 换项目时只需替换下面 7 个值；security rules 需允许已登录（含匿名）用户读写。
 [firebase]
-  apiKey = ""
-  authDomain = ""
-  projectId = ""
-  storageBucket = ""
-  messagingSenderId = ""
-  appId = ""
-  measurementId = ""
+  apiKey = "AIzaSyAAewpePDDgQeOfYB34B5rduJkI0nlaChI"
+  authDomain = "xiongpin-dev.firebaseapp.com"
+  projectId = "xiongpin-dev"
+  storageBucket = "xiongpin-dev.firebasestorage.app"
+  messagingSenderId = "1071031468435"
+  appId = "1:1071031468435:web:7702197157a40444662866"
+  measurementId = "G-83BVRCX56T"
