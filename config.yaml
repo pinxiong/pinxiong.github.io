@@ -4,7 +4,7 @@
 baseURL: "https://xiongpin.dev/"
 languageCode: "en-us"
 defaultContentLanguage: "en"
-title: "Xiong Pin"
+title: "Pin Xiong"
 theme: "PaperMod"
 
 pagination:
@@ -28,10 +28,10 @@ outputs:
 
 params:
   env: production
-  title: "Xiong Pin"
+  title: "Pin Xiong"
   description: "Notes on distributed systems, cloud architecture, and AI-assisted engineering — written from real production work."
   keywords: [Blog, Cloud, AWS, Distributed Systems, AI Coding]
-  author: "Xiong Pin"
+  author: "Pin Xiong"
 
   defaultTheme: auto
   disableThemeToggle: false
@@ -53,7 +53,7 @@ params:
   tocopen: false
 
   homeInfoParams:
-    Title: "Hi, I'm Xiong Pin"
+    Title: "Hi, I'm Pin Xiong"
     Content: >
       I work on cloud architecture and distributed systems.
       Here I write up engineering problems I actually hit in production — what broke,

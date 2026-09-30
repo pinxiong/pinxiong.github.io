@@ -8,7 +8,7 @@ comments: false
 disableShare: true
 ---
 
-I work on cloud architecture and distributed systems — currently on connectivity and vehicle-cloud platforms, with previous work across multi-region AWS deployments.
+I'm **Pin Xiong** (熊聘). I work on cloud architecture and distributed systems — currently on connectivity and vehicle-cloud platforms, with previous work across multi-region AWS deployments.
 
 I serve as Vice Chair of the CCC Fleet Management Task Group, am an Apache Dubbo Committer, and an AWS Community Builder.
 

@@ -92,6 +92,9 @@ docs/                    # operating manuals (not part of the published site)
 - **Hugo version.** CI pins `HUGO_VERSION` in the workflow and `scripts/install-hugo.sh` reads that
   same value, so local and deployed builds cannot drift. `config.yaml` declares a minimum of
   extended 0.146.0.
+- **Name.** The byline everywhere on the site is **Pin Xiong** — given name first, so English
+  readers parse the surname correctly. Use **Xiong, Pin** only in indexed/formal contexts
+  (citations, speaker rosters) where the surname must be unambiguous.
 - **Custom domain.** `static/CNAME` holds `xiongpin.dev` and ships inside every build, so
   deployments never drop the domain. Keep it.
 - **`baseURL`.** Locally Hugo serves `http://localhost:1313`; in CI the base URL comes from

@@ -79,7 +79,7 @@ Error: Ensure GITHUB_TOKEN has permission "id-token: write".
 
 ```bash
 curl -s https://xiongpin.dev | grep -o "<title>[^<]*</title>"
-# 期望：<title>Xiong Pin</title>
+# 期望：<title>Pin Xiong</title>
 ```
 
 ---
