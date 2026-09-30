@@ -59,6 +59,9 @@ fingerprintAlgorithm = "sha512"
   showTags = true
   showWordCount = true
   showZenMode = false
+  # 阅读量/点赞开关：等 [firebase] 填入真实配置后再置 true 并部署
+  showViews = false
+  showLikes = false
   sharingLinks = ["linkedin", "x-twitter", "email"]
 
 [list]
@@ -90,3 +93,15 @@ fingerprintAlgorithm = "sha512"
   cardView = false
 
 [seo]
+
+# 阅读量/点赞后端（Blowfish 原生支持，Firebase Firestore + 匿名登录）
+# 用户在 Firebase 控制台拿到以下 7 个值后填入，然后把上面 [article] 里的
+# showViews / showLikes 改为 true 并重新部署即可生效。
+[firebase]
+  apiKey = ""
+  authDomain = ""
+  projectId = ""
+  storageBucket = ""
+  messagingSenderId = ""
+  appId = ""
+  measurementId = ""
