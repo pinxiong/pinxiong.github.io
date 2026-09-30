@@ -39,6 +39,9 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # Enables Pages with the GitHub Actions build type on first run.
+          enablement: true
 
       - name: Build with Hugo
         env:
