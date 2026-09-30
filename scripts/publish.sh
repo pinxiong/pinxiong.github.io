@@ -20,16 +20,28 @@ if [ -n "$FILE" ]; then
     echo "No such file: $FILE"
     exit 1
   fi
-  if grep -qE '^draft:[[:space:]]*true[[:space:]]*$' "$FILE"; then
-    perl -pi -e 's/^draft:\s*true\s*$/draft: false/' "$FILE"
+  if grep -qE '^draft:[ \t]*true[ \t]*$' "$FILE"; then
+    # NOTE: use [ \t] rather than \s — in perl -p the line still contains its
+    # trailing newline, and \s is greedy enough to eat it, which would join the
+    # next front-matter key onto the same line.
+    perl -pi -e 's/^draft:[ \t]*true[ \t]*$/draft: false/' "$FILE"
     echo "Un-drafted: $FILE"
   else
     echo "Note: $FILE is not marked draft: true (nothing to flip)."
   fi
+
+  # Sanity check: front matter must still start/close with --- and hold draft: false.
+  if [ "$(head -1 "$FILE")" != "---" ] || [ "$(grep -cE '^---[ \t]*$' "$FILE")" -lt 2 ] \
+     || ! grep -qE '^draft:[ \t]*false[ \t]*$' "$FILE"; then
+    echo
+    echo "Front matter looks broken in $FILE — not committing. Inspect it:"
+    echo "  head -10 \"$FILE\""
+    exit 1
+  fi
 fi
 
 # Refuse to push while a draft would silently stay unpublished.
-DRAFTS="$(grep -rlE '^draft:[[:space:]]*true[[:space:]]*$' content/posts 2>/dev/null || true)"
+DRAFTS="$(grep -rlE '^draft:[ \t]*true[ \t]*$' content/posts 2>/dev/null || true)"
 if [ -n "$DRAFTS" ]; then
   echo
   echo "Still in draft (will NOT be published):"
