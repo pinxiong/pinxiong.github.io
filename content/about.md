@@ -7,9 +7,9 @@ showAuthor: false
 showRelatedContent: false
 ---
 
-I'm **Pin Xiong** (熊聘).
+I'm **Pin Xiong**.
 
-**Apache Dubbo Committer, AWS Community Builder, Vice Chair of the CCC Fleet Management Task Group.**
+**Apache Dubbo Committer, AWS Community Builder.**
 
 10+ years of experience in the internet industry, familiar with microservices, middleware, Cloud Native, and Serverless. Currently focused on AI-related technology.
 

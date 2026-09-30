@@ -8,13 +8,13 @@ title = "Pin Xiong"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  description = "Apache Dubbo Committer, AWS Community Builder, and CCC Fleet Management Task Group Vice Chair. Notes on microservices, Cloud Native, Serverless, and AI."
+  description = "Apache Dubbo Committer, AWS Community Builder. 10+ years of experience in the internet industry — microservices, middleware, Cloud Native, Serverless. Currently focused on AI-related technology."
   copyright = "© 2026 Pin Xiong"
 
 [params.author]
   name = "Pin Xiong"
-  headline = "Apache Dubbo Committer, AWS Community Builder, Vice Chair of the CCC Fleet Management Task Group."
-  bio = "Apache Dubbo Committer, AWS Community Builder, Vice Chair of the CCC Fleet Management Task Group. 10+ years of experience in the internet industry — microservices, middleware, Cloud Native, Serverless. Currently focused on AI-related technology."
+  headline = "Apache Dubbo Committer, AWS Community Builder."
+  bio = "Apache Dubbo Committer, AWS Community Builder. 10+ years of experience in the internet industry — microservices, middleware, Cloud Native, Serverless. Currently focused on AI-related technology."
   links = [
     { github = "https://github.com/pinxiong" },
     { linkedin = "https://www.linkedin.com/in/pinxiong" },
