@@ -13,8 +13,8 @@ title = "Pin Xiong"
 
 [params.author]
   name = "Pin Xiong"
-  headline = "Cloud architecture and distributed systems"
-  bio = "I write up engineering problems I actually hit in production — what broke, how I debugged it, and what I would do differently next time."
+  headline = "Microservices, middleware, Cloud Native, Serverless — now focused on AI"
+  bio = "Apache Dubbo Committer, AWS Community Builder, and Vice Chair of the CCC Fleet Management Task Group. 10+ years in the internet industry across microservices, middleware, Cloud Native, and Serverless."
   links = [
     { github = "https://github.com/pinxiong" },
     { linkedin = "https://www.linkedin.com/in/pinxiong" },
