@@ -1,0 +1,26 @@
+{{/*
+  Project override of the theme's author card (themes/blowfish/layouts/partials/author.html).
+
+  Differences from upstream:
+  - No author bio: the card shows the byline label and the name only.
+  - The name links to the About page, which carries the full description.
+  - Author image/social links are untouched (image unset; links render as before).
+
+  Keep in sync with the theme version when upgrading Blowfish.
+*/}}
+<div class="flex author">
+  <div class="place-self-center">
+    {{ with .Site.Params.Author.name | markdownify }}
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        {{ i18n "author.byline_title" | markdownify }}
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        <a href="{{ "about/" | relURL }}"
+           class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2">
+          {{ . }}
+        </a>
+      </div>
+    {{ end }}
+    <div class="text-2xl sm:text-lg">{{ partialCached "author-links.html" . }}</div>
+  </div>
+</div>
