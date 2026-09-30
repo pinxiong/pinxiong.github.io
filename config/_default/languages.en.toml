@@ -8,13 +8,13 @@ title = "Pin Xiong"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  description = "Notes on distributed systems, cloud architecture, and AI-assisted engineering — written from real production work."
+  description = "Apache Dubbo Committer, AWS Community Builder, and CCC Fleet Management Task Group Vice Chair. Notes on microservices, Cloud Native, Serverless, and AI."
   copyright = "© 2026 Pin Xiong"
 
 [params.author]
   name = "Pin Xiong"
-  headline = "Microservices, middleware, Cloud Native, Serverless — now focused on AI"
-  bio = "Apache Dubbo Committer, AWS Community Builder, and Vice Chair of the CCC Fleet Management Task Group. 10+ years in the internet industry across microservices, middleware, Cloud Native, and Serverless."
+  headline = "Apache Dubbo Committer, AWS Community Builder, Vice Chair of the CCC Fleet Management Task Group."
+  bio = "Apache Dubbo Committer, AWS Community Builder, Vice Chair of the CCC Fleet Management Task Group. 10+ years of experience in the internet industry — microservices, middleware, Cloud Native, Serverless. Currently focused on AI-related technology."
   links = [
     { github = "https://github.com/pinxiong" },
     { linkedin = "https://www.linkedin.com/in/pinxiong" },

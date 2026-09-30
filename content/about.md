@@ -7,19 +7,11 @@ showAuthor: false
 showRelatedContent: false
 ---
 
-I'm **Pin Xiong** (熊聘). Apache Dubbo Committer, AWS Community Builder, and Vice Chair of the CCC Fleet Management Task Group.
+I'm **Pin Xiong** (熊聘).
 
-10+ years in the internet industry, working across microservices, middleware, Cloud Native, and Serverless. Today my focus is AI-related technology.
+**Apache Dubbo Committer, AWS Community Builder, Vice Chair of the CCC Fleet Management Task Group.**
 
-## What I write about
-
-- Cloud and distributed systems, from production experience
-- AI-assisted engineering: what works, and where it quietly breaks
-- Field notes from standards work
-
-## Why I write in English
-
-The problems I work on are discussed in English first, and the audience I want to reach reads English. Writing here is also my own practice: every post is a rep.
+10+ years of experience in the internet industry, familiar with microservices, middleware, Cloud Native, and Serverless. Currently focused on AI-related technology.
 
 ## Elsewhere
 
