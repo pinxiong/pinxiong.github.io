@@ -67,6 +67,10 @@ params:
     - name: rss
       url: "index.xml"
 
+  social:
+    twitter: ""
+    facebook_admin: ""
+
   editPost:
     URL: "https://github.com/pinxiong/pinxiong.github.io/tree/master/content"
     Text: "Suggest changes"
@@ -117,12 +121,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-    extensions:
-      passthrough:
-        enable: true
-        delimiters:
-          block: ["$$", "$$"]
-          inline: ["$", "$"]
   highlight:
     noClasses: false
     lineNos: false
