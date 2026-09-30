@@ -124,7 +124,7 @@
 }
 
 .article-content a:hover {
-  color: var(--color-primary-600);
+  color: rgba(var(--color-primary-600), 1);
   text-decoration-color: currentColor;
 }
 
@@ -301,4 +301,30 @@
 /* Reading progress bar stays a thin accent line. */
 #reading-progress {
   height: 2px;
+}
+
+/* Author name: a link to /about/ that looks exactly like plain text.
+   No accent colour, no underline, and nothing changes on hover or focus --
+   only the cursor gives the affordance away. */
+.author .author-name-link,
+.author .author-name-link:link,
+.author .author-name-link:visited,
+.author .author-name-link:hover,
+.author .author-name-link:focus,
+.author .author-name-link:active {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-line: none;
+  background: none;
+  border-bottom: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Keyboard users still get a focus ring when tabbing through the page;
+   a mouse click never triggers :focus-visible, so the visual stays flat. */
+.author .author-name-link:focus-visible {
+  outline: 2px solid rgba(var(--color-primary-500), 1);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
