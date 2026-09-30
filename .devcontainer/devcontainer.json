@@ -1,0 +1,30 @@
+{
+  "name": "xiongpin.dev - Hugo site",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "bash scripts/install-hugo.sh",
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo preview",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "budparr.language-hugo-vscode",
+        "yzhang.markdown-all-in-one",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github"
+      ],
+      "settings": {
+        "files.associations": { "*.html": "gohtml" },
+        "editor.rulers": [100],
+        "search.exclude": { "public/**": true, "resources/**": true }
+      }
+    }
+  }
+}
