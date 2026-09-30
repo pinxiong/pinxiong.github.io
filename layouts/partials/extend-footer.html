@@ -1,0 +1,28 @@
+{{/*
+  Graceful degradation for the Firebase views/likes counters.
+
+  The counter script (assets/js/firebase.js of the theme) only sets
+  window.process_article after its module evaluates successfully. If the
+  visitor's network cannot reach Google (gstatic.com / firebaseio.com —
+  e.g. mainland China), the module never evaluates and the counter spans
+  stay as grey "loading" pills forever, and the Like button does nothing.
+
+  After 10 seconds: if the module hasn't evaluated, hide the stuck pills
+  (their wrapper keeps the eye/heart icon together with the number) and
+  the Like button, so those visitors see a clean meta row instead.
+  Visitors who can reach Firebase are unaffected.
+*/}}
+<script>
+  (function () {
+    setTimeout(function () {
+      if (window.process_article) return; // firebase.js evaluated fine — the theme owns the UI from here
+      document.querySelectorAll("span[id^='views_'], span[id^='likes_']").forEach(function (el) {
+        if (el.innerText.trim() === "loading" && el.parentElement) {
+          el.parentElement.style.display = "none";
+        }
+      });
+      var btn = document.getElementById("button_likes");
+      if (btn) btn.style.display = "none";
+    }, 10000);
+  })();
+</script>

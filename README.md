@@ -75,6 +75,11 @@ content/
   posts/                  # articles (one .md per post)
   about.md                # About page
 assets/css/custom.css     # site typography — loaded last, overrides the theme
+layouts/partials/
+  extend-footer.html      # injected via the theme's extend-footer hook: hides the
+                          # views/likes "loading" pills + Like button when Firebase
+                          # is unreachable (mainland China), so the meta row degrades
+                          # cleanly for those visitors
 archetypes/posts.md       # template every new post starts from
 themes/blowfish/          # vendored theme, pristine upstream (see BLOWFISH_VERSION)
 static/                   # CNAME, favicon, images — copied verbatim to the site root
