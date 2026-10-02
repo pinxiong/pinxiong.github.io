@@ -50,6 +50,25 @@ if [ -n "$DRAFTS" ]; then
 fi
 
 git add -A
+
+# Guard: `git add -A` can sweep up editor temp files. Editors that save
+# atomically (write a temp file, then rename over the original) leave an
+# extensionless file in the same directory for a few milliseconds; one of those
+# was committed as content/posts/XXXVLuKW on 2026-10-02. Hugo never renders
+# extensionless files, so anything under content/ without an extension is junk.
+# NOTE: keep this a one-liner filtered by perl. This script runs under macOS
+# bash 3.2, which mis-parses `case` nested inside a command substitution.
+STRAY="$(git diff --cached --name-only --diff-filter=A -- content \
+  | perl -ne 'chomp; my ($b) = m{([^/]+)$}; next if $b =~ /\./; print "$_\n" if -e;')"
+if [ -n "$STRAY" ]; then
+  echo
+  echo "Unstaged stray extensionless file(s) under content/ (not committed):"
+  echo "$STRAY" | while IFS= read -r f; do
+    echo "  $f"
+    git rm --cached -q -- "$f" 2>/dev/null || true
+  done
+fi
+
 if git diff --cached --quiet; then
   echo "Nothing to commit — site is already up to date."
   exit 0
