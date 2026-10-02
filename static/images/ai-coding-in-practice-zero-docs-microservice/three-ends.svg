@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <!-- Mobile Device -->
+  <rect x="40" y="34" width="250" height="112" rx="16" fill="#2563eb"/>
+  <text x="165" y="79" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">Mobile Device</text>
+  <text x="165" y="109" text-anchor="middle" font-size="13" font-weight="500" fill="#dbeafe">Apple &#183; Xiaomi &#183; Huawei</text>
+
+  <!-- Vehicle -->
+  <rect x="710" y="34" width="250" height="112" rx="16" fill="#ea580c"/>
+  <text x="835" y="79" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">Vehicle</text>
+  <text x="835" y="109" text-anchor="middle" font-size="13" font-weight="500" fill="#ffedd5">TSP &#183; Module &#183; RKE</text>
+
+  <!-- Cloud -->
+  <rect x="355" y="248" width="290" height="124" rx="16" fill="#0d9488"/>
+  <text x="500" y="303" text-anchor="middle" font-size="21" font-weight="800" fill="#ffffff">Cloud</text>
+  <text x="500" y="333" text-anchor="middle" font-size="13" font-weight="500" fill="#ccfbf1">API &#183; PKI &#183; Certificates</text>
+
+  <!-- Mobile Device <-> Vehicle : BLE / NFC / UWB (violet) -->
+  <line x1="290" y1="90" x2="710" y2="90" stroke="#7c3aed" stroke-width="2.5"/>
+  <polygon points="290,90 302,84 302,96" fill="#7c3aed"/>
+  <polygon points="710,90 698,84 698,96" fill="#7c3aed"/>
+  <rect x="425" y="75" width="150" height="30" rx="15" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="500" y="95" text-anchor="middle" font-size="13" font-weight="700" fill="#6d28d9">BLE / NFC / UWB</text>
+
+  <!-- Mobile Device -> Cloud : HTTPS (red) -->
+  <line x1="160" y1="146" x2="383" y2="248" stroke="#dc2626" stroke-width="2.5"/>
+  <polygon points="383,248 367.4,248.6 373.2,235.8" fill="#dc2626"/>
+  <rect x="227" y="183" width="88" height="28" rx="14" fill="#ffffff" stroke="#fecaca" stroke-width="1.5"/>
+  <text x="271" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#b91c1c">HTTPS</text>
+
+  <!-- Vehicle -> Cloud : MQTT (lime) -->
+  <line x1="838" y1="146" x2="620" y2="248" stroke="#65a30d" stroke-width="2.5"/>
+  <polygon points="620,248 629.7,235.8 635.7,248.4" fill="#65a30d"/>
+  <rect x="692" y="183" width="74" height="28" rx="14" fill="#ffffff" stroke="#d9f99d" stroke-width="1.5"/>
+  <text x="729" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#4d7c0f">MQTT</text>
+</svg>

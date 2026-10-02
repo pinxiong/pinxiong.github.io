@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <!-- ================= column geometry ================= -->
+  <!-- col x: 20 / 262 / 504 / 746  w=234 -->
+
+  <!-- Phase 1 header -->
+  <rect x="20" y="16" width="234" height="44" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="137" y="43" text-anchor="middle" font-size="14" font-weight="700" fill="#2563eb">PHASE 1 &#183; UNDERSTAND</text>
+  <!-- Phase 2 header -->
+  <rect x="262" y="16" width="234" height="44" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="379" y="43" text-anchor="middle" font-size="14" font-weight="700" fill="#ea580c">PHASE 2 &#183; DEFINE</text>
+  <!-- Phase 3 header -->
+  <rect x="504" y="16" width="234" height="44" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="621" y="43" text-anchor="middle" font-size="14" font-weight="700" fill="#0d9488">PHASE 3 &#183; REFACTOR</text>
+  <!-- Phase 4 header -->
+  <rect x="746" y="16" width="234" height="44" rx="10" fill="#faf5ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="863" y="43" text-anchor="middle" font-size="14" font-weight="700" fill="#7c3aed">PHASE 4 &#183; DEPLOY</text>
+
+  <!-- arrows between phases -->
+  <polygon points="260,38 248,32 248,44" fill="#94a3b8"/>
+  <polygon points="502,38 490,32 490,44" fill="#94a3b8"/>
+  <polygon points="744,38 732,32 732,44" fill="#94a3b8"/>
+
+  <!-- ================= Phase 1 steps ================= -->
+  <rect x="20" y="76" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="44" cy="105" r="13" fill="#2563eb"/><text x="44" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+  <text x="66" y="101" font-size="13.5" font-weight="600" fill="#0f172a">Generate tech docs</text>
+  <text x="66" y="120" font-size="11.5" fill="#64748b">architecture &#183; flows &#183; modules</text>
+
+  <rect x="20" y="144" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="44" cy="173" r="13" fill="#2563eb"/><text x="44" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+  <text x="66" y="169" font-size="13.5" font-weight="600" fill="#0f172a">Generate test cases</text>
+  <text x="66" y="188" font-size="11.5" fill="#64748b">98% API coverage &#183; safety net</text>
+
+  <rect x="20" y="212" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="44" cy="241" r="13" fill="#2563eb"/><text x="44" y="246" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+  <text x="66" y="237" font-size="13.5" font-weight="600" fill="#0f172a">Deep code distillation</text>
+  <text x="66" y="256" font-size="11.5" fill="#64748b">call chains &#183; Redis keys &#183; schemas</text>
+
+  <!-- ================= Phase 2 step ================= -->
+  <rect x="262" y="76" width="234" height="86" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="286" cy="105" r="13" fill="#ea580c"/><text x="286" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+  <text x="308" y="101" font-size="13.5" font-weight="600" fill="#0f172a">Code standards</text>
+  <text x="308" y="120" font-size="11.5" fill="#64748b">+ harness engineering</text>
+  <text x="286" y="146" font-size="11.5" fill="#64748b">new requirements &#183; specs &#183; plans</text>
+
+  <!-- ================= Phase 3 steps ================= -->
+  <rect x="504" y="76" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="528" cy="105" r="13" fill="#0d9488"/><text x="528" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">5</text>
+  <text x="550" y="101" font-size="13.5" font-weight="600" fill="#0f172a">AI refactor</text>
+  <text x="550" y="120" font-size="11.5" fill="#64748b">rewrite per spec + standards</text>
+
+  <rect x="504" y="144" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="528" cy="173" r="13" fill="#0d9488"/><text x="528" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">6</text>
+  <text x="550" y="169" font-size="13.5" font-weight="600" fill="#0f172a">Consistency check *</text>
+  <text x="550" y="188" font-size="11.5" fill="#64748b">new code vs distilled docs</text>
+
+  <rect x="504" y="212" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="528" cy="241" r="13" fill="#0d9488"/><text x="528" y="246" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">7</text>
+  <text x="550" y="237" font-size="13.5" font-weight="600" fill="#0f172a">Test regression *</text>
+  <text x="550" y="256" font-size="11.5" fill="#64748b">Step-2 cases vs new code</text>
+
+  <rect x="504" y="280" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="528" cy="309" r="13" fill="#0d9488"/><text x="528" y="314" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">8</text>
+  <text x="550" y="305" font-size="13.5" font-weight="600" fill="#0f172a">Code diff *</text>
+  <text x="550" y="324" font-size="11.5" fill="#64748b">nothing changed unintended</text>
+
+  <rect x="504" y="348" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="528" cy="377" r="13" fill="#0d9488"/><text x="528" y="382" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">9</text>
+  <text x="550" y="373" font-size="13.5" font-weight="600" fill="#0f172a">New docs</text>
+  <text x="550" y="392" font-size="11.5" fill="#64748b">changes &#183; optimizations &#183; TODO</text>
+
+  <rect x="504" y="416" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="528" cy="445" r="13" fill="#0d9488"/><text x="528" y="450" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">10</text>
+  <text x="552" y="441" font-size="13.5" font-weight="600" fill="#0f172a">Knowledge base</text>
+  <text x="552" y="460" font-size="11.5" fill="#64748b">input to the next AI loop</text>
+
+  <!-- ================= Phase 4 steps ================= -->
+  <rect x="746" y="76" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="770" cy="105" r="13" fill="#7c3aed"/><text x="770" y="110" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">11</text>
+  <text x="792" y="101" font-size="13.5" font-weight="600" fill="#0f172a">Deploy &amp; integration</text>
+  <text x="792" y="120" font-size="11.5" fill="#64748b">first run: 20 minutes</text>
+
+  <rect x="746" y="144" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="770" cy="173" r="13" fill="#7c3aed"/><text x="770" y="178" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">12</text>
+  <text x="792" y="169" font-size="13.5" font-weight="600" fill="#0f172a">Grayscale plan</text>
+  <text x="792" y="188" font-size="11.5" fill="#64748b">human gate before execution</text>
+
+  <rect x="746" y="212" width="234" height="58" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="770" cy="241" r="13" fill="#7c3aed"/><text x="770" y="246" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">13</text>
+  <text x="792" y="237" font-size="13.5" font-weight="600" fill="#0f172a">Grayscale release</text>
+  <text x="792" y="256" font-size="11.5" fill="#64748b">zero production incidents</text>
+
+  <!-- footnote -->
+  <text x="20" y="640" font-size="13" fill="#475569"><tspan font-weight="700" fill="#0d9488">* every check runs in a separate agent</tspan><tspan fill="#64748b">  &#8212;  player and referee are never the same, and every step ends with human review.</tspan></text>
+</svg>
