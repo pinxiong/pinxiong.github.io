@@ -1,0 +1,10 @@
+{{/*
+  项目级 favicon 覆盖：小尺寸用「P」字标（浏览器标签页 + Google SERP，
+  Google 要求 icon 边长为 48px 的倍数），大尺寸保留「Pin」字标。
+  本文件存在时，主题 head.html 会用它替代内置的三行 icon 声明。
+*/}}
+<link rel="icon" type="image/png" sizes="48x48" href="{{ "favicon-48x48.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">

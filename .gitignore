@@ -9,3 +9,7 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# Private writing workspace (must stay local, repo is public)
+writing-lab/
+outputs/
