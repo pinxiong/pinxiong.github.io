@@ -33,25 +33,15 @@ Before we talk about how to learn a new technology, we should first look at how 
 
 ### The four layers
 
-[![The four layers of a technology, from top to bottom: syntax and usage lasting months, framework and tooling lasting one to three years, paradigm lasting five to ten years, and principle and mechanism lasting decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
+[![The four layers of a technology: syntax and usage answering how exactly do I write it, lasting months; framework and tooling answering which product do I use, lasting one to three years; paradigm answering which philosophy is this, lasting five to ten years; principle and mechanism answering what holds it up, lasting decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
 
 The four layers are a way to take a technology apart. Splitting it shows where each piece lands: a technology belongs to one layer, while a product reaches across several. That is what makes the real questions answerable: how to learn it, whether it is worth learning and how much time it deserves.
-
-- **Syntax and usage** — answers "how exactly do I write it?" It lasts months: YAML fields, CLI flags, the exact wording of a prompt.
-- **Framework and tooling** — answers "which product do I use?" It lasts one to three years: Docker, Kubernetes, one particular AI coding tool.
-- **Paradigm** — answers "which philosophy is this?" It lasts five to ten years: containerization, declarative orchestration, serverless.
-- **Principle and mechanism** — answers "what holds it up?" It lasts decades: TCP/IP protocol, process scheduling, virtual memory.
 
 ### How to learn each layer
 
 Take the first of those questions, how to learn it. The strategy is different for every layer, but each one comes down to the same questions: which direction to work in, how deep to go and how you know you have gone far enough.
 
-[![The four layers with a top-down arrow across the top two and a bottom-up arrow across the bottom two](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)
-
-- **Syntax and usage** — top-down and fast; deep enough to get the job done, since the exact wording is not worth memorising.
-- **Framework and tooling** — top-down; deep enough to say what the class solves, not just how to use one product.
-- **Paradigm** — bottom-up; deep enough to follow the design philosophy rather than the steps.
-- **Principle and mechanism** — bottom-up; deep enough to hold the principle rather than the details, so you can still sketch the skeleton of the technology in your head.
+[![The four layers with a top-down arrow across the top two and a bottom-up arrow across the bottom two, each layer marked with how deep to go: fast and shallow for usage, what the class solves for tooling, the design philosophy for paradigm, and the skeleton rather than the details for mechanism](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)
 
 That is the whole model: four layers, each with its own way in, its own depth and its own test. It holds for any technology that is new to you.
 

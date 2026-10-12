@@ -1,28 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 390" width="560" height="390" role="img" aria-labelledby="ldTitle">
-  <title id="ldTitle">The four layers with a top-down arrow across the top two and a bottom-up arrow across the bottom two</title>
-  <rect width="560" height="390" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 472" width="560" height="472" role="img" aria-labelledby="ldTitle">
+  <title id="ldTitle">The four layers with a top-down arrow across the top two and a bottom-up arrow across the bottom two, each with how deep to go</title>
+  <rect width="560" height="472" fill="#ffffff"/>
   <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
 
-    <rect x="170" y="20" width="370" height="64" rx="14" fill="#f59e0b"/>
-    <text x="355" y="60" font-size="20" font-weight="700" fill="#ffffff">Syntax and usage</text>
+    <rect x="150" y="20" width="390" height="94" rx="14" fill="#f59e0b"/>
+    <text x="345" y="52" font-size="20" font-weight="700" fill="#ffffff">Syntax and usage</text>
+    <text x="345" y="78" font-size="14" fill="#ffffff" opacity="0.88">fast and shallow</text>
+    <text x="345" y="98" font-size="14" fill="#ffffff" opacity="0.88">the wording is not worth memorising</text>
 
-    <rect x="170" y="100" width="370" height="64" rx="14" fill="#f97316"/>
-    <text x="355" y="140" font-size="20" font-weight="700" fill="#ffffff">Framework and tooling</text>
+    <rect x="150" y="124" width="390" height="94" rx="14" fill="#f97316"/>
+    <text x="345" y="156" font-size="20" font-weight="700" fill="#ffffff">Framework and tooling</text>
+    <text x="345" y="182" font-size="14" fill="#ffffff" opacity="0.88">say what the class solves,</text>
+    <text x="345" y="202" font-size="14" fill="#ffffff" opacity="0.88">not just how to use one product</text>
 
-    <rect x="170" y="180" width="370" height="64" rx="14" fill="#14b8a6"/>
-    <text x="355" y="220" font-size="20" font-weight="700" fill="#ffffff">Paradigm</text>
+    <rect x="150" y="228" width="390" height="94" rx="14" fill="#14b8a6"/>
+    <text x="345" y="260" font-size="20" font-weight="700" fill="#ffffff">Paradigm</text>
+    <text x="345" y="286" font-size="14" fill="#ffffff" opacity="0.88">follow the design philosophy, not the steps</text>
 
-    <rect x="170" y="260" width="370" height="64" rx="14" fill="#2563eb"/>
-    <text x="355" y="300" font-size="20" font-weight="700" fill="#ffffff">Principle and mechanism</text>
+    <rect x="150" y="332" width="390" height="94" rx="14" fill="#2563eb"/>
+    <text x="345" y="364" font-size="20" font-weight="700" fill="#ffffff">Principle and mechanism</text>
+    <text x="345" y="390" font-size="14" fill="#ffffff" opacity="0.88">hold the principle, not the details</text>
+    <text x="345" y="410" font-size="14" fill="#ffffff" opacity="0.88">and keep the skeleton in your head</text>
 
-    <line x1="142" y1="26" x2="142" y2="146" stroke="#94a3b8" stroke-width="3"/>
-    <polygon points="142,162 133,144 151,144" fill="#94a3b8"/>
-    <text x="124" y="99" font-size="17" font-weight="600" fill="#64748b" text-anchor="end">top-down</text>
+    <line x1="126" y1="26" x2="126" y2="198" stroke="#94a3b8" stroke-width="3"/>
+    <polygon points="126,214 117,196 135,196" fill="#94a3b8"/>
+    <text x="108" y="125" font-size="17" font-weight="600" fill="#64748b" text-anchor="end">top-down</text>
 
-    <line x1="142" y1="318" x2="142" y2="198" stroke="#94a3b8" stroke-width="3"/>
-    <polygon points="142,182 133,200 151,200" fill="#94a3b8"/>
-    <text x="124" y="259" font-size="17" font-weight="600" fill="#64748b" text-anchor="end">bottom-up</text>
+    <line x1="126" y1="420" x2="126" y2="254" stroke="#94a3b8" stroke-width="3"/>
+    <polygon points="126,238 117,256 135,256" fill="#94a3b8"/>
+    <text x="108" y="333" font-size="17" font-weight="600" fill="#64748b" text-anchor="end">bottom-up</text>
 
-    <text x="280" y="362" font-size="16" fill="#64748b">The same four layers, read in two directions.</text>
+    <text x="280" y="456" font-size="16" fill="#64748b">The same four layers, read in two directions.</text>
   </g>
 </svg>
