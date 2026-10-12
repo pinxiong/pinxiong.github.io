@@ -17,13 +17,13 @@ Twenty years ago the same website started with a harder question: where does the
 
 That question has been answered six times in thirty years.
 
-[![Six stages of deployment from the 1990s to 2014: own hardware, x86 virtualization in 2001, cloud in 2006, containers in 2013, orchestration in 2014 and functions in 2014, with the gaps between them shrinking from ten years to one](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/deployment-stages.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/deployment-stages.svg)
+[![Six stages of deployment from the 1990s to 2014: own hardware, x86 virtualization in 2001, cloud in 2006, containers in 2013, orchestration in 2014 and functions in 2014, with the gaps between them shrinking from about ten years to five months](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/deployment-stages.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/deployment-stages.svg)
 
 Two things stand out in that timeline.
 
 First, no generation kills the one before it. Each one wraps the one below and solves what that one left behind, so deployment keeps getting easier to put into production.
 
-Second, the gaps keep shrinking: roughly 10, 5, 7 and 1 years between stages, with three of them landing inside twenty months, from March 2013 to November 2014, while the first waited two decades.
+Second, the gaps turn from years into months. The first stages sit roughly ten, five and seven years apart; the last three, from Docker in March 2013 to Lambda in November 2014, all land inside twenty months.
 
 Then the chain collapsed into a single step. An AI coding tool will take the whole thing now: it writes the code, sets up the environment and deploys the service. The same website that once took a week of preparation comes together in minutes. **The point is the speed, not the tool.**
 
@@ -61,7 +61,7 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 
 - **Syntax and usage**: the wording of a prompt, how the tool is configured, what its slash commands are called.
 - **Framework and tooling**: Cursor, Claude Code, Kiro, Qoder and the like.
-- **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and the spec flow behind tools like Kiro — steering, requirements, design and tasks.
+- **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and how tools like Kiro sequence the work — a spec flow from requirements to design to tasks, with steering files holding the project context around it.
 - **Principle and mechanism**: how the LLM works underneath — which is why hallucination happens, why the context window is a hard limit, and why an agent needs a verification loop.
 
 The list says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
@@ -70,7 +70,7 @@ The list says one thing clearly: AI coding spans all four layers, so "should I l
 
 - **Usage**: you move through it fast, letting AI write while you check the result. You should still see at a glance when the tool has gone off course.
 - **Tooling**: you work top-down, take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves.
-- **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its flow as a whole: what steering does before anything is written, why requirements come before design, and why design comes before tasks. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
+- **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its design as a whole: why the spec flow runs requirements, then design, then tasks, and what the steering files carry into every spec. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
 - **Mechanism**: you work bottom-up, with AI as the tutor and the mechanism itself as the subject: what an LLM actually is, why it hallucinates and how to reduce it, how to keep the same task giving the same result, how to spend fewer tokens for the same work, and which model fits which job.
 
 ## How to learn in the AI era
@@ -89,4 +89,4 @@ Paradigm and mechanism barely move, so they are the part that travels across gen
 
 Understanding how a technology works is half of it. The other half is pulling the principle out into a shape that is not tied to that one technology, so it carries into the next one and you do not start from zero.
 
-Together they answer the question this article opened with. Not the newest tool, and not the fundamentals alone, but both, plus the abstraction that lets you carry what you learn forward.
+That is the answer: not the newest tool, and not the fundamentals alone, but both, plus the abstraction that lets you carry what you learn forward.
