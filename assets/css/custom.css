@@ -271,6 +271,17 @@
   margin-inline: auto;
 }
 
+/* The figure shortcode (used when a figure needs a caption with a link in it)
+   wraps the image in an inline-block link so the image can still be clicked to
+   open the full-size file. That link is shrink-to-fit and sits flush left, so
+   the image inside it ignores margin-inline:auto and the whole figure drifts
+   left. Make the link a block that hugs the image, then centre the box. */
+.article-content figure > a {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
+
 .article-content figure {
   margin: 2.1em 0;
 }
