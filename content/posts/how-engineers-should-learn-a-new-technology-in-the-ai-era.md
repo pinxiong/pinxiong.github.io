@@ -40,7 +40,7 @@ The four layers are a way to take a technology apart. Splitting it shows where e
 - **Syntax and usage** — answers "how exactly do I write it?" It lasts months: YAML fields, CLI flags, the exact wording of a prompt.
 - **Framework and tooling** — answers "which product do I use?" It lasts one to three years: Docker, Kubernetes, one particular AI coding tool.
 - **Paradigm** — answers "which philosophy is this?" It lasts five to ten years: containerization, declarative orchestration, serverless.
-- **Principle and mechanism** — answers "what holds it up?" It lasts decades: TCP/IP semantics, process scheduling, virtual memory.
+- **Principle and mechanism** — answers "what holds it up?" It lasts decades: TCP/IP protocol, process scheduling, virtual memory.
 
 ### How to learn each layer
 
