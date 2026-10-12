@@ -62,7 +62,7 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 - **Syntax and usage**: the wording of a prompt, how the tool is configured, what its slash commands are called.
 - **Framework and tooling**: Cursor, Claude Code, Kiro, Qoder and the like.
 - **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and the spec flow behind tools like Kiro — steering, requirements, design and tasks.
-- **Principle and mechanism**: the internals of the model — hallucination, the context window as a hard limit, and the verification loop an agent needs.
+- **Principle and mechanism**: how the LLM works underneath — which is why hallucination happens, why the context window is a hard limit, and why an agent needs a verification loop.
 
 The list says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
 
