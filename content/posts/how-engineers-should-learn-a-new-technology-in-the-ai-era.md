@@ -68,7 +68,7 @@ The list says one thing clearly: AI coding spans all four layers, so "should I l
 
 ### How to learn it, layer by layer
 
-- **Usage**: you move through it fast, letting AI write while you check the result. The wording is not worth memorising, but you should see at a glance when the tool has gone off course.
+- **Usage**: you move through it fast, letting AI write while you check the result. You should still see at a glance when the tool has gone off course.
 - **Tooling**: you work top-down, take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves.
 - **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its flow as a whole: what steering does before anything is written, why requirements come before design, and why design comes before tasks. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
 - **Mechanism**: you work bottom-up, with AI as the tutor and the mechanism itself as the subject: what an LLM actually is, why it hallucinates and how to reduce it, how to keep the same task giving the same result, how to spend fewer tokens for the same work, and which model fits which job.
