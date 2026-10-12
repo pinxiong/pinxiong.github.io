@@ -51,7 +51,12 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 
 ### Where AI coding lands
 
-[![AI coding mapped onto the four layers: prompt wording and tool configuration at the syntax layer, tools like Cursor and Kiro at the framework layer, context handover and the spec flow at the paradigm layer, and how the LLM works at the mechanism layer](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/ai-coding-mapping.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/ai-coding-mapping.svg)
+{{< figure
+  src="/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/ai-coding-mapping.svg"
+  alt="AI coding mapped onto the four layers: prompt wording and tool configuration at the syntax layer, tools like Cursor and Kiro at the framework layer, context handover and the spec flow at the paradigm layer, and how the LLM works at the mechanism layer"
+  href="/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/ai-coding-mapping.svg"
+  caption="At the framework layer: Cursor, Claude Code, [Kiro](https://kiro.dev) and Qoder."
+>}}
 
 The picture says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
 
