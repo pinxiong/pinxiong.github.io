@@ -13,7 +13,7 @@ Building a small website today takes about ten minutes. A landing page, a form, 
 
 Twenty years ago the same website started with a harder question: where does the code run? You picked a machine, installed an operating system, configured the runtime, opened the network ports and set up a way to release changes.
 
-## One question, six answers
+## New technology keeps arriving faster
 
 That question has been answered six times in thirty years.
 
@@ -34,7 +34,7 @@ Second, the gaps keep shrinking: roughly 10, 5, 7 and 1 years between stages, wi
 
 Then the chain collapsed into a single step. An AI coding tool will take the whole thing now: it writes the code, sets up the environment and deploys the service. The same website that once took a week of preparation comes together in minutes. The point is the speed, not the tool.
 
-## Four layers, four lifetimes
+## How to understand a technology
 
 Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are ideas you compare, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
 
@@ -57,7 +57,7 @@ The next table answers the first of those three questions. At the top you work t
 
 That is the whole model: four layers, each with its own way in, its own depth and its own test. It holds for any technology that is new to you.
 
-## The same four layers, in AI coding
+## How to understand AI coding
 
 The model stays abstract until it lands on a technology you actually use. AI coding is the obvious place to test it, because almost everyone is already working with it. When a new technology arrives, there is one judgement to make: split it, see which layers it spans and learn each layer its own way. You do not have to label yourself top-down or bottom-up first. In the AI era the two have largely merged, so there is little to gain by picking a side in advance.
 
@@ -72,14 +72,14 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 
 Two conclusions fall out of that table. AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four. Each layer is also learned differently.
 
-### Layer by layer
+### How to learn it, layer by layer
 
 - **Usage**: you move through it fast, letting AI write while you check the result. The wording is not worth memorising, but you should see at a glance when the tool has gone off course.
 - **Tooling**: you work top-down, take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves.
 - **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its flow as a whole: what steering does before anything is written, why requirements come before design, why design comes before tasks and what breaks when that order is reversed. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
 - **Mechanism**: you work bottom-up, letting AI tutor you into building the map. When something breaks at three in the morning and AI hands you five guesses, the map is what picks the right one.
 
-## Three things to carry forward
+## Three takeaways
 
 Three points to end on. The first two sit at opposite ends of the same table.
 
