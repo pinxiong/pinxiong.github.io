@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 404" width="560" height="404" role="img" aria-labelledby="acTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 404" width="520" height="404" role="img" aria-labelledby="acTitle">
   <title id="acTitle">AI coding mapped onto the four layers of a technology</title>
-  <rect width="560" height="404" fill="#ffffff"/>
+  <rect width="520" height="404" fill="#ffffff"/>
   <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
 
     <rect x="20" y="31" width="200" height="74" rx="14" fill="#f59e0b"/>
@@ -23,7 +23,7 @@
     <text x="120" y="253" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">philosophy</text>
     <line x1="246" y1="236" x2="238" y2="236" stroke="#94a3b8" stroke-width="2.5"/>
     <polygon points="228,236 238,231 238,241" fill="#94a3b8"/>
-    <text x="252" y="222" font-size="15" fill="#334155">context handover; the spec flow:</text>
+    <text x="252" y="222" font-size="15" fill="#334155">context handover, and the spec flow:</text>
     <text x="252" y="238" font-size="15" fill="#334155">requirements → design → tasks,</text>
     <text x="252" y="254" font-size="15" fill="#334155">with steering files around it</text>
 
@@ -37,6 +37,6 @@
     <text x="252" y="322" font-size="15" fill="#334155">hallucination, the context window,</text>
     <text x="252" y="338" font-size="15" fill="#334155">the verification loop</text>
 
-    <text x="280" y="388" font-size="15" fill="#64748b" text-anchor="middle">The same four layers, filled in with AI coding.</text>
+    <text x="260" y="388" font-size="15" fill="#64748b" text-anchor="middle">The same four layers, filled in with AI coding.</text>
   </g>
 </svg>

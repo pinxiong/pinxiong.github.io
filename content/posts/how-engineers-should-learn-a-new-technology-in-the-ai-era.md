@@ -41,7 +41,7 @@ The four layers are a way to take a technology apart. Splitting it shows where e
 
 Take the first of those questions, how to learn it. The strategy is different for every layer, but each one comes down to the same questions: which direction to work in, how deep to go and how you know you have gone far enough.
 
-[![The four layers with a top-down arrow across the top two and a bottom-up arrow across the bottom two, each layer marked with how deep to go: fast and shallow for usage, what the class solves for tooling, the design philosophy for paradigm, and the skeleton rather than the details for mechanism](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)
+[![The four layers in two groups: the top two learned top-down, fast and shallow for usage and what the class solves for tooling, and the bottom two learned bottom-up, the design philosophy for paradigm and the skeleton rather than the details for mechanism](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)
 
 That is the whole model: four layers, each with its own way in, its own depth and its own test. It holds for any technology that is new to you.
 
