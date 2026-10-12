@@ -38,16 +38,11 @@ Then the chain collapsed into a single step. An AI coding tool will take the who
 
 Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are ideas you compare, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
 
-| Layer | The question to ask | Examples | Rough lifetime |
-| --- | --- | --- | --- |
-| Syntax and usage | How exactly do I write it? | YAML fields, CLI flags, the exact wording of a prompt | Months |
-| Framework and tooling | Which product do I use? | Docker, Kubernetes, one particular AI coding tool | Two to three years |
-| Paradigm | Which class of idea is this? | Containerization, declarative orchestration, serverless | Five to ten years |
-| Principle and mechanism | What holds it up? | TCP/IP semantics, process scheduling, virtual memory | Decades |
+![The four layers of a technology as a pyramid: syntax and usage at the top, then framework and tooling, then paradigm, with principle and mechanism at the base, and lifetimes running from months to decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers.svg)
 
 The four layers are a way to take a technology apart. Splitting it shows where each piece lands: a technology belongs to one layer, while a product reaches across several. That is what makes the real questions answerable: how to learn it, whether it is worth learning and how much time it deserves.
 
-The second table answers the first of those three questions. At the top you work top-down, starting at the surface and going down as questions appear. Underneath you work bottom-up, starting at the mechanism and building up. What separates the rows is then how far to go and what tells you that you have gone far enough.
+The next table answers the first of those three questions. At the top you work top-down, starting at the surface and going down as questions appear. Underneath you work bottom-up, starting at the mechanism and building up. What separates the rows is then how far to go and what tells you that you have gone far enough.
 
 | Layer | How to learn it | How deep to go | How to check yourself |
 | --- | --- | --- | --- |

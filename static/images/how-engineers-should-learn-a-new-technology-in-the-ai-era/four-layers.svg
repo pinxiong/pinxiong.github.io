@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 680" font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="A technology as a four-layer pyramid: syntax and usage on top, framework and tooling, paradigm, and principle and mechanism at the base">
+  <defs>
+    <filter id="pshadow" x="-5%" y="-5%" width="115%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <marker id="parrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- ================= pyramid: 4 tiers ================= -->
+  <g filter="url(#pshadow)">
+    <!-- tier 1 · syntax and usage -->
+    <polygon points="340,80 500,80 567.5,215 272.5,215" fill="#d97706"/>
+    <polygon points="340,80 500,80 512,98 328,98" fill="#fbbf24"/>
+
+    <!-- tier 2 · framework and tooling -->
+    <polygon points="272.5,215 567.5,215 635,350 205,350" fill="#ea580c"/>
+    <polygon points="272.5,215 567.5,215 582,233 258,233" fill="#fb923c"/>
+
+    <!-- tier 3 · paradigm -->
+    <polygon points="205,350 635,350 702.5,485 137.5,485" fill="#0d9488"/>
+    <polygon points="205,350 635,350 649,368 191,368" fill="#2dd4bf"/>
+
+    <!-- tier 4 · principle and mechanism -->
+    <polygon points="137.5,485 702.5,485 770,620 70,620" fill="#2563eb"/>
+    <polygon points="137.5,485 702.5,485 716,503 124,503" fill="#60a5fa"/>
+  </g>
+
+  <!-- tier labels -->
+  <text x="420" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Syntax and usage</text>
+  <text x="420" y="166" text-anchor="middle" font-size="15" font-weight="600" fill="#fff7ed">Months</text>
+
+  <text x="420" y="275" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Framework and tooling</text>
+  <text x="420" y="301" text-anchor="middle" font-size="15" font-weight="600" fill="#fff7ed">Two to three years</text>
+
+  <text x="420" y="410" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Paradigm</text>
+  <text x="420" y="436" text-anchor="middle" font-size="15" font-weight="600" fill="#f0fdfa">Five to ten years</text>
+
+  <text x="420" y="545" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Principle and mechanism</text>
+  <text x="420" y="571" text-anchor="middle" font-size="15" font-weight="600" fill="#eff6ff">Decades</text>
+
+  <!-- ================= leader lines ================= -->
+  <line x1="538" y1="148" x2="824" y2="148" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="538" cy="148" r="3.5" fill="#d97706"/>
+  <line x1="605" y1="283" x2="824" y2="283" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="605" cy="283" r="3.5" fill="#ea580c"/>
+  <line x1="673" y1="418" x2="824" y2="418" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="673" cy="418" r="3.5" fill="#0d9488"/>
+  <line x1="740" y1="553" x2="824" y2="553" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="740" cy="553" r="3.5" fill="#2563eb"/>
+
+  <!-- ================= cards ================= -->
+  <rect x="830" y="92" width="360" height="112" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="852" y="132" font-size="15.5" font-weight="700" fill="#0f172a">How exactly do I write it?</text>
+  <text x="852" y="158" font-size="13" fill="#64748b">YAML fields, CLI flags, the exact wording</text>
+  <text x="852" y="178" font-size="13" fill="#64748b">of a prompt</text>
+
+  <rect x="830" y="227" width="360" height="112" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="852" y="267" font-size="15.5" font-weight="700" fill="#0f172a">Which product do I use?</text>
+  <text x="852" y="293" font-size="13" fill="#64748b">Docker, Kubernetes, one particular AI</text>
+  <text x="852" y="313" font-size="13" fill="#64748b">coding tool</text>
+
+  <rect x="830" y="362" width="360" height="112" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="852" y="402" font-size="15.5" font-weight="700" fill="#0f172a">Which class of idea is this?</text>
+  <text x="852" y="428" font-size="13" fill="#64748b">Containerization, declarative</text>
+  <text x="852" y="448" font-size="13" fill="#64748b">orchestration, serverless</text>
+
+  <rect x="830" y="497" width="360" height="112" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="852" y="537" font-size="15.5" font-weight="700" fill="#0f172a">What holds it up?</text>
+  <text x="852" y="563" font-size="13" fill="#64748b">TCP/IP semantics, process scheduling,</text>
+  <text x="852" y="583" font-size="13" fill="#64748b">virtual memory</text>
+
+  <!-- ================= depth axis ================= -->
+  <line x1="44" y1="130" x2="44" y2="580" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#parrow)"/>
+  <text x="26" y="355" text-anchor="middle" font-size="14" font-weight="600" fill="#94a3b8" transform="rotate(-90 26 355)">lasts longer</text>
+</svg>
