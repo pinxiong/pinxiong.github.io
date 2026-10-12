@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 564" width="560" height="564" role="img" aria-labelledby="lmTitle">
+  <title id="lmTitle">How to learn AI coding layer by layer: what you do at each of the four layers</title>
+  <rect width="560" height="564" fill="#ffffff"/>
+  <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+
+    <rect x="20" y="24" width="520" height="44" rx="12" fill="#f59e0b"/>
+    <text x="40" y="54" font-size="21" font-weight="700" fill="#ffffff">Usage</text>
+    <text x="40" y="96" font-size="15" fill="#334155">let AI write while you check the result, and still spot</text>
+    <text x="40" y="118" font-size="15" fill="#334155">when the tool goes off course</text>
+
+    <rect x="20" y="142" width="520" height="44" rx="12" fill="#f97316"/>
+    <text x="40" y="172" font-size="21" font-weight="700" fill="#ffffff">Tooling</text>
+    <text x="40" y="214" font-size="15" fill="#334155">take the hottest tool today and run your first project</text>
+    <text x="40" y="236" font-size="15" fill="#334155">with AI beside you</text>
+
+    <rect x="20" y="260" width="520" height="44" rx="12" fill="#14b8a6"/>
+    <text x="40" y="290" font-size="21" font-weight="700" fill="#ffffff">Paradigm</text>
+    <text x="40" y="332" font-size="15" fill="#334155">read the design as a whole: why the spec flow runs</text>
+    <text x="40" y="354" font-size="15" fill="#334155">requirements, then design, then tasks, what the steering files</text>
+    <text x="40" y="376" font-size="15" fill="#334155">carry into every spec, and why that reasoning outlives the tool</text>
+
+    <rect x="20" y="400" width="520" height="44" rx="12" fill="#2563eb"/>
+    <text x="40" y="430" font-size="21" font-weight="700" fill="#ffffff">Mechanism</text>
+    <text x="40" y="472" font-size="15" fill="#334155">with AI as the tutor: what an LLM is, why it hallucinates and</text>
+    <text x="40" y="494" font-size="15" fill="#334155">how to reduce it, how to get the same result twice, and how to</text>
+    <text x="40" y="516" font-size="15" fill="#334155">spend fewer tokens, and which model fits which job</text>
+  </g>
+</svg>
