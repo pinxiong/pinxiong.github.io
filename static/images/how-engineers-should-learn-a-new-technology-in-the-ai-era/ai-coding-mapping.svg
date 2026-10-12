@@ -1,26 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 530" width="560" height="530" role="img" aria-labelledby="acTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 404" width="560" height="404" role="img" aria-labelledby="acTitle">
   <title id="acTitle">AI coding mapped onto the four layers of a technology</title>
-  <rect width="560" height="530" fill="#ffffff"/>
+  <rect width="560" height="404" fill="#ffffff"/>
   <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
 
-    <rect x="20" y="24" width="520" height="44" rx="12" fill="#f59e0b"/>
-    <text x="40" y="54" font-size="21" font-weight="700" fill="#ffffff">Syntax and usage</text>
-    <text x="40" y="96" font-size="16" fill="#334155">the wording of a prompt · how the tool is configured · what its</text>
-    <text x="40" y="118" font-size="16" fill="#334155">slash commands are called</text>
+    <rect x="20" y="31" width="200" height="74" rx="14" fill="#f59e0b"/>
+    <text x="120" y="61" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Syntax and usage</text>
+    <text x="120" y="85" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">notation</text>
+    <line x1="246" y1="68" x2="238" y2="68" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,68 238,63 238,73" fill="#94a3b8"/>
+    <text x="252" y="62" font-size="15" fill="#334155">prompt wording, tool configuration,</text>
+    <text x="252" y="78" font-size="15" fill="#334155">slash commands</text>
 
-    <rect x="20" y="142" width="520" height="44" rx="12" fill="#f97316"/>
-    <text x="40" y="172" font-size="21" font-weight="700" fill="#ffffff">Framework and tooling</text>
-    <text x="40" y="214" font-size="16" fill="#334155">Cursor · Claude Code · Kiro · Qoder, and the like</text>
+    <rect x="20" y="115" width="200" height="74" rx="14" fill="#f97316"/>
+    <text x="120" y="145" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Framework and tooling</text>
+    <text x="120" y="169" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">product</text>
+    <line x1="246" y1="152" x2="238" y2="152" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,152 238,147 238,157" fill="#94a3b8"/>
+    <text x="252" y="154" font-size="15" fill="#334155">Cursor · Claude Code · Kiro · Qoder</text>
 
-    <rect x="20" y="238" width="520" height="44" rx="12" fill="#14b8a6"/>
-    <text x="40" y="268" font-size="21" font-weight="700" fill="#ffffff">Paradigm</text>
-    <text x="40" y="310" font-size="16" fill="#334155">how you hand over context · how you frame the environment · how the</text>
-    <text x="40" y="332" font-size="16" fill="#334155">loop is ordered: requirements → design → tasks, with steering files</text>
-    <text x="40" y="354" font-size="16" fill="#334155">holding the project context around it</text>
+    <rect x="20" y="199" width="200" height="74" rx="14" fill="#14b8a6"/>
+    <text x="120" y="229" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Paradigm</text>
+    <text x="120" y="253" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">philosophy</text>
+    <line x1="246" y1="236" x2="238" y2="236" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,236 238,231 238,241" fill="#94a3b8"/>
+    <text x="252" y="222" font-size="15" fill="#334155">context handover; the spec flow:</text>
+    <text x="252" y="238" font-size="15" fill="#334155">requirements → design → tasks,</text>
+    <text x="252" y="254" font-size="15" fill="#334155">with steering files around it</text>
 
-    <rect x="20" y="378" width="520" height="44" rx="12" fill="#2563eb"/>
-    <text x="40" y="408" font-size="21" font-weight="700" fill="#ffffff">Principle and mechanism</text>
-    <text x="40" y="450" font-size="16" fill="#334155">how the LLM works underneath · why it hallucinates · why the context</text>
-    <text x="40" y="472" font-size="16" fill="#334155">window is a hard limit · why an agent needs a verification loop</text>
+    <rect x="20" y="283" width="200" height="74" rx="14" fill="#2563eb"/>
+    <text x="120" y="305" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Principle and</text>
+    <text x="120" y="325" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">mechanism</text>
+    <text x="120" y="345" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">underneath</text>
+    <line x1="246" y1="320" x2="238" y2="320" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,320 238,315 238,325" fill="#94a3b8"/>
+    <text x="252" y="306" font-size="15" fill="#334155">how the LLM works underneath:</text>
+    <text x="252" y="322" font-size="15" fill="#334155">hallucination, the context window,</text>
+    <text x="252" y="338" font-size="15" fill="#334155">the verification loop</text>
+
+    <text x="280" y="388" font-size="15" fill="#64748b" text-anchor="middle">The same four layers, filled in with AI coding.</text>
   </g>
 </svg>

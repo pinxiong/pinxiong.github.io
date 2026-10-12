@@ -1,28 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 564" width="560" height="564" role="img" aria-labelledby="lmTitle">
-  <title id="lmTitle">How to learn AI coding layer by layer: what you do at each of the four layers</title>
-  <rect width="560" height="564" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 404" width="560" height="404" role="img" aria-labelledby="lmTitle">
+  <title id="lmTitle">How to learn AI coding layer by layer: the move to make at each of the four layers</title>
+  <rect width="560" height="404" fill="#ffffff"/>
   <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
 
-    <rect x="20" y="24" width="520" height="44" rx="12" fill="#f59e0b"/>
-    <text x="40" y="54" font-size="21" font-weight="700" fill="#ffffff">Usage</text>
-    <text x="40" y="96" font-size="15" fill="#334155">let AI write while you check the result, and still spot</text>
-    <text x="40" y="118" font-size="15" fill="#334155">when the tool goes off course</text>
+    <rect x="20" y="31" width="200" height="74" rx="14" fill="#f59e0b"/>
+    <text x="120" y="61" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Usage</text>
+    <text x="120" y="85" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">↓ top-down</text>
+    <line x1="246" y1="68" x2="238" y2="68" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,68 238,63 238,73" fill="#94a3b8"/>
+    <text x="252" y="62" font-size="15" fill="#334155">let AI write; check the result, and</text>
+    <text x="252" y="78" font-size="15" fill="#334155">spot when it goes off course</text>
 
-    <rect x="20" y="142" width="520" height="44" rx="12" fill="#f97316"/>
-    <text x="40" y="172" font-size="21" font-weight="700" fill="#ffffff">Tooling</text>
-    <text x="40" y="214" font-size="15" fill="#334155">take the hottest tool today and run your first project</text>
-    <text x="40" y="236" font-size="15" fill="#334155">with AI beside you</text>
+    <rect x="20" y="115" width="200" height="74" rx="14" fill="#f97316"/>
+    <text x="120" y="145" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Tooling</text>
+    <text x="120" y="169" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">↓ top-down</text>
+    <line x1="246" y1="152" x2="238" y2="152" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,152 238,147 238,157" fill="#94a3b8"/>
+    <text x="252" y="146" font-size="15" fill="#334155">take the hottest tool, run a first</text>
+    <text x="252" y="162" font-size="15" fill="#334155">project with AI beside you</text>
 
-    <rect x="20" y="260" width="520" height="44" rx="12" fill="#14b8a6"/>
-    <text x="40" y="290" font-size="21" font-weight="700" fill="#ffffff">Paradigm</text>
-    <text x="40" y="332" font-size="15" fill="#334155">read the design as a whole: why the spec flow runs</text>
-    <text x="40" y="354" font-size="15" fill="#334155">requirements, then design, then tasks, what the steering files</text>
-    <text x="40" y="376" font-size="15" fill="#334155">carry into every spec, and why that reasoning outlives the tool</text>
+    <rect x="20" y="199" width="200" height="74" rx="14" fill="#14b8a6"/>
+    <text x="120" y="229" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Paradigm</text>
+    <text x="120" y="253" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">↑ bottom-up</text>
+    <line x1="246" y1="236" x2="238" y2="236" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,236 238,231 238,241" fill="#94a3b8"/>
+    <text x="252" y="222" font-size="15" fill="#334155">read the design as a whole: why</text>
+    <text x="252" y="238" font-size="15" fill="#334155">requirements, design and tasks</text>
+    <text x="252" y="254" font-size="15" fill="#334155">come in that order</text>
 
-    <rect x="20" y="400" width="520" height="44" rx="12" fill="#2563eb"/>
-    <text x="40" y="430" font-size="21" font-weight="700" fill="#ffffff">Mechanism</text>
-    <text x="40" y="472" font-size="15" fill="#334155">with AI as the tutor: what an LLM is, why it hallucinates and</text>
-    <text x="40" y="494" font-size="15" fill="#334155">how to reduce it, how to get the same result twice, and how to</text>
-    <text x="40" y="516" font-size="15" fill="#334155">spend fewer tokens, and which model fits which job</text>
+    <rect x="20" y="283" width="200" height="74" rx="14" fill="#2563eb"/>
+    <text x="120" y="305" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Mechanism</text>
+    <text x="120" y="329" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">↑ bottom-up</text>
+    <line x1="246" y1="320" x2="238" y2="320" stroke="#94a3b8" stroke-width="2.5"/>
+    <polygon points="228,320 238,315 238,325" fill="#94a3b8"/>
+    <text x="252" y="306" font-size="15" fill="#334155">with AI as the tutor: LLM internals,</text>
+    <text x="252" y="322" font-size="15" fill="#334155">hallucination, consistency, tokens,</text>
+    <text x="252" y="338" font-size="15" fill="#334155">model choice</text>
+
+    <text x="280" y="388" font-size="15" fill="#64748b" text-anchor="middle">The move to make at each layer.</text>
   </g>
 </svg>
