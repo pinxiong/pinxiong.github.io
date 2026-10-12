@@ -38,9 +38,13 @@ Then the chain collapsed into a single step. An AI coding tool will take the who
 
 Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are ideas you compare, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
 
+### The four layers
+
 ![The four layers of a technology as a pyramid: syntax and usage at the top, then framework and tooling, then paradigm, with principle and mechanism at the base, and lifetimes running from months to decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers.svg)
 
 The four layers are a way to take a technology apart. Splitting it shows where each piece lands: a technology belongs to one layer, while a product reaches across several. That is what makes the real questions answerable: how to learn it, whether it is worth learning and how much time it deserves.
+
+### How to learn each layer
 
 The next table answers the first of those three questions. At the top you work top-down, starting at the surface and going down as questions appear. Underneath you work bottom-up, starting at the mechanism and building up. What separates the rows is then how far to go and what tells you that you have gone far enough.
 
@@ -57,6 +61,8 @@ That is the whole model: four layers, each with its own way in, its own depth an
 
 The model stays abstract until it lands on a technology you actually use. AI coding is the obvious place to test it, because almost everyone is already working with it. When a new technology arrives, there is one judgement to make: split it, see which layers it spans and learn each layer its own way. You do not have to label yourself top-down or bottom-up first. In the AI era the two have largely merged, so there is little to gain by picking a side in advance.
 
+### Where AI coding lands
+
 | Layer | In AI coding |
 | --- | --- |
 | Syntax and usage | the wording of a prompt, how the tool is configured, what its slash commands are called |
@@ -66,7 +72,7 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 
 Two conclusions fall out of that table. AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four. Each layer is also learned differently.
 
-**Layer by layer**
+### Layer by layer
 
 - **Usage**: you move through it fast, letting AI write while you check the result. The wording is not worth memorising, but you should see at a glance when the tool has gone off course.
 - **Tooling**: you work top-down, take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves.
@@ -77,10 +83,16 @@ Two conclusions fall out of that table. AI coding spans all four layers, so "sho
 
 Three points to end on. The first two sit at opposite ends of the same table.
 
-**Bet early on the top two layers.** Usage and tooling were always the fastest to turn over. Getting a bet wrong there now costs days instead of months, so there is no reason to wait for a technology to settle. Place the bet early and place several at once. All of that starts with an open mind toward whatever is new.
+### Bet early on the top two layers
 
-**Hold on to the bottom two.** Paradigm and mechanism barely move, so they are the part that travels across generations of tools. Knowledge from the top layers expires with the tools; the principles underneath do not. That payoff takes longest to arrive, which is why you collect a map rather than a memory of details.
+Usage and tooling were always the fastest to turn over. Getting a bet wrong there now costs days instead of months, so there is no reason to wait for a technology to settle. Place the bet early and place several at once. All of that starts with an open mind toward whatever is new.
 
-**Abstract whatever you learn.** Understanding how a technology works is half of it. The other half is pulling the principle out into a shape that is not tied to that one technology, so it carries into the next one and you do not start from zero.
+### Hold on to the bottom two
+
+Paradigm and mechanism barely move, so they are the part that travels across generations of tools. Knowledge from the top layers expires with the tools; the principles underneath do not. That payoff takes longest to arrive, which is why you collect a map rather than a memory of details.
+
+### Abstract whatever you learn
+
+Understanding how a technology works is half of it. The other half is pulling the principle out into a shape that is not tied to that one technology, so it carries into the next one and you do not start from zero.
 
 Together they answer the question this article opened with. Not the newest tool, and not the fundamentals alone, but both, plus the abstraction that lets you carry what you learn forward.
