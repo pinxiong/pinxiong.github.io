@@ -40,20 +40,18 @@ Deployment is not a single technology, and neither are Kubernetes and AI coding.
 
 ### The four layers
 
-![The four layers of a technology as a pyramid: syntax and usage at the top, then framework and tooling, then paradigm, with principle and mechanism at the base, and lifetimes running from months to decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers.svg)
+[![The four layers of a technology as a pyramid: syntax and usage at the top, then framework and tooling, then paradigm, with principle and mechanism at the base, and lifetimes running from months to decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
 
 The four layers are a way to take a technology apart. Splitting it shows where each piece lands: a technology belongs to one layer, while a product reaches across several. That is what makes the real questions answerable: how to learn it, whether it is worth learning and how much time it deserves.
 
 ### How to learn each layer
 
-The next table answers the first of those three questions. At the top you work top-down, starting at the surface and going down as questions appear. Underneath you work bottom-up, starting at the mechanism and building up. What separates the rows is then how far to go and what tells you that you have gone far enough.
+Take the first of those questions, how to learn it. For every layer the answer has three parts: the direction to work in, how deep to go and how you know you have gone far enough. At the top you work top-down, starting at the surface and going down as questions appear. Underneath you work bottom-up, starting at the mechanism and building up.
 
-| Layer | How to learn it | How deep to go | How to check yourself |
-| --- | --- | --- | --- |
-| Syntax and usage | top-down and fast: let AI write while you check the result | enough to get the job done, since the exact wording is not worth memorising | you can see at a glance when the tool has gone off course |
-| Framework and tooling | top-down: take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves | enough to use it and to see what the class solves | you can say what the class solves, not just how to use one product |
-| Paradigm | bottom-up: keep asking why it is ordered that way, as in the sequence steering, requirements, design and tasks | enough to follow the design philosophy rather than the steps | you can say what breaks when that order is reversed |
-| Principle and mechanism | bottom-up: let AI tutor you into a map of your own | enough to hold the map, not the details | at three in the morning, when AI hands you five guesses, you pick the right one |
+- **Syntax and usage** — top-down and fast: let AI write while you check the result; only as deep as the job needs, since the exact wording is not worth memorising; you have gone far enough when you see at a glance that the tool has gone off course.
+- **Framework and tooling** — top-down: take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves; deep enough to say what the class solves, not just how to use one product.
+- **Paradigm** — bottom-up: keep asking why it is ordered that way, as in the steering, requirements, design and tasks sequence; deep enough to follow the design philosophy rather than the steps, so you can say what breaks when that order is reversed.
+- **Principle and mechanism** — bottom-up: let AI tutor you into a map of your own; deep enough to hold the map, not the details, so that at three in the morning you can pick the right one out of five guesses.
 
 That is the whole model: four layers, each with its own way in, its own depth and its own test. It holds for any technology that is new to you.
 
