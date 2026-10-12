@@ -46,10 +46,10 @@ The four layers are a way to take a technology apart. Splitting it shows where e
 
 Take the first of those questions, how to learn it. The strategy is different for every layer, but each one comes down to the same questions: which direction to work in, how deep to go and how you know you have gone far enough.
 
-- **Syntax and usage** — top-down and fast: let AI write while you check the result; only as deep as the job needs, since the exact wording is not worth memorising.
-- **Framework and tooling** — top-down: take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves; deep enough to say what the class solves, not just how to use one product.
-- **Paradigm** — bottom-up: keep asking why it is ordered that way, as in the steering, requirements, design and tasks sequence; deep enough to follow the design philosophy rather than the steps, so you can say what breaks when that order is reversed.
-- **Principle and mechanism** — bottom-up: let AI tutor you into a map of your own; deep enough to hold the map, not the details, so that at three in the morning you can pick the right one out of five guesses.
+- **Syntax and usage** — top-down and fast; deep enough to get the job done, since the exact wording is not worth memorising.
+- **Framework and tooling** — top-down; deep enough to say what the class solves, not just how to use one product.
+- **Paradigm** — bottom-up; deep enough to follow the design philosophy rather than the steps.
+- **Principle and mechanism** — bottom-up; deep enough to hold the map, not the details.
 
 That is the whole model: four layers, each with its own way in, its own depth and its own test. It holds for any technology that is new to you.
 
@@ -64,7 +64,7 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 - **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and the spec flow behind tools like Kiro — steering, requirements, design and tasks.
 - **Principle and mechanism**: what an LLM actually is — why hallucination cannot be removed, why the context window is a hard limit, why an agent needs a verification loop.
 
-Two conclusions fall out of that list. AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four. Each layer is also learned differently.
+The list says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
 
 ### How to learn it, layer by layer
 
@@ -75,7 +75,7 @@ Two conclusions fall out of that list. AI coding spans all four layers, so "shou
 
 ## How to learn in the AI era
 
-Three points to end on. The first two sit at opposite ends of the same table.
+Three points to end on. The first two sit at opposite ends of the same model.
 
 ### Bet early on the top two layers
 
