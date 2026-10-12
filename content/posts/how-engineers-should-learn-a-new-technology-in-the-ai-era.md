@@ -62,7 +62,7 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 - **Syntax and usage**: the wording of a prompt, how the tool is configured, what its slash commands are called.
 - **Framework and tooling**: Cursor, Claude Code, Kiro, Qoder and the like.
 - **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and the spec flow behind tools like Kiro — steering, requirements, design and tasks.
-- **Principle and mechanism**: what an LLM actually is — why hallucination cannot be removed, why the context window is a hard limit, why an agent needs a verification loop.
+- **Principle and mechanism**: the internals of the model — hallucination, the context window as a hard limit, and the verification loop an agent needs.
 
 The list says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
 
@@ -70,8 +70,8 @@ The list says one thing clearly: AI coding spans all four layers, so "should I l
 
 - **Usage**: you move through it fast, letting AI write while you check the result. The wording is not worth memorising, but you should see at a glance when the tool has gone off course.
 - **Tooling**: you work top-down, take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves.
-- **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its flow as a whole: what steering does before anything is written, why requirements come before design, why design comes before tasks and what breaks when that order is reversed. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
-- **Mechanism**: you work bottom-up, letting AI tutor you into building the map. When something breaks at three in the morning and AI hands you five guesses, the map is what picks the right one.
+- **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its flow as a whole: what steering does before anything is written, why requirements come before design, and why design comes before tasks. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
+- **Mechanism**: you work bottom-up, with AI as the tutor and the mechanism itself as the subject: what an LLM actually is, why it hallucinates and how to reduce it, how to keep the same task giving the same result, how to spend fewer tokens for the same work, and which model fits which job.
 
 ## How to learn in the AI era
 
