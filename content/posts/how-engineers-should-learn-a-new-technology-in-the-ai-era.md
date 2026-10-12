@@ -46,6 +46,8 @@ The four layers are a way to take a technology apart. Splitting it shows where e
 
 Take the first of those questions, how to learn it. The strategy is different for every layer, but each one comes down to the same questions: which direction to work in, how deep to go and how you know you have gone far enough.
 
+[![The four layers with a top-down arrow across the top two and a bottom-up arrow across the bottom two](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/learning-direction.svg)
+
 - **Syntax and usage** — top-down and fast; deep enough to get the job done, since the exact wording is not worth memorising.
 - **Framework and tooling** — top-down; deep enough to say what the class solves, not just how to use one product.
 - **Paradigm** — bottom-up; deep enough to follow the design philosophy rather than the steps.
@@ -59,12 +61,9 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 
 ### Where AI coding lands
 
-- **Syntax and usage**: the wording of a prompt, how the tool is configured, what its slash commands are called.
-- **Framework and tooling**: Cursor, Claude Code, Kiro, Qoder and the like.
-- **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and how tools like Kiro sequence the work — a spec flow from requirements to design to tasks, with steering files holding the project context around it.
-- **Principle and mechanism**: how the LLM works underneath — which is why hallucination happens, why the context window is a hard limit, and why an agent needs a verification loop.
+[![AI coding mapped onto the four layers: prompt wording and tool configuration at the syntax layer, tools like Cursor and Kiro at the framework layer, context handover and the spec flow at the paradigm layer, and how the LLM works at the mechanism layer](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/ai-coding-mapping.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/ai-coding-mapping.svg)
 
-The list says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
+The picture says one thing clearly: AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four.
 
 ### How to learn it, layer by layer
 
