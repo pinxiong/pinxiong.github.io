@@ -17,16 +17,9 @@ Twenty years ago the same website started with a harder question: where does the
 
 That question has been answered six times in thirty years.
 
-| Stage | Roughly | The problem it solved |
-| --- | --- | --- |
-| Own hardware | 1990s | The starting point |
-| x86 virtualization | 2001 | One machine running one operating system was wasteful |
-| Cloud (EC2) | 2006 | Buying machines and building data centers was slow and expensive |
-| Containers (Docker) | 2013 | Environments differed between machines, and delivery was slow |
-| Orchestration (Kubernetes) | 2014 | Manual scheduling broke down once containers multiplied |
-| Functions (Lambda) | 2014 | Nobody wanted to manage servers at all |
+[![Six stages of deployment from the 1990s to 2014: own hardware, x86 virtualization in 2001, cloud in 2006, containers in 2013, orchestration in 2014 and functions in 2014, with the gaps between them shrinking from ten years to one](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/deployment-stages.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/deployment-stages.svg)
 
-Two things stand out in that table.
+Two things stand out in that timeline.
 
 First, no generation kills the one before it. Each one wraps the one below and solves what that one left behind, so deployment keeps getting easier to put into production.
 
@@ -36,17 +29,22 @@ Then the chain collapsed into a single step. An AI coding tool will take the who
 
 ## How to understand a technology
 
-Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are ideas you compare, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
+Before we talk about how to learn a new technology, we should first look at how to understand one. Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are ideas you compare, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
 
 ### The four layers
 
-[![The four layers of a technology as a pyramid: syntax and usage at the top, then framework and tooling, then paradigm, with principle and mechanism at the base, and lifetimes running from months to decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
+[![The four layers of a technology, from top to bottom: syntax and usage lasting months, framework and tooling lasting two to three years, paradigm lasting five to ten years, and principle and mechanism lasting decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
 
 The four layers are a way to take a technology apart. Splitting it shows where each piece lands: a technology belongs to one layer, while a product reaches across several. That is what makes the real questions answerable: how to learn it, whether it is worth learning and how much time it deserves.
 
+- **Syntax and usage** — answers "how exactly do I write it?" It lasts months: YAML fields, CLI flags, the exact wording of a prompt.
+- **Framework and tooling** — answers "which product do I use?" It lasts two to three years: Docker, Kubernetes, one particular AI coding tool.
+- **Paradigm** — answers "which class of idea is this?" It lasts five to ten years: containerization, declarative orchestration, serverless.
+- **Principle and mechanism** — answers "what holds it up?" It lasts decades: TCP/IP semantics, process scheduling, virtual memory.
+
 ### How to learn each layer
 
-Take the first of those questions, how to learn it. For every layer the answer has three parts: the direction to work in, how deep to go and how you know you have gone far enough. At the top you work top-down, starting at the surface and going down as questions appear. Underneath you work bottom-up, starting at the mechanism and building up.
+Take the first of those questions, how to learn it. For every layer the answer has three parts: the direction to work in, how deep to go and how you know you have gone far enough.
 
 - **Syntax and usage** — top-down and fast: let AI write while you check the result; only as deep as the job needs, since the exact wording is not worth memorising; you have gone far enough when you see at a glance that the tool has gone off course.
 - **Framework and tooling** — top-down: take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves; deep enough to say what the class solves, not just how to use one product.
@@ -61,14 +59,12 @@ The model stays abstract until it lands on a technology you actually use. AI cod
 
 ### Where AI coding lands
 
-| Layer | In AI coding |
-| --- | --- |
-| Syntax and usage | the wording of a prompt, how the tool is configured, what its slash commands are called |
-| Framework and tooling | Cursor, Claude Code, Kiro, Qoder and the like |
-| Paradigm | how you hand over context, how you frame the environment, how the loop is organised, and the spec flow behind tools like Kiro: steering, requirements, design and tasks |
-| Principle and mechanism | what an LLM actually is: why hallucination cannot be removed, why the context window is a hard limit, why an agent needs a verification loop |
+- **Syntax and usage**: the wording of a prompt, how the tool is configured, what its slash commands are called.
+- **Framework and tooling**: Cursor, Claude Code, Kiro, Qoder and the like.
+- **Paradigm**: how you hand over context, how you frame the environment, how the loop is organised, and the spec flow behind tools like Kiro — steering, requirements, design and tasks.
+- **Principle and mechanism**: what an LLM actually is — why hallucination cannot be removed, why the context window is a hard limit, why an agent needs a verification loop.
 
-Two conclusions fall out of that table. AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four. Each layer is also learned differently.
+Two conclusions fall out of that list. AI coding spans all four layers, so "should I learn AI coding" is the wrong question. It breaks into four. Each layer is also learned differently.
 
 ### How to learn it, layer by layer
 
