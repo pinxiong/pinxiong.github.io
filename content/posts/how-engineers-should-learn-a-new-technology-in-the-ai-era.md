@@ -49,7 +49,7 @@ Take the first of those questions, how to learn it. The strategy is different fo
 - **Syntax and usage** — top-down and fast; deep enough to get the job done, since the exact wording is not worth memorising.
 - **Framework and tooling** — top-down; deep enough to say what the class solves, not just how to use one product.
 - **Paradigm** — bottom-up; deep enough to follow the design philosophy rather than the steps.
-- **Principle and mechanism** — bottom-up; deep enough to hold the map, not the details.
+- **Principle and mechanism** — bottom-up; deep enough to understand how it behaves, not the details.
 
 That is the whole model: four layers, each with its own way in, its own depth and its own test. It holds for any technology that is new to you.
 
@@ -83,7 +83,7 @@ Usage and tooling were always the fastest to turn over. Getting a bet wrong ther
 
 ### Hold on to the bottom two
 
-Paradigm and mechanism barely move, so they are the part that travels across generations of tools. Knowledge from the top layers expires with the tools; the principles underneath do not. That payoff takes longest to arrive, which is why you collect a map rather than a memory of details.
+Paradigm and mechanism barely move, so they are the part that travels across generations of tools. Knowledge from the top layers expires with the tools; the principles underneath do not. That payoff takes longest to arrive, which is why you keep the understanding rather than a memory of details.
 
 ### Abstract whatever you learn
 
