@@ -79,7 +79,7 @@ Two conclusions fall out of that table. AI coding spans all four layers, so "sho
 - **Paradigm**: you work bottom-up. This layer is about how context is handed over, so the question is not which steps to follow but why they are ordered that way. Take Kiro and read its flow as a whole: what steering does before anything is written, why requirements come before design, why design comes before tasks and what breaks when that order is reversed. That reasoning is Kiro's design philosophy, and it is the part worth learning, because it outlives the tool.
 - **Mechanism**: you work bottom-up, letting AI tutor you into building the map. When something breaks at three in the morning and AI hands you five guesses, the map is what picks the right one.
 
-## Three takeaways
+## How to learn in the AI era
 
 Three points to end on. The first two sit at opposite ends of the same table.
 
