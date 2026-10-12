@@ -263,6 +263,14 @@
   border-radius: 8px;
 }
 
+/* Inline figures are narrower than the 672px measure. The theme leaves them
+   flush left, so all the leftover width piles up on the right — and because the
+   SVG background is white it reads as part of the picture. Centring splits the
+   slack evenly and keeps the figure on the column's axis. */
+.article-content :is(img, video) {
+  margin-inline: auto;
+}
+
 .article-content figure {
   margin: 2.1em 0;
 }
