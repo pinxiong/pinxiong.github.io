@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-labelledby="cvdTitle">
+  <title id="cvdTitle">Cover art: four layers, one model, from months to decades</title>
+  <rect width="1000" height="420" fill="#0f172a"/>
+  <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+
+    <rect x="60" y="62" width="36" height="5" rx="2.5" fill="#fbbf24"/>
+    <text x="110" y="70" font-size="17" font-weight="700" letter-spacing="2.6" fill="#fbbf24">THE AI ERA · A FOUR-LAYER MODEL</text>
+
+    <text x="60" y="176" font-size="74" font-weight="800" fill="#ffffff">4 <tspan fill="#60a5fa">LAYERS</tspan></text>
+    <text x="60" y="256" font-size="74" font-weight="800" fill="#ffffff">1 <tspan fill="#60a5fa">MODEL</tspan></text>
+
+    <text x="60" y="304" font-size="21" fill="#cbd5e1">From syntax that turns over in months to mechanisms that stay stable for decades</text>
+
+    <rect x="740" y="72" width="200" height="44" rx="11" fill="#f59e0b"/>
+    <rect x="710" y="128" width="230" height="44" rx="11" fill="#f97316"/>
+    <rect x="680" y="184" width="260" height="44" rx="11" fill="#14b8a6"/>
+    <rect x="650" y="240" width="290" height="44" rx="11" fill="#2563eb"/>
+
+    <rect x="60" y="336" width="272" height="58" rx="29" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="84" y="360" font-size="12" font-weight="700" letter-spacing="1.6" fill="#93c5fd">USAGE &amp; TOOLING</text>
+    <text x="84" y="382" font-size="17" font-weight="700" fill="#ffffff">months to years</text>
+
+    <rect x="356" y="336" width="272" height="58" rx="29" fill="none" stroke="#14b8a6" stroke-width="1.5"/>
+    <text x="380" y="360" font-size="12" font-weight="700" letter-spacing="1.6" fill="#5eead4">PARADIGM</text>
+    <text x="380" y="382" font-size="17" font-weight="700" fill="#ffffff">about a decade</text>
+
+    <rect x="652" y="336" width="272" height="58" rx="29" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="676" y="360" font-size="12" font-weight="700" letter-spacing="1.6" fill="#86efac">MECHANISM</text>
+    <text x="676" y="382" font-size="17" font-weight="700" fill="#ffffff">decades</text>
+  </g>
+</svg>

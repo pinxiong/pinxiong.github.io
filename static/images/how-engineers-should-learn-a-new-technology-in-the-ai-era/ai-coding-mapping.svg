@@ -23,9 +23,9 @@
     <text x="140" y="253" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">philosophy</text>
     <line x1="286" y1="236" x2="278" y2="236" stroke="#94a3b8" stroke-width="2.5"/>
     <polygon points="268,236 278,231 278,241" fill="#94a3b8"/>
-    <text x="292" y="222" font-size="15" fill="#334155">context handover, and the spec flow:</text>
-    <text x="292" y="238" font-size="15" fill="#334155">requirements → design → tasks,</text>
-    <text x="292" y="254" font-size="15" fill="#334155">with steering files around it</text>
+    <text x="292" y="222" font-size="15" fill="#334155">context handover, the spec flow</text>
+    <text x="292" y="238" font-size="15" fill="#334155">(requirements → design → tasks)</text>
+    <text x="292" y="254" font-size="15" fill="#334155">and steering, the project context</text>
 
     <rect x="20" y="283" width="240" height="74" rx="14" fill="#2563eb"/>
     <text x="140" y="305" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Principle and</text>

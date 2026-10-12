@@ -5,7 +5,7 @@
 
     <rect x="20" y="31" width="240" height="74" rx="14" fill="#f59e0b"/>
     <text x="140" y="61" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Syntax and usage</text>
-    <text x="140" y="85" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">Months</text>
+    <text x="140" y="85" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">New notation every few months</text>
     <line x1="286" y1="68" x2="278" y2="68" stroke="#94a3b8" stroke-width="2.5"/>
     <polygon points="268,68 278,63 278,73" fill="#94a3b8"/>
     <text x="292" y="54" font-size="15" fill="#334155" font-style="italic">how exactly do I write it?</text>
@@ -14,7 +14,7 @@
 
     <rect x="20" y="115" width="240" height="74" rx="14" fill="#f97316"/>
     <text x="140" y="145" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Framework and tooling</text>
-    <text x="140" y="169" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">One to three years</text>
+    <text x="140" y="169" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">New tool every few years</text>
     <line x1="286" y1="152" x2="278" y2="152" stroke="#94a3b8" stroke-width="2.5"/>
     <polygon points="268,152 278,147 278,157" fill="#94a3b8"/>
     <text x="292" y="138" font-size="15" fill="#334155" font-style="italic">which product do I use?</text>
@@ -23,7 +23,7 @@
 
     <rect x="20" y="199" width="240" height="74" rx="14" fill="#14b8a6"/>
     <text x="140" y="229" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Paradigm</text>
-    <text x="140" y="253" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">Five to ten years</text>
+    <text x="140" y="253" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">New paradigm once a decade</text>
     <line x1="286" y1="236" x2="278" y2="236" stroke="#94a3b8" stroke-width="2.5"/>
     <polygon points="268,236 278,231 278,241" fill="#94a3b8"/>
     <text x="292" y="222" font-size="15" fill="#334155" font-style="italic">which philosophy is this?</text>
@@ -33,7 +33,7 @@
     <rect x="20" y="283" width="240" height="74" rx="14" fill="#2563eb"/>
     <text x="140" y="305" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Principle and</text>
     <text x="140" y="325" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">mechanism</text>
-    <text x="140" y="345" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">Decades</text>
+    <text x="140" y="345" font-size="12" fill="#ffffff" opacity="0.85" text-anchor="middle">Stable for decades</text>
     <line x1="286" y1="320" x2="278" y2="320" stroke="#94a3b8" stroke-width="2.5"/>
     <polygon points="268,320 278,315 278,325" fill="#94a3b8"/>
     <text x="292" y="306" font-size="15" fill="#334155" font-style="italic">what holds it up?</text>
