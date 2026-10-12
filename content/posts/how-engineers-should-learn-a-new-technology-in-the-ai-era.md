@@ -25,28 +25,28 @@ First, no generation kills the one before it. Each one wraps the one below and s
 
 Second, the gaps keep shrinking: roughly 10, 5, 7 and 1 years between stages, with three of them landing inside twenty months, from March 2013 to November 2014, while the first waited two decades.
 
-Then the chain collapsed into a single step. An AI coding tool will take the whole thing now: it writes the code, sets up the environment and deploys the service. The same website that once took a week of preparation comes together in minutes. The point is the speed, not the tool.
+Then the chain collapsed into a single step. An AI coding tool will take the whole thing now: it writes the code, sets up the environment and deploys the service. The same website that once took a week of preparation comes together in minutes. **The point is the speed, not the tool.**
 
 ## How to understand a technology
 
-Before we talk about how to learn a new technology, we should first look at how to understand one. Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are ideas you compare, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
+Before we talk about how to learn a new technology, we should first look at how to understand one. Deployment is not a single technology, and neither are Kubernetes and AI coding. We talk about each as if the name covered one skill, but what sits under it is not the same kind of thing: some are notations you memorize, some are products you choose, some are philosophies you reason about, and some are mechanisms underneath. A few of them turn over every few months, and a few have not changed in decades. Modeling a technology in layers is what makes that visible.
 
 ### The four layers
 
-[![The four layers of a technology, from top to bottom: syntax and usage lasting months, framework and tooling lasting two to three years, paradigm lasting five to ten years, and principle and mechanism lasting decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
+[![The four layers of a technology, from top to bottom: syntax and usage lasting months, framework and tooling lasting one to three years, paradigm lasting five to ten years, and principle and mechanism lasting decades](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)](/images/how-engineers-should-learn-a-new-technology-in-the-ai-era/four-layers-pyramid.svg)
 
 The four layers are a way to take a technology apart. Splitting it shows where each piece lands: a technology belongs to one layer, while a product reaches across several. That is what makes the real questions answerable: how to learn it, whether it is worth learning and how much time it deserves.
 
 - **Syntax and usage** — answers "how exactly do I write it?" It lasts months: YAML fields, CLI flags, the exact wording of a prompt.
-- **Framework and tooling** — answers "which product do I use?" It lasts two to three years: Docker, Kubernetes, one particular AI coding tool.
-- **Paradigm** — answers "which class of idea is this?" It lasts five to ten years: containerization, declarative orchestration, serverless.
+- **Framework and tooling** — answers "which product do I use?" It lasts one to three years: Docker, Kubernetes, one particular AI coding tool.
+- **Paradigm** — answers "which philosophy is this?" It lasts five to ten years: containerization, declarative orchestration, serverless.
 - **Principle and mechanism** — answers "what holds it up?" It lasts decades: TCP/IP semantics, process scheduling, virtual memory.
 
 ### How to learn each layer
 
-Take the first of those questions, how to learn it. For every layer the answer has three parts: the direction to work in, how deep to go and how you know you have gone far enough.
+Take the first of those questions, how to learn it. The strategy is different for every layer, but each one comes down to the same questions: which direction to work in, how deep to go and how you know you have gone far enough.
 
-- **Syntax and usage** — top-down and fast: let AI write while you check the result; only as deep as the job needs, since the exact wording is not worth memorising; you have gone far enough when you see at a glance that the tool has gone off course.
+- **Syntax and usage** — top-down and fast: let AI write while you check the result; only as deep as the job needs, since the exact wording is not worth memorising.
 - **Framework and tooling** — top-down: take the hottest tool today, run your first project with AI beside you, then step back and ask what this class of tool actually solves; deep enough to say what the class solves, not just how to use one product.
 - **Paradigm** — bottom-up: keep asking why it is ordered that way, as in the steering, requirements, design and tasks sequence; deep enough to follow the design philosophy rather than the steps, so you can say what breaks when that order is reversed.
 - **Principle and mechanism** — bottom-up: let AI tutor you into a map of your own; deep enough to hold the map, not the details, so that at three in the morning you can pick the right one out of five guesses.
