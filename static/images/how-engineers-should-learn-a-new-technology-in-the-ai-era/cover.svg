@@ -1,39 +1,78 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="cvTitle">
   <title id="cvTitle">Cover: how to learn in the AI era — bet early on the top two layers, hold on to the bottom two, abstract whatever you learn</title>
-  <rect width="1200" height="675" fill="#0f172a"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1024"/>
+      <stop offset="1" stop-color="#0d1c3a"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.12" cy="0.05" r="0.75">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.95" cy="0.9" r="0.8">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowC" cx="0.45" cy="1.15" r="0.6">
+      <stop offset="0" stop-color="#14b8a6" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#463414"/>
+      <stop offset="1" stop-color="#1b2236"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d403c"/>
+      <stop offset="1" stop-color="#1b2236"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173561"/>
+      <stop offset="1" stop-color="#1b2236"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glowA)"/>
+  <rect width="1200" height="675" fill="url(#glowB)"/>
+  <rect width="1200" height="675" fill="url(#glowC)"/>
+
   <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
 
     <rect x="72" y="78" width="42" height="5" rx="2.5" fill="#fbbf24"/>
     <text x="130" y="87" font-size="20" font-weight="700" letter-spacing="3" fill="#fbbf24">A FOUR-LAYER MODEL · THREE MOVES</text>
 
     <text x="72" y="214" font-size="86" font-weight="800" fill="#ffffff">HOW TO LEARN</text>
-    <text x="72" y="308" font-size="86" font-weight="800" fill="#ffffff">IN THE <tspan fill="#60a5fa">AI ERA</tspan></text>
-    <text x="72" y="354" font-size="23" fill="#94a3b8">Three moves that follow from the four layers</text>
+    <text x="72" y="308" font-size="86" font-weight="800" fill="#ffffff">IN THE <tspan fill="#38bdf8">AI ERA</tspan></text>
+    <text x="72" y="354" font-size="23" fill="#a6b6cd">Three moves that follow from the four layers</text>
 
-    <rect x="1028" y="300" width="100" height="13" rx="6.5" fill="#f59e0b"/>
-    <rect x="988" y="318" width="140" height="13" rx="6.5" fill="#f97316"/>
-    <rect x="948" y="336" width="180" height="13" rx="6.5" fill="#14b8a6"/>
-    <rect x="908" y="354" width="220" height="13" rx="6.5" fill="#2563eb"/>
+    <rect x="1022" y="297" width="112" height="19" rx="9.5" fill="#fbbf24" opacity="0.22"/>
+    <rect x="1028" y="300" width="100" height="13" rx="6.5" fill="#fbbf24"/>
+    <rect x="982" y="315" width="152" height="19" rx="9.5" fill="#fb923c" opacity="0.22"/>
+    <rect x="988" y="318" width="140" height="13" rx="6.5" fill="#fb923c"/>
+    <rect x="942" y="333" width="192" height="19" rx="9.5" fill="#2dd4bf" opacity="0.22"/>
+    <rect x="948" y="336" width="180" height="13" rx="6.5" fill="#2dd4bf"/>
+    <rect x="902" y="351" width="232" height="19" rx="9.5" fill="#60a5fa" opacity="0.22"/>
+    <rect x="908" y="354" width="220" height="13" rx="6.5" fill="#60a5fa"/>
 
-    <rect x="72" y="392" width="336" height="204" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <rect x="98" y="412" width="44" height="5" rx="2.5" fill="#f59e0b"/>
-    <text x="98" y="474" font-size="36" font-weight="800" fill="#ffffff">BET EARLY</text>
-    <text x="98" y="506" font-size="19" fill="#94a3b8">on the top two layers</text>
-    <line x1="98" y1="530" x2="382" y2="530" stroke="#334155" stroke-width="1"/>
-    <text x="98" y="560" font-size="15.5" fill="#fcd34d">Wrong bets cost days, not months</text>
+    <rect x="72" y="392" width="336" height="204" rx="18" fill="url(#g1)" stroke="#f59e0b" stroke-opacity="0.6" stroke-width="1.5"/>
+    <path d="M 90 392 H 390 A 18 18 0 0 1 408 410 V 399 H 72 V 410 A 18 18 0 0 1 90 392 Z" fill="#f59e0b"/>
+    <text x="98" y="470" font-size="36" font-weight="800" fill="#fbbf24">BET EARLY</text>
+    <text x="98" y="502" font-size="19" fill="#cbd5e1">on the top two layers</text>
+    <line x1="98" y1="528" x2="382" y2="528" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="98" y="558" font-size="15.5" fill="#fcd34d">Wrong bets cost days, not months</text>
 
-    <rect x="432" y="392" width="336" height="204" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <rect x="458" y="412" width="44" height="5" rx="2.5" fill="#14b8a6"/>
-    <text x="458" y="474" font-size="36" font-weight="800" fill="#ffffff">HOLD ON</text>
-    <text x="458" y="506" font-size="19" fill="#94a3b8">to the bottom two layers</text>
-    <line x1="458" y1="530" x2="742" y2="530" stroke="#334155" stroke-width="1"/>
-    <text x="458" y="560" font-size="15.5" fill="#5eead4">Principles outlive the tools</text>
+    <rect x="432" y="392" width="336" height="204" rx="18" fill="url(#g2)" stroke="#14b8a6" stroke-opacity="0.6" stroke-width="1.5"/>
+    <path d="M 450 392 H 750 A 18 18 0 0 1 768 410 V 399 H 432 V 410 A 18 18 0 0 1 450 392 Z" fill="#14b8a6"/>
+    <text x="458" y="470" font-size="36" font-weight="800" fill="#2dd4bf">HOLD ON</text>
+    <text x="458" y="502" font-size="19" fill="#cbd5e1">to the bottom two layers</text>
+    <line x1="458" y1="528" x2="742" y2="528" stroke="#14b8a6" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="458" y="558" font-size="15.5" fill="#5eead4">Principles outlive the tools</text>
 
-    <rect x="792" y="392" width="336" height="204" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-    <rect x="818" y="412" width="44" height="5" rx="2.5" fill="#3b82f6"/>
-    <text x="818" y="474" font-size="36" font-weight="800" fill="#ffffff">ABSTRACT</text>
-    <text x="818" y="506" font-size="19" fill="#94a3b8">whatever you learn</text>
-    <line x1="818" y1="530" x2="1102" y2="530" stroke="#334155" stroke-width="1"/>
-    <text x="818" y="560" font-size="15.5" fill="#93c5fd">So it carries into the next one</text>
+    <rect x="792" y="392" width="336" height="204" rx="18" fill="url(#g3)" stroke="#3b82f6" stroke-opacity="0.6" stroke-width="1.5"/>
+    <path d="M 810 392 H 1110 A 18 18 0 0 1 1128 410 V 399 H 792 V 410 A 18 18 0 0 1 810 392 Z" fill="#3b82f6"/>
+    <text x="818" y="470" font-size="36" font-weight="800" fill="#60a5fa">ABSTRACT</text>
+    <text x="818" y="502" font-size="19" fill="#cbd5e1">whatever you learn</text>
+    <line x1="818" y1="528" x2="1102" y2="528" stroke="#3b82f6" stroke-opacity="0.35" stroke-width="1"/>
+    <text x="818" y="558" font-size="15.5" fill="#93c5fd">So it carries into the next one</text>
   </g>
 </svg>
