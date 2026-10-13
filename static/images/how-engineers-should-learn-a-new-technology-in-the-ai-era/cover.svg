@@ -1,32 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="cvTitle">
-  <title id="cvTitle">Cover art: four layers, one model, from months to decades</title>
+  <title id="cvTitle">Cover: how to learn in the AI era — bet early on the top two layers, hold on to the bottom two, abstract whatever you learn</title>
   <rect width="1200" height="675" fill="#0f172a"/>
   <g font-family="ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif">
 
-    <rect x="72" y="86" width="42" height="5" rx="2.5" fill="#fbbf24"/>
-    <text x="130" y="95" font-size="20" font-weight="700" letter-spacing="3" fill="#fbbf24">THE AI ERA · A FOUR-LAYER MODEL</text>
+    <rect x="72" y="78" width="42" height="5" rx="2.5" fill="#fbbf24"/>
+    <text x="130" y="87" font-size="20" font-weight="700" letter-spacing="3" fill="#fbbf24">A FOUR-LAYER MODEL · THREE MOVES</text>
 
-    <text x="72" y="250" font-size="100" font-weight="800" fill="#ffffff">4 <tspan fill="#60a5fa">LAYERS</tspan></text>
-    <text x="72" y="360" font-size="100" font-weight="800" fill="#ffffff">1 <tspan fill="#60a5fa">MODEL</tspan></text>
+    <text x="72" y="214" font-size="86" font-weight="800" fill="#ffffff">HOW TO LEARN</text>
+    <text x="72" y="308" font-size="86" font-weight="800" fill="#ffffff">IN THE <tspan fill="#60a5fa">AI ERA</tspan></text>
+    <text x="72" y="354" font-size="23" fill="#94a3b8">Three moves that follow from the four layers</text>
 
-    <text x="72" y="424" font-size="25" fill="#cbd5e1">How a technology holds up, from syntax that turns over</text>
-    <text x="72" y="458" font-size="25" fill="#cbd5e1">in months to mechanisms that stay stable for decades</text>
+    <rect x="1028" y="300" width="100" height="13" rx="6.5" fill="#f59e0b"/>
+    <rect x="988" y="318" width="140" height="13" rx="6.5" fill="#f97316"/>
+    <rect x="948" y="336" width="180" height="13" rx="6.5" fill="#14b8a6"/>
+    <rect x="908" y="354" width="220" height="13" rx="6.5" fill="#2563eb"/>
 
-    <rect x="880" y="140" width="280" height="64" rx="14" fill="#f59e0b"/>
-    <rect x="840" y="220" width="320" height="64" rx="14" fill="#f97316"/>
-    <rect x="800" y="300" width="360" height="64" rx="14" fill="#14b8a6"/>
-    <rect x="760" y="380" width="400" height="64" rx="14" fill="#2563eb"/>
+    <rect x="72" y="392" width="336" height="204" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="98" y="412" width="44" height="5" rx="2.5" fill="#f59e0b"/>
+    <text x="98" y="474" font-size="36" font-weight="800" fill="#ffffff">BET EARLY</text>
+    <text x="98" y="506" font-size="19" fill="#94a3b8">on the top two layers</text>
+    <line x1="98" y1="530" x2="382" y2="530" stroke="#334155" stroke-width="1"/>
+    <text x="98" y="560" font-size="15.5" fill="#fcd34d">Wrong bets cost days, not months</text>
 
-    <rect x="72" y="524" width="300" height="80" rx="40" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="102" y="556" font-size="14" font-weight="700" letter-spacing="1.8" fill="#93c5fd">USAGE &amp; TOOLING</text>
-    <text x="102" y="584" font-size="21" font-weight="700" fill="#ffffff">months to years</text>
+    <rect x="432" y="392" width="336" height="204" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="458" y="412" width="44" height="5" rx="2.5" fill="#14b8a6"/>
+    <text x="458" y="474" font-size="36" font-weight="800" fill="#ffffff">HOLD ON</text>
+    <text x="458" y="506" font-size="19" fill="#94a3b8">to the bottom two layers</text>
+    <line x1="458" y1="530" x2="742" y2="530" stroke="#334155" stroke-width="1"/>
+    <text x="458" y="560" font-size="15.5" fill="#5eead4">Principles outlive the tools</text>
 
-    <rect x="400" y="524" width="300" height="80" rx="40" fill="none" stroke="#14b8a6" stroke-width="1.5"/>
-    <text x="430" y="556" font-size="14" font-weight="700" letter-spacing="1.8" fill="#5eead4">PARADIGM</text>
-    <text x="430" y="584" font-size="21" font-weight="700" fill="#ffffff">about a decade</text>
-
-    <rect x="728" y="524" width="300" height="80" rx="40" fill="none" stroke="#22c55e" stroke-width="1.5"/>
-    <text x="758" y="556" font-size="14" font-weight="700" letter-spacing="1.8" fill="#86efac">MECHANISM</text>
-    <text x="758" y="584" font-size="21" font-weight="700" fill="#ffffff">decades</text>
+    <rect x="792" y="392" width="336" height="204" rx="18" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <rect x="818" y="412" width="44" height="5" rx="2.5" fill="#3b82f6"/>
+    <text x="818" y="474" font-size="36" font-weight="800" fill="#ffffff">ABSTRACT</text>
+    <text x="818" y="506" font-size="19" fill="#94a3b8">whatever you learn</text>
+    <line x1="818" y1="530" x2="1102" y2="530" stroke="#334155" stroke-width="1"/>
+    <text x="818" y="560" font-size="15.5" fill="#93c5fd">So it carries into the next one</text>
   </g>
 </svg>
