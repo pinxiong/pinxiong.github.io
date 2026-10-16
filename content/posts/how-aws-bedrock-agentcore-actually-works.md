@@ -8,13 +8,13 @@ tags: ["aws", "bedrock", "agentcore", "cdk", "ai-agents"]
 
 AWS Bedrock AgentCore replaces Dockerfiles, instance sizing and hand-rolled IAM with a single JSON file. One command turns that file into a running, observable endpoint. This walkthrough covers the full path from project creation to trace analysis.
 
-![The whole AgentCore CLI lifecycle in six commands](images/how-aws-bedrock-agentcore-actually-works/F0-command-map.png)
+![The whole AgentCore CLI lifecycle in six commands](/images/how-aws-bedrock-agentcore-actually-works/F0-command-map.png)
 
 ## What AgentCore is and is not
 
 AgentCore is a family of managed runtimes for AI agents: nine managed services covering hosting, memory, access control, tool integration, code execution, browser automation, quality and observability. This article covers two of them: Runtime and Observability.
 
-![AgentCore: 9 managed services, 2 used in this article](images/how-aws-bedrock-agentcore-actually-works/F1-capability-map.png)
+![AgentCore: 9 managed services, 2 used in this article](/images/how-aws-bedrock-agentcore-actually-works/F1-capability-map.png)
 
 What it is not:
 
@@ -28,7 +28,7 @@ AgentCore hosts that code and adds an HTTP endpoint, an IAM role and a trace pip
 
 You write agent code. You write two JSON files. The CLI generates everything else. AWS runs a CloudFormation stack that you never have to look at.
 
-![Three layers: business code, the contract, the plumbing](images/how-aws-bedrock-agentcore-actually-works/F2-three-layers.png)
+![Three layers: business code, the contract, the plumbing](/images/how-aws-bedrock-agentcore-actually-works/F2-three-layers.png)
 
 | Layer | What lives there | Who maintains it |
 |---|---|---|
@@ -87,7 +87,7 @@ aws bedrock list-foundation-models --region us-east-1 \
 # deepseek.v3.2
 ```
 
-![Terminal self-check: tool versions, AWS identity, region and model availability](images/how-aws-bedrock-agentcore-actually-works/screenshot-1-environment-check.png)
+![Terminal self-check: tool versions, AWS identity, region and model availability](/images/how-aws-bedrock-agentcore-actually-works/screenshot-1-environment-check.png)
 
 Runtime IAM role. The CLI generates an IAM role for the runtime. The policy carries three permission groups: `bedrock:InvokeModel*`, `logs:*` for the group under `/aws/bedrock-agentcore/runtimes/`, and `xray:PutTraceSegments`. It is a least-privilege template for later.
 
@@ -122,7 +122,7 @@ To continue, navigate to your new project:
 
 The command produces three categories of files:
 
-![Project tree in the editor: agentcore/ config and app/hello_agent/ code](images/how-aws-bedrock-agentcore-actually-works/screenshot-2-directory-tree.png)
+![Project tree in the editor: agentcore/ config and app/hello_agent/ code](/images/how-aws-bedrock-agentcore-actually-works/screenshot-2-directory-tree.png)
 
 The project root gets `AGENTS.md`, `README.md` and `git init`. `agentcore/` gets the contract (`agentcore.json`), the targets file (`aws-targets.json`), `.env.local` for secrets and the vendored `cdk/` app. `app/hello_agent/` gets the agent: `main.py` (entrypoint), a `model/` package, `pyproject.toml` and helper packages (`mcp_client/`, `skills/`). The contract points `codeLocation` at `app/hello_agent/` and `entrypoint` at `main.py`; the platform zips, deploys and starts what `codeLocation` names.
 
@@ -198,11 +198,11 @@ From the project root:
 agentcore deploy -y --target default
 ```
 
-![agentcore deploy progress and the stack outputs, including the runtime ID and ARN](images/how-aws-bedrock-agentcore-actually-works/screenshot-3-first-deploy.png)
+![agentcore deploy progress and the stack outputs, including the runtime ID and ARN](/images/how-aws-bedrock-agentcore-actually-works/screenshot-3-first-deploy.png)
 
 Between the command and the last checkmark, six things happen:
 
-![Deploy: six steps to READY, with measured timings](images/how-aws-bedrock-agentcore-actually-works/F4-deploy-pipeline.png)
+![Deploy: six steps to READY, with measured timings](/images/how-aws-bedrock-agentcore-actually-works/F4-deploy-pipeline.png)
 
 1. Package the code. The CLI zips whatever `codeLocation` names, with platform dependencies, into one asset. A hello-world agent produces a 41 MB zip; the local `.venv` is excluded. No image is built anywhere in the project.
 2. Synthesize. The vendored CDK app (`node dist/bin/cdk.js`) reads both JSON files and emits a CloudFormation template into `cdk.out/`.
@@ -233,7 +233,7 @@ Measured timings: this deploy took 3 minutes 29 seconds. The CLI's step log says
 
 `agentcore dev -l` runs the same app locally on `localhost:8080`. Model calls still go to Bedrock, so credentials are needed but no deployment is. Edits to `main.py` trigger hot reload without a restart.
 
-![agentcore dev -l boot banner: Uvicorn on localhost:8080 with the reloader watching app/hello_agent/](images/how-aws-bedrock-agentcore-actually-works/screenshot-4-local-run.png)
+![agentcore dev -l boot banner: Uvicorn on localhost:8080 with the reloader watching app/hello_agent/](/images/how-aws-bedrock-agentcore-actually-works/screenshot-4-local-run.png)
 
 ## Step 5 · Invoke the deployed runtime
 
@@ -243,11 +243,11 @@ The deployed runtime answers through the data plane. The CLI wraps it:
 agentcore invoke --prompt "What is 17 plus 25? Use the tool."
 ```
 
-![agentcore invoke against the deployed runtime: the reply, the session ID and the invoke log path](images/how-aws-bedrock-agentcore-actually-works/screenshot-5-cloud-invoke.png)
+![agentcore invoke against the deployed runtime: the reply, the session ID and the invoke log path](/images/how-aws-bedrock-agentcore-actually-works/screenshot-5-cloud-invoke.png)
 
 The answer is correct and the tool ran, but the reply carries model scaffolding around it: the `I'll use the addition tool` preamble and a `<|DSML|>function_calls` marker precede the final text. That is model behavior, not a platform bug; the troubleshooting section explains the fix.
 
-![One HTTP surface, two hosts: agentcore dev and agentcore deploy](images/how-aws-bedrock-agentcore-actually-works/F5-one-surface.png)
+![One HTTP surface, two hosts: agentcore dev and agentcore deploy](/images/how-aws-bedrock-agentcore-actually-works/F5-one-surface.png)
 
 `agentcore dev` and the deployed runtime are two hosts for the same app: the local server on `localhost:8080`, and a managed microVM behind `https://bedrock-agentcore.<region>.amazonaws.com/runtimes/<runtime-arn>/invocations`. Both expose the same two routes (`/ping`, `/invocations`); routing, scaling and TLS stay on the platform side, so the code is unaware which host it runs on. `agentcore invoke` is a CLI client for the hosted `/invocations`.
 
@@ -290,7 +290,7 @@ agentcore traces list          # lists recent traces (2-3 min after the invoke)
 agentcore traces get <trace-id>
 ```
 
-![agentcore traces list and traces get: the trace for the invoke above tops the list](images/how-aws-bedrock-agentcore-actually-works/screenshot-6-observability.png)
+![agentcore traces list and traces get: the trace for the invoke above tops the list](/images/how-aws-bedrock-agentcore-actually-works/screenshot-6-observability.png)
 
 ```text
 invoke_agent Strands Agents              gen_ai.agent.tools=["add_numbers"]  tokens=902

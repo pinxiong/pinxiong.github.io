@@ -142,6 +142,12 @@
   border: none;
 }
 
+/* Inline code must not render bold (user preference: uniform weight).
+   Scoped to :not(pre) > code so code blocks are untouched. */
+.article-content :not(pre) > code {
+  font-weight: 400;
+}
+
 /* One frame, on the outermost wrapper only. Blowfish nests
    .highlight-wrapper (holds the copy button) > .highlight > pre — styling
    more than one layer produced nested frames with dead gaps between them. */
