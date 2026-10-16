@@ -347,3 +347,10 @@
   outline-offset: 2px;
   border-radius: 2px;
 }
+
+/* Code blocks: strip Chroma's bold on class names, operators, constants, etc.
+   The syntax-highlight theme marks tokens like .nc, .no, .nd, .ne, .nl, .nf,
+   .fm, .o, .ow as font-weight:bold. Override to keep code uniformly weighted. */
+.chroma span {
+  font-weight: normal !important;
+}
