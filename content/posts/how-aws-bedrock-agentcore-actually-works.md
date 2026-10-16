@@ -338,7 +338,3 @@ agentcore status            # nothing deployed should be listed
 4. Observability is real but asynchronous. The tool call gets its own span in the cloud and spans take minutes to become queryable. Write tests accordingly.
 
 In AgentCore, your infrastructure is not code you maintain. It is code that compiles.
-
----
-
-Before publishing: remove `draft: true` from the front matter and delete this note.
