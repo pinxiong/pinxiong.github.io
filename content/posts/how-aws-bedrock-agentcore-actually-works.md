@@ -4,6 +4,10 @@ date: 2026-10-16
 draft: false
 description: "A step-by-step walkthrough of AWS Bedrock AgentCore: set up the environment, scaffold a project with one command, deploy, invoke, read the trace, and see how one JSON file becomes four CloudFormation resources."
 tags: ["aws", "bedrock", "agentcore", "cdk", "ai-agents"]
+images: ["/images/how-aws-bedrock-agentcore-actually-works/cover.png"]
+cover:
+  image: "/images/how-aws-bedrock-agentcore-actually-works/cover.png"
+  alt: "Cover art: How Bedrock AgentCore works. One JSON file in, four CloudFormation resources out, measured on a real deploy in us-east-1"
 ---
 
 AWS Bedrock AgentCore replaces Dockerfiles, instance sizing and hand-rolled IAM with a single JSON file. One command turns that file into a running, observable endpoint. This walkthrough covers the full path from project creation to trace analysis.
