@@ -1,7 +1,7 @@
 ---
 title: "It Remembers Across Restarts — and Forgets Mid-Conversation"
 date: 2026-11-06
-draft: false
+draft: true
 description: "Session files stored fourteen messages while the model saw six. A restart keeps your name, and seven turns later the same conversation forgets it."
 tags: ["aws", "strands", "ai-agents", "bedrock"]
 images: ["/images/sessions-state-memory/cover.png"]
