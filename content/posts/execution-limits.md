@@ -88,7 +88,7 @@ ends without a summary. A cycle runs in a fixed order: check the limits, call th
 tools it asked for. The check sits at the top of that cycle, before the model call. That
 placement is what lets the source promise something useful. A cap that fires at the next cycle's
 top fires after the previous turn's tools completed. `agent.messages` also stays valid for
-another call, with no assistant message left pointing at tool calls that never ran
+another call, with no model reply left pointing at tool calls that never ran
 (`types/agent.py:168-169`, `event_loop/event_loop.py:217`).
 
 ![Three probes of the turn limit: no limits ends at 9 turns, turns=3 stops with limit_turns, turns=1 cuts after one turn](/images/execution-limits/S1-turn-limit.png)
@@ -137,8 +137,7 @@ calls `agent.cancel()`. Here that thread is a watchdog.
 
 Two probes, same `agent.cancel()`, different phases of the loop. In the first, the watchdog cancels
 three seconds into a long answer. Streaming is a cancellation safe point, so the call returns in
-3.0 seconds with `stop_reason` set to `cancelled` and the cancel message as the final assistant
-message.
+3.0 seconds with `stop_reason` set to `cancelled` and the cancel message as the final message from the model.
 
 In the second, the watchdog fires five seconds into a tool that sleeps twenty seconds. The tool
 keeps sleeping. The call returns after 21.9 seconds, still `cancelled`, still carrying the
