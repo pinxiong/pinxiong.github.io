@@ -157,6 +157,8 @@ def main() -> int:
              "|---|---|---|---|---|---|---|---|"]
     for slug, s in sorted(snapshot.items(),
                           key=lambda kv: kv[1].get("published_at") or "", reverse=True):
+        if (s.get("published_at") or "")[:10] < "2026-09-01":
+            continue  # Pin, 2026-11-07: only Sep-2026 onward belongs in the report
         d, b = s["devto"], s["bc"] or {}
         title = s["title"][:58].replace("|", "\\|")
         lines.append(f"| [{title}]({d['url']}) | {s['series']} | "

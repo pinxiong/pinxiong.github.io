@@ -30,6 +30,8 @@ plt.rcParams["font.sans-serif"] = ["PingFang SC", "Hiragino Sans GB", "Arial Uni
 plt.rcParams["axes.unicode_minus"] = False
 BLUE, TEAL, ORANGE, GREY = "#2f6f9f", "#3aa39a", "#d97b29", "#8a939b"
 
+CUTOFF = "2026-09-01"  # Pin, 2026-11-07: only articles published from Sep 2026 on
+
 SHORT = [
     ("how-the-strands-agent-loop", "UC01 Agent 循环"),
     ("the-tools-that-got-replaced", "UC02 工具被取代"),
@@ -98,6 +100,8 @@ def main() -> int:
 
     rows = []
     for slug, a in arts.items():
+        if (a.get("published_at") or "")[:10] < CUTOFF:
+            continue  # older articles are stock, not signal
         d = a["devto"]
         b = a.get("bc") or {}
         rows.append({
