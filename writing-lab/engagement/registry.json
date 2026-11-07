@@ -1,0 +1,68 @@
+{
+  "comment": "Per-article channel map. Key = Dev.to slug. bc = Builder Center content id, medium = Medium URL (null = not published there or unknown). Dev.to stats are discovered automatically from /api/articles/me/published, so new articles only need bc/medium added here.",
+  "articles": {
+    "how-the-strands-agent-loop-actually-works-2m17": {
+      "series": "strands-in-action",
+      "uc": "UC01",
+      "bc": "3LdLIKF4QRX5tQAloHWqkS7Rr2u",
+      "medium": null,
+      "site": "https://xiongpin.dev/posts/how-the-strands-agent-loop-works/"
+    },
+    "the-tools-that-got-replaced-2hod": {
+      "series": "strands-in-action",
+      "uc": "UC02",
+      "bc": "3LfU2Smwk0qIDvFJprHjqELXczS",
+      "medium": null,
+      "site": "https://xiongpin.dev/posts/the-tools-that-got-replaced/"
+    },
+    "the-limits-that-dont-limit-2o4j": {
+      "series": "strands-in-action",
+      "uc": "UC03",
+      "bc": "3Li5l8UlIgThJpfAkefMsa0hok5",
+      "medium": "https://medium.com/@pinxiong.cn/the-limits-that-dont-limit-f8994f37cad7",
+      "site": "https://xiongpin.dev/posts/execution-limits/"
+    },
+    "it-remembers-across-restarts-and-forgets-mid-conversation-1ehh": {
+      "series": "strands-in-action",
+      "uc": "UC04",
+      "bc": "3Ll4sEZ0YTvNRvbvH4UWe5hUdtz",
+      "medium": "https://medium.com/@pinxiong.cn/it-remembers-across-restarts-and-forgets-mid-conversation-1a27f5d6b782",
+      "site": "https://xiongpin.dev/posts/sessions-state-memory/"
+    },
+    "your-first-agent-as-a-service-deploying-a-support-agent-on-agentcore-48hh": {
+      "series": "agentcore",
+      "bc": "3Kthro3Dt7uuzaUIIQ01LODb4n3",
+      "medium": "https://medium.com/@pinxiong.cn/your-first-agent-as-a-service-deploying-a-support-agent-on-agentcore-a5a62d328b40"
+    },
+    "an-agent-that-remembers-short-term-and-long-term-memory-on-agentcore-3bf5": {
+      "series": "agentcore",
+      "bc": "3KtqxBw9HvfgjCtDsPBP6Yn5JHn",
+      "medium": "https://medium.com/@pinxiong.cn/an-agent-that-remembers-short-term-and-long-term-memory-on-agentcore-3401667db4d6"
+    },
+    "reaching-real-systems-without-holding-credentials-gateway-and-identity-3p6a": {
+      "series": "agentcore",
+      "bc": "3Ku6j0Z4tIcffIQ9QrvW8yYdEfr",
+      "medium": "https://medium.com/@pinxiong.cn/reaching-real-systems-without-holding-credentials-gateway-and-identity-f6ca46ff8837"
+    },
+    "stopping-an-agent-from-overreaching-policy-in-enforce-mode-4dgf": {
+      "series": "agentcore",
+      "bc": "3L3Snq6kL76BoOEdZNQHJiGuN20",
+      "medium": null
+    },
+    "a-research-agent-that-searches-browses-and-computes-3n1j": {
+      "series": "agentcore",
+      "bc": "3LAAmOAFTDAOFCj9zspOGsKLycS",
+      "medium": "https://medium.com/@pinxiong.cn/a-research-agent-that-searches-browses-and-computes-9b95a8017a3e"
+    },
+    "finding-what-broke-observability-evaluation-optimization-4epk": {
+      "series": "agentcore",
+      "bc": "3LIuO3ijU7qWElcPy6lrlOw7EcL",
+      "medium": "https://medium.com/@pinxiong.cn/finding-what-broke-observability-evaluation-optimization-177a547640c0"
+    },
+    "two-specialists-one-orchestrator-one-catalog-10g8": {
+      "series": "agentcore",
+      "bc": "3LUUQ6VZMY1O7EyKHz2cS6Qh6R1",
+      "medium": "https://medium.com/@pinxiong.cn/two-specialists-one-orchestrator-one-catalog-4c5d6938753c"
+    }
+  }
+}

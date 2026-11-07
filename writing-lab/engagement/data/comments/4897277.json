@@ -1,0 +1,42 @@
+[
+ {
+  "id": "3iih7",
+  "user": "gautamtalksdev",
+  "name": "Gautam K",
+  "created_at": "2026-10-22T18:21:26Z",
+  "depth": 0,
+  "text": "The detail I liked most is the order service echoing which token it saw. That turns the outbound hop into something you can check instead of something you trust.\n\nQuestion on the write path: the orders credential is scoped to orders.read, but createTicket writes rows, and the gate in front of it is the same inbound JWT the reads use. If you turned the Policy engine on, would you treat the ticketing target differently from the two read targets, or keep one rule for the whole gateway?"
+ },
+ {
+  "id": "3jmm7",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-02T10:37:26Z",
+  "depth": 1,
+  "text": "Good eye on the token echo — making the outbound hop checkable instead of trustworthy was the whole point of that design.\n\nYour reading of the setup is accurate, with one sharpening: orders is the only target that carries outboundAuth at all. The ticketing Lambda holds no credential of its own — the gateway invokes it with its execution role — and the CRM target carries none either. So yes, the inbound CUSTOM_JWT is the single uniform gate in front of all three tools.\n\nIf I turned the Policy engine on, I would treat ticketing differently — and the mechanism pushes you that way whether you plan for it or not. Policies are Cedar statements matched per tool call, not per gateway: the action is the fully prefixed tool name (for example ticketing___createTicket), and the condition can inspect the arguments, like context.input.amount &lt;= 500 in the refund lab. There is no real \"one rule for the whole gateway\" option short of a blanket permit, which defeats the purpose.\n\nThe part that forces your hand is the default. When I measured this in the follow-up Policy article (dev.to/aws-builders/stopping-an-ag...), any call that no policy matches falls through to deny — the decision log says verbatim \"No policy applies to the request (denied by default)\". That is exactly why that gateway needed a second policy, approvalAlways, existing solely so the recording tool survived the fall-through. Attach the same engine to ops-gateway and you must write an explicit permit for every tool you want to keep alive — both reads and the write — or the whole tool list goes dark.\n\nSo concretely: one permit covering orders___listOrders and crm___getCustomer, and a separate stricter permit for ticketing___createTicket with an argument condition — the write-path equivalent of the amount ceiling, for example constraining order_id to a known pattern. Measured cost of the decision at the gateway: 44 to 56 ms, which buys you a write gate that the shared inbound JWT cannot express."
+ },
+ {
+  "id": "3jo83",
+  "user": "gautamtalksdev",
+  "name": "Gautam K",
+  "created_at": "2026-11-02T22:58:07Z",
+  "depth": 2,
+  "text": "The default deny detail is the useful part, thank you. It means turning the engine on is itself a change that can take tools offline, so I would ship the permits first and attach the engine second. The 44 to 56 ms number is helpful too, that is cheap for a gate on the one tool that writes."
+ },
+ {
+  "id": "3jo9g",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-02T23:58:03Z",
+  "depth": 3,
+  "text": "Thank you — and one small refinement on the order: in LOG_ONLY the engine cannot take anything offline, so engine and permits can ship together while you watch the decision log. That was the sequence here: three DENYs logged, nothing blocked, the CNY 3000 refund still executed, then one mode field flipped to ENFORCE. \"Permits first\" only becomes mandatory when the first attach is already ENFORCE."
+ },
+ {
+  "id": "3k06p",
+  "user": "gautamtalksdev",
+  "name": "Gautam K",
+  "created_at": "2026-11-03T17:00:55Z",
+  "depth": 4,
+  "text": "That's a better order than mine, thanks. Log only first means the three DENYs show you exactly which permits are missing before anything can go dark. I'll correct my mental model: permits first is only required when the first attach is already in enforce."
+ }
+]
