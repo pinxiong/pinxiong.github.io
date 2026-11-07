@@ -13,25 +13,18 @@
 **插入位置**：找到 F1 图（三条泳道机制图，alt 是 "Three stacked lanes joined by downward arrows..."），
 新节插在这张图**之后**、标题 **"Summarizing, but only at the cliff" 之前**。
 
-**粘贴以下内容**（标题用 Heading 2；python 代码块和 text 输出块各自单独设成代码块）：
+**粘贴以下内容**（标题用 Heading 2；python 代码块和 text 输出块各自单独设成代码块）。
+
+> 下面每个自然段都是**一整行**，这是故意的：Medium 会把段内换行变成硬换行，如果按源码那样
+> 在 95 字符处折行，粘上去就会出现一句一断的锯齿。整段粘完再按需 `Option+Shift+↑/↓` 调。
 
 ---
 
 ## State does not inject itself
 
-The third lane has a gap of its own. In 1.63.0, `agent.state` is written to `agent.json` and
-restored on the next invocation, but nothing in the prompt path ever reads it. `FileSessionManager`
-hands it to `SessionAgent.from_agent` (`state=agent.state.get()`, `types/session.py:145`【链接1】)
-and reloads it at `repository_session_manager.py:262`【链接2】;
-`SnapshotSessionManager` goes through `take_snapshot` and `load_snapshot` instead
-(`agent/agent.py:2262`【链接3】, `:2304`). And `system_prompt` is a value, typed
-`str | list[SystemContentBlock] | None` (`agent/agent.py:243`【链接4】),
-not a callable. So a fact in state is durable and invisible at the same time: the same failure the
-window produced, out of a different store.
+The third lane has a gap of its own. In 1.63.0, `agent.state` is written to `agent.json` and restored on the next invocation, but nothing in the prompt path ever reads it. `FileSessionManager` hands it to `SessionAgent.from_agent` (`state=agent.state.get()`, `types/session.py:145`【链接1】) and reloads it at `repository_session_manager.py:262`【链接2】; `SnapshotSessionManager` goes through `take_snapshot` and `load_snapshot` instead (`agent/agent.py:2262`【链接3】, `:2304`). And `system_prompt` is a value, typed `str | list[SystemContentBlock] | None` (`agent/agent.py:243`【链接4】), not a callable. So a fact in state is durable and invisible at the same time: the same failure the window produced, out of a different store.
 
-If the model has to see it, the injection is yours to write. The smallest working version is a
-`BeforeInvocationEvent` hook (`hooks/events.py:39`【链接5】)
-plus the `system_prompt` setter (`agent/agent.py:812`【链接6】):
+If the model has to see it, the injection is yours to write. The smallest working version is a `BeforeInvocationEvent` hook (`hooks/events.py:39`【链接5】) plus the `system_prompt` setter (`agent/agent.py:812`【链接6】):
 
 ```python
 BASE_PROMPT = "You are a concise assistant."
@@ -43,9 +36,7 @@ def inject_manifest(event: BeforeInvocationEvent) -> None:
 agent.add_hook(inject_manifest, BeforeInvocationEvent)
 ```
 
-Same setup as the sliding-window run, with one addition: the codename goes into both the first user
-message and `agent.state`, and the hook rewrites the system prompt on every invocation. Turn seven
-now answers with the codename, even though it left the window at turn four:
+Same setup as the sliding-window run, with one addition: the codename goes into both the first user message and `agent.state`, and the hook rewrites the system prompt on every invocation. Turn seven now answers with the codename, even though it left the window at turn four:
 
 ```text
 ORION_IN_MESSAGES_BEFORE_ASK: False
@@ -53,11 +44,7 @@ TURN 7 ask     | msgs= 6 stored=14 | ORION
 ORION_IN_SYSTEM_PROMPT: True
 ```
 
-The hook fires before every invocation, not once at construction, so the manifest tracks state as it
-changes. The channel is not free either: it repeats the serialized state in the prompt on every
-call, which is a fair price for an invariant and a bad one for a log. Which restates the original
-rule with the machinery filled in. Messages are for the model, state is for your code, and the
-bridge between them is a hook you write yourself.
+The hook fires before every invocation, not once at construction, so the manifest tracks state as it changes. The channel is not free either: it repeats the serialized state in the prompt on every call, which is a fair price for an invariant and a bad one for a log. Which restates the original rule with the machinery filled in. Messages are for the model, state is for your code, and the bridge between them is a hook you write yourself.
 
 ---
 
