@@ -86,6 +86,8 @@ def barh(items, title, fname, color=BLUE, xlabel="", out=None):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=dt.date.today().isoformat())
+    ap.add_argument("--weekly", action="store_true",
+                    help="also draw a per-article trend chart (needs >=2 days of history)")
     args = ap.parse_args()
     date = args.date
 
@@ -160,6 +162,36 @@ def main() -> int:
         fig.savefig(out / "trend.png", facecolor="white")
         plt.close(fig)
         images.append(("trend.png", "总量趋势"))
+
+    if args.weekly and len(days) >= 2:
+        # per-article cumulative Dev.to views, last snapshot of each day
+        series: dict[str, dict[str, int]] = {}
+        for line in hist.read_text().splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            if r["channel"] != "devto":
+                continue
+            series.setdefault(r["slug"], {})[r["ts"][:10]] = r["views"] or 0
+        ordered = sorted(days)
+        by_slug = {s: [v.get(d, 0) for d in ordered] for s, v in series.items()}
+        names = {s: label(s, arts.get(s, {}).get("title", s)) for s in series}
+        top_slugs = sorted(by_slug, key=lambda s: by_slug[s][-1], reverse=True)[:6]
+        fig, ax = plt.subplots(figsize=(9.2, 4.2), dpi=150)
+        palette = [BLUE, TEAL, ORANGE, "#6a8caf", "#b08a3e", "#5f7a5f"]
+        for i, s in enumerate(top_slugs):
+            ax.plot(ordered, by_slug[s], marker="o", linewidth=1.8, markersize=4,
+                    color=palette[i % len(palette)], label=names[s])
+        ax.set_title("逐篇趋势：Dev.to 累计阅读", fontsize=13, color="#1f2a33")
+        ax.legend(frameon=False, fontsize=9, loc="upper left")
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.grid(axis="y", color="#eceff1")
+        ax.set_axisbelow(True)
+        ax.tick_params(labelsize=9)
+        fig.tight_layout()
+        fig.savefig(out / "weekly-trends.png", facecolor="white")
+        plt.close(fig)
+        images.append(("weekly-trends.png", "逐篇趋势（Dev.to 累计阅读）"))
 
     tot_v = sum(r["views"] for r in rows)
     tot_r = sum(r["reactions"] for r in rows)
