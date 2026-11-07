@@ -205,9 +205,10 @@ def main() -> int:
     top_bc = max(rows, key=lambda r: r["bc_likes"] or 0)
 
     base = f"https://xiongpin.dev/images/engagement/{date}/"
+    cache_buster = dt.datetime.now().strftime("%H%M%S")  # CDN may serve a stale image otherwise
     img_html = "\n".join(
         f'<h3 style="margin:26px 0 8px;font-size:16px;color:#1f2a33">{t}</h3>'
-        f'<img src="{base}{n}" alt="{t}" style="width:100%;max-width:760px;border:1px solid #e6eaed;border-radius:6px">'
+        f'<img src="{base}{n}?v={cache_buster}" alt="{t}" style="width:100%;max-width:760px;border:1px solid #e6eaed;border-radius:6px">'
         for n, t in images)
     html = f"""<div style="font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;color:#1f2a33;max-width:800px">
 <h2 style="margin:0 0 4px">文章反馈日报 · {date}</h2>
