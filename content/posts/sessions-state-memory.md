@@ -1,6 +1,6 @@
 ---
 title: "It Remembers Across Restarts — and Forgets Mid-Conversation"
-date: 2026-11-06
+date: 2026-11-07
 draft: true
 description: "Session files stored fourteen messages while the model saw six. A restart keeps your name, and seven turns later the same conversation forgets it."
 tags: ["aws", "strands", "ai-agents", "bedrock"]
@@ -10,7 +10,7 @@ cover:
   alt: "Two process cards recalling a planted name across a restart, then counters reading fourteen messages stored on disk against six visible to the model"
 ---
 
-> Verified on 2026-11-06 against `strands-agents` 1.63.0, Python 3.11 and Bedrock in
+> Verified on 2026-11-07 against `strands-agents` 1.63.0, Python 3.11 and Bedrock in
 > `us-east-1`. Every number below came out of a run, and the setup steps live in `README.md`.
 > The model is `amazon.nova-pro-v1:0` on Amazon Bedrock.
 
