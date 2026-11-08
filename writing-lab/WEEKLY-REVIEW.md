@@ -36,6 +36,7 @@
 1. `python3 writing-lab/engagement/scan.py` 采集；Dev.to 不可达则用已有数据并注明截止时间。
 2. 聚合 `history.jsonl`：每篇近 7 天与上一周的 views / reactions / comments 增量与累计；不足两周只列近 7 天并标注。
 3. 生成图表：`.venv/bin/python report.py --weekly --date <今天>`；push `static/images/engagement` 与 `writing-lab/engagement`（`git add -f`），curl 确认图片 200 后再继续。
+   **push 前先 `git pull --rebase`**：周一 21:30 还有流水线发布、日报两个任务会推同一个仓库，并发推送必然有一个被拒；被拒就 rebase 后重试一次，不要 force push。
 4. 复核既有判断是否仍成立（首轮基线三条：边界/失败类评论率高、反直觉标题 reaction 率高、BC 推荐位是最大杠杆）。成立的保留，不成立的推翻并写依据。
 5. **先处理反馈闭环，再改规则**：读本周 `feedback/` 记录里「出口」未执行的条目并执行；回看 `ledger.md` 标「待回看」的条目——预期效果成立改「已生效」，不成立就撤回并在台账追加撤回行。**这一步不能跳，否则规则只增不减。**
 6. 列出仍未回复的评论（文章 + 评论者 + 链接），不起草回复。
