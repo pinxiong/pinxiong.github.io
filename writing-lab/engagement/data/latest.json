@@ -1,5 +1,5 @@
 {
- "ts": "2026-11-07T21:59:05+08:00",
+ "ts": "2026-11-08T21:30:48+08:00",
  "articles": {
   "it-remembers-across-restarts-and-forgets-mid-conversation-1ehh": {
    "title": "It Remembers Across Restarts — and Forgets Mid-Conversation",
@@ -8,15 +8,15 @@
    "uc": "UC04",
    "devto": {
     "id": 4991329,
-    "views": 9,
+    "views": 12,
     "reactions": 4,
-    "comments": 4,
+    "comments": 6,
     "url": "https://dev.to/aws-builders/it-remembers-across-restarts-and-forgets-mid-conversation-1ehh"
    },
    "bc": {
     "id": "3Ll4sEZ0YTvNRvbvH4UWe5hUdtz",
-    "likes": 72,
-    "comments": 2,
+    "likes": 130,
+    "comments": 11,
     "url": "https://builder.aws.com/content/3Ll4sEZ0YTvNRvbvH4UWe5hUdtz"
    },
    "medium": {
@@ -32,15 +32,15 @@
    "uc": "UC03",
    "devto": {
     "id": 4985028,
-    "views": 63,
+    "views": 67,
     "reactions": 22,
-    "comments": 6,
+    "comments": 10,
     "url": "https://dev.to/aws-builders/the-limits-that-dont-limit-2o4j"
    },
    "bc": {
     "id": "3Li5l8UlIgThJpfAkefMsa0hok5",
     "likes": 20,
-    "comments": 4,
+    "comments": 9,
     "url": "https://builder.aws.com/content/3Li5l8UlIgThJpfAkefMsa0hok5"
    },
    "medium": {
@@ -80,7 +80,7 @@
    "uc": "UC01",
    "devto": {
     "id": 4974345,
-    "views": 15,
+    "views": 16,
     "reactions": 0,
     "comments": 0,
     "url": "https://dev.to/aws-builders/how-the-strands-agent-loop-actually-works-2m17"
@@ -243,7 +243,7 @@
    "uc": null,
    "devto": {
     "id": 4870214,
-    "views": 80,
+    "views": 91,
     "reactions": 0,
     "comments": 0,
     "url": "https://dev.to/aws-builders/an-agent-that-remembers-short-term-and-long-term-memory-on-agentcore-3bf5"
@@ -310,7 +310,7 @@
    "uc": null,
    "devto": {
     "id": 4840394,
-    "views": 147,
+    "views": 149,
     "reactions": 9,
     "comments": 0,
     "url": "https://dev.to/aws-builders/how-engineers-should-learn-a-new-technology-in-the-ai-era-5dce"
@@ -329,7 +329,7 @@
    "uc": null,
    "devto": {
     "id": 4793349,
-    "views": 85,
+    "views": 87,
     "reactions": 1,
     "comments": 4,
     "url": "https://dev.to/aws-builders/ai-coding-in-practice-refactoring-a-zero-docs-microservice-1kkg"

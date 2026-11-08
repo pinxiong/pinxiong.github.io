@@ -85,6 +85,34 @@ def barh(items, title, fname, color=BLUE, xlabel="", out=None):
     plt.close(fig)
 
 
+def new_comments_html() -> str:
+    """Orange highlight block at the top of the mail when new comments appeared."""
+    f = ROOT / "data" / "new-comments.md"
+    if not f.exists():
+        return ""
+    text = f.read_text()
+    if "### " not in text:
+        return ""
+    items = []
+    for chunk in text.split("### ")[1:]:
+        lines = chunk.strip().splitlines()
+        head = lines[0].strip()
+        author = next((l.split("author:", 1)[1].strip() for l in lines if "author:" in l), "")
+        body = " ".join(l for l in lines[1:] if not l.startswith("- ")).strip()
+        items.append((head, author, body[:400]))
+    if not items:
+        return ""
+    inner = "".join(
+        f'<p style="margin:10px 0 2px;font-size:14px"><b>{h}</b><br>'
+        f'<span style="color:#8a6a3a;font-size:13px">{a}</span></p>'
+        f'<p style="margin:0 0 6px;font-size:13px;line-height:1.7;color:#4a3c28">{b}</p>'
+        for h, a, b in items)
+    return (f'<div style="background:#fff6e8;border-left:4px solid #d97b29;'
+            f'padding:12px 16px;border-radius:4px;margin:18px 0">'
+            f'<b style="color:#b35c0f;font-size:15px">🔔 今日新增评论 {len(items)} 条</b>'
+            f'{inner}</div>')
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=dt.date.today().isoformat())
@@ -226,7 +254,8 @@ def main() -> int:
 <td style="padding:10px;border:1px solid #e6eaed">{tot_c}</td>
 <td style="padding:10px;border:1px solid #e6eaed">{tot_bl}</td>
 <td style="padding:10px;border:1px solid #e6eaed">{tot_bc}</td></tr></table>
-<p style="font-size:13px;color:#5a6672">共 {len(rows)} 篇文章。Medium 未采集（本机网络不可达），主站为静态站无互动指标。</p>
+<p style="font-size:13px;color:#5a6672">共 {len(rows)} 篇（仅 2026 年 9 月以后发布）；统计 Dev.to 与 Builder Center。</p>
+{new_comments_html()}
 {img_html}
 <h3 style="margin:26px 0 8px;font-size:16px">读数结论</h3>
 <ul style="font-size:14px;line-height:1.9;padding-left:20px">

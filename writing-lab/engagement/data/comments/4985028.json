@@ -46,5 +46,37 @@
   "created_at": "2026-11-07T00:41:30Z",
   "depth": 1,
   "text": "Confirmed, and the hook is even narrower than \"per-invocation\": in the article's probe the counter is a plain defaultdict in the caller's closure (src/tool_quota.py:42), registered on one agent instance (src/tool_quota.py:57). Two workers on the same job are two processes with two counters, so 2 + 2 attempts both pass. It is a per-process budget, not a per-job one — fine for bounding one run, useless for bounding a job.\n\nYour design is the right shape. Concretely:\n\n\n\nReserve before the attempt: a conditional write on a job-level record (DynamoDB conditional put on job_id, or Redis INCR with a TTL as the cheap version). The atomicity has to live in the store, not in any worker.\n\nTie the reservation to the side effect: the attempt id becomes the idempotency key handed to the tool that performs the external effect, so a replayed attempt is a no-op at the effect, not a second charge.\n\nRelease only after confirmation: on timeout or crash, reconcile by reading the effect's own idempotency record — not by assuming nothing happened.\n\n\nStep 3 is where this connects to the thread above: in 1.63.0 a cancelled invocation can still have run its tool to completion and recorded the result (the loop appends the tool result at strands/event_loop/event_loop.py:1135 and only then checks cancellation at :1166). So \"the run was cancelled\" is not grounds for releasing the reservation. Release on cancel and you have built a double-spend."
+ },
+ {
+  "id": "3kf89",
+  "user": "innokentyb",
+  "name": "Kent Bodrov",
+  "created_at": "2026-11-08T11:10:44Z",
+  "depth": 2,
+  "text": "Thanks for tracing that to the actual process boundary. One edge case is the reservation TTL expiring while the external effect is still unknown: another worker could acquire capacity before reconciliation finishes. I’d keep an explicit unresolved state and reconcile it before freeing the budget. Would you scope the idempotency key to the logical effect across retries, while keeping a separate ID for each execution attempt?"
+ },
+ {
+  "id": "3kfdg",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-08T12:59:24Z",
+  "depth": 3,
+  "text": "Yes, two keys, and they must never be the same string.\n\nThe idempotency key is the identity of the logical effect: it comes from (session, scenario, intent) and does not change across retries, restarts or redeploys. That is what the sink dedupes on. The attempt id is separate metadata, used for tracing only, and it must never enter the key. The moment it does, every retry looks like new work and the mechanism silently stops deduplicating, which is worse than not having it, because you think you are covered.\n\nYour TTL case is the more dangerous direction of the same bug. Releasing capacity while the external effect is unknown is a double spend: the budget goes back, another worker takes it, and then the original call succeeds after all. Two effects, no owner, and the second one looks legitimate.\n\nWhat I do instead: TTL expiry is not a release, it is a state transition. reserved to unresolved, and unresolved still counts against the budget. A reconciler then asks the sink the only question that has a truthful answer: did a record with this key land? Yes means terminal, no means safe to release. Only a terminal state frees capacity. The consequence is that a stuck unresolved row can hold a slot indefinitely, which is honest. The alternative is over-committing without anyone noticing.\n\nThe cost is ownership. Someone has to work the unresolved queue, usually whoever gets paged for the failed run. In a test harness that is cheap. In production it is the part nobody staffs, which is usually why the state is missing in the first place."
+ },
+ {
+  "id": "3kdpo",
+  "user": "gonzalogjuka",
+  "name": "Gonzalo Gjuka",
+  "created_at": "2026-11-07T16:36:34Z",
+  "depth": 0,
+  "text": "The \"a 5-second deadline took 21.9 seconds\" finding has an exact cousin in cloud provisioning. On OCI, oci limits resource-availability get --service-name compute --limit-name standard-a1-core-count can report 2 OCPUs available, and the launch still fails with \"Out of host capacity\": the quota measures what your tenancy may use, not what the host has. The failed launch takes about 100 s server-side before it answers, and --max-retries 0 does not shorten it, because the wait is on their side of the call. Same lesson as your turn cap: a limit only guarantees something about the thing it counts, and the thing that bites is usually one level down."
+ },
+ {
+  "id": "3kfdh",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-08T13:00:02Z",
+  "depth": 1,
+  "text": "Same shape, and the 100 s server-side wait is the part I would underline. The limit answered in milliseconds about a number it owns, then the resource layer answered a minute and a half later about a different number. Two systems, two clocks, the same word.\n\nThe version I ended up with: a limit has three properties, and reading only the first is how it gets trusted. What it counts, who owns the counter, and when the count is evaluated. Your quota counts entitlement, owned by the tenancy, evaluated at request time. Host capacity is a different counter, owned by the scheduler, evaluated at placement time. \"2 available\" is true in the first and irrelevant in the second.\n\nIn mine, limit_turns counts turns taken, and what actually bites is spend inside a single turn, which no turn cap sees. A limit can be perfectly enforced and still fail to bound the thing you were afraid of.\n\nDoes the OCI error distinguish quota-exhausted from host-exhausted? If both come back as the same string, a retry policy cannot tell \"wait and it will work\" from \"the host may never have it\", and --max-retries 0 is the only honest setting."
  }
 ]
