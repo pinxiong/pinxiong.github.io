@@ -11,8 +11,11 @@
 - [2026-11-07] **重试与超时下的幂等键：重复工单断言** —— red-team 篇 Reid Marlow。`len(found) > 0` 放行重复写入，改成 `len(found) == 1` 并校验幂等键才能抓到。主题可扩成「副作用断言」专篇。
 - [2026-11-07] **prohibited-phrase 检查的否定句误判** —— red-team 篇 xcl。`must_not_say` 用正则会把「不提供全额退款」误判为违规，又放过没用到原词的承诺。如何区分「解释政策边界」与「做出承诺」。
 - [2026-11-07] **spec 漂移：tribal knowledge 变成 artifact 之后** —— AI Coding 篇 ai_adam（越南语，尚未回复）。代码继续前进而 spec 没跟上时会发生什么，怎么发现。
+- [2026-11-08] **配额、实际容量与服务端等待：客户端限制管不到的一层** —— UC03《The Limits That Don't Limit》Gonzalo Gjuka。OCI 配额可用但主机容量不足、客户端重试设置无法缩短首次服务端等待的实例，把文章的「限额只约束它计数的东西」扩展到了云资源供给，适合做一次跨系统对照实测。
 
 ## 已成文 / 已闭环
+
+- [2026-11-08] 预留配额的崩溃边界：outcome_unknown 与 unused 分离、按外部幂等键对账后才归还容量 —— UC03 Mayank Raj。已产出 `outreach/uc03-comments/reservation_crash.py` 与三种情形证据（naive 重复写 + 容量误归还；reconcile 不重复；崩溃于副作用前不泄漏配额），回复经独立 agent 两轮验证 PASS。若扩成文章素材已齐。
 
 - [2026-11-07] Agent 记忆的契约测试（多深度植入 + 检索与行为双断言）—— UC04 Alex Shev。已产出 `outreach/uc04-comments/contract_test.py` 与 7 组单进程 + 3 组跨进程证据，并在 Dev.to/Medium 回复中公布。若扩成独立文章，素材已齐。
 - [2026-11-07] state 需自行注入 prompt（BeforeInvocationEvent + manifest）—— UC04 Reid Marlow。已写入 UC04 正文「State does not inject itself」一节并同步四渠道。
