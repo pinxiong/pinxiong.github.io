@@ -6,6 +6,8 @@
 
 ## 待写
 
+- [2026-11-09] **unresolved 队列的治理五项：scope owner / decision deadline / forced timeout + external read-back / recovery owner / 何时停止自动 reconciliation 转人工** —— UC03《The Limits That Don't Limit》Kent Bodrov 18:30 追问。UC05 正文 17:00 已定稿，未覆盖这五项；周复盘（20:20）曾建议补节后再发，用户拍板按原计划 11-09 21:30 发布，本轮不补进正文。转为发布后的反馈出口：在评论回复里正面回答，并作为下一篇候选素材。
+
 - [2026-11-07] **manifest 注入的 token 与 TTFT 成本实测** —— UC04《It Remembers Across Restarts》Reid Marlow。他主张每轮注入固定 manifest；我回复里承认「这部分没测过，不能算免费」。这是一个公开承认过的实证缺口，补上就是一篇完整的实测文：注入 vs 加大窗口 vs 摘要器，三者的 token 与延迟对照。
 - [2026-11-07] **多 worker 并发下的配额预留与副作用对账** —— UC03《The Limits That Don't Limit》Kent Bodrov。单次调用的限额管不住两个并发 attempt 各花一份剩余配额；他问的是 shared atomic job-level store + 释放前对账。这是 UC03 的直接续集，且需要真实并发实验。
 - [2026-11-07] **重试与超时下的幂等键：重复工单断言** —— red-team 篇 Reid Marlow。`len(found) > 0` 放行重复写入，改成 `len(found) == 1` 并校验幂等键才能抓到。主题可扩成「副作用断言」专篇。
