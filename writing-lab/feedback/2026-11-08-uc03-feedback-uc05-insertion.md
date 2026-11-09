@@ -45,3 +45,33 @@
 ## 6. 下篇开写时必须记住的一条
 
 > **判断反馈是"澄清"还是"缺口"：澄清改正文，缺口改计划。**
+
+## 7. 周复盘回看（2026-11-09，D+3）
+
+### 数据窗口
+
+历史快照从 2026-11-07 20:57 到 2026-11-09 20:19，不足两周，不做上一周对比。此窗口内：
+
+- Dev.to：views 62 → 85（+23），reactions 22 → 22（+0），comments 6 → 15（+9）。
+- Builder Center：likes 20 → 20（+0），comments 4 → 9（+5）。
+- Dev.to 累计 85 views / 15 comments，评论数为每百次阅读 17.6 条；评论包含作者回复，只用于和首轮基线的同口径比较。
+
+### 新读者反馈（保留原文）
+
+Kent Bodrov（Dev.to，2026-11-09）：
+
+> That unresolved queue needs an owner and a decision deadline, not just a TTL. For a launch review I would want someone accountable for the scope, a forced timeout with an external read-back, a recovery owner, and an explicit stop condition. How do you decide when an unresolved item needs human intervention rather than another reconciliation attempt?
+
+Gonzalo Gjuka（Dev.to，2026-11-08）：
+
+> Yes, and that part the API gets right. The limit comes back as HTTP 400: LimitExceeded for Oracle's limit on the tenancy, QuotaExceeded for an admin's quota on the compartment. Oracle's API error table marks both "Retry: No". Host capacity comes back as a 500 with the message "Out of host capacity.", and 500s sit in the retry-with-backoff class. A retry policy can split on status: never retry the 400s, loop on that 500. My loop also matches the message, not just the status, so any other 500 shows up in the log instead of passing for capacity.
+
+### 出口核验
+
+| 出口 | 本次结论 | 是否已执行 |
+|---|---|---|
+| B 系列选题 | UC05 已在 `strands-in-action/PLAN.md` v3 插入，下一篇仍是 UC05，不再次插队；Kent 的新问题归入本篇必须回答的「unresolved 队列如何退出」 | 已执行 |
+| A 写作规则 | 「边界类文章必须写到边界之外靠什么」继续待回看；UC05 尚未发布，没有发布后证据，本周不提前写成硬规则 | 已执行（明确不改） |
+| C 发布策略 | 本周没有新增可支持改窗口的证据，继续沿用 21:30–22:30（GMT+8） | 已执行（明确不改） |
+
+UC05 完稿时必须补答：unresolved item 的 scope owner、decision deadline、forced timeout + external read-back、recovery owner，以及何时停止自动 reconciliation 并转人工。Gonzalo 的 OCI 例子只作为跨系统对照线索；未独立复现前不写成自己的实测结论。
