@@ -1,5 +1,5 @@
 {
- "ts": "2026-11-08T21:30:48+08:00",
+ "ts": "2026-11-09T20:19:21+08:00",
  "articles": {
   "it-remembers-across-restarts-and-forgets-mid-conversation-1ehh": {
    "title": "It Remembers Across Restarts — and Forgets Mid-Conversation",
@@ -10,13 +10,13 @@
     "id": 4991329,
     "views": 12,
     "reactions": 4,
-    "comments": 6,
+    "comments": 7,
     "url": "https://dev.to/aws-builders/it-remembers-across-restarts-and-forgets-mid-conversation-1ehh"
    },
    "bc": {
     "id": "3Ll4sEZ0YTvNRvbvH4UWe5hUdtz",
-    "likes": 130,
-    "comments": 11,
+    "likes": 156,
+    "comments": 13,
     "url": "https://builder.aws.com/content/3Ll4sEZ0YTvNRvbvH4UWe5hUdtz"
    },
    "medium": {
@@ -32,9 +32,9 @@
    "uc": "UC03",
    "devto": {
     "id": 4985028,
-    "views": 67,
+    "views": 85,
     "reactions": 22,
-    "comments": 10,
+    "comments": 15,
     "url": "https://dev.to/aws-builders/the-limits-that-dont-limit-2o4j"
    },
    "bc": {
@@ -197,7 +197,7 @@
     "id": 4908048,
     "views": 57,
     "reactions": 0,
-    "comments": 7,
+    "comments": 9,
     "url": "https://dev.to/aws-builders/stopping-an-agent-from-overreaching-policy-in-enforce-mode-4dgf"
    },
    "bc": {
@@ -221,7 +221,7 @@
     "id": 4897277,
     "views": 60,
     "reactions": 2,
-    "comments": 5,
+    "comments": 6,
     "url": "https://dev.to/aws-builders/reaching-real-systems-without-holding-credentials-gateway-and-identity-3p6a"
    },
    "bc": {

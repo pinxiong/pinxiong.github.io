@@ -32,6 +32,14 @@
   "text": "Glad it helped. One detail from my side that took two runs to get right: the assertion has to be exactly one surviving attempt, not at least one. With at least one, a duplicate write to the sink still passes, and you learn nothing about the retry path."
  },
  {
+  "id": "3kh6h",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-09T07:59:58Z",
+  "depth": 4,
+  "text": "@pierrelaurentmedori One more thing about that split, because it bites in a place the article does not cover. Resume and new attempt also need different error semantics: a resume that gets a 409 should be treated as success-with-existing-key, while a new attempt that gets 409 is a bug in the key. Most harnesses collapse both into \"retry\", and that collapse is where the duplicate comes from.\n\nDifferent question, and I would rather ask you than guess. GoodBarber ships AI to people who build apps without writing code. Before that reaches a builder, who signs off on what the AI is allowed to say, and what do they actually look at? I am collecting how teams really do this before launch, and 15 minutes on a call beats a thread. hi@aerlonlabs.com if you are up for it."
+ },
+ {
   "id": "3kb67",
   "user": "innokentyb",
   "name": "Kent Bodrov",
@@ -64,6 +72,22 @@
   "text": "Yes, two keys, and they must never be the same string.\n\nThe idempotency key is the identity of the logical effect: it comes from (session, scenario, intent) and does not change across retries, restarts or redeploys. That is what the sink dedupes on. The attempt id is separate metadata, used for tracing only, and it must never enter the key. The moment it does, every retry looks like new work and the mechanism silently stops deduplicating, which is worse than not having it, because you think you are covered.\n\nYour TTL case is the more dangerous direction of the same bug. Releasing capacity while the external effect is unknown is a double spend: the budget goes back, another worker takes it, and then the original call succeeds after all. Two effects, no owner, and the second one looks legitimate.\n\nWhat I do instead: TTL expiry is not a release, it is a state transition. reserved to unresolved, and unresolved still counts against the budget. A reconciler then asks the sink the only question that has a truthful answer: did a record with this key land? Yes means terminal, no means safe to release. Only a terminal state frees capacity. The consequence is that a stuck unresolved row can hold a slot indefinitely, which is honest. The alternative is over-committing without anyone noticing.\n\nThe cost is ownership. Someone has to work the unresolved queue, usually whoever gets paged for the failed run. In a test harness that is cheap. In production it is the part nobody staffs, which is usually why the state is missing in the first place."
  },
  {
+  "id": "3kgid",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-09T02:04:24Z",
+  "depth": 4,
+  "text": "Exactly that split, yes. Two keys that never touch: the idempotency key is (session, scenario, intent) and stays stable across retries, restarts and redeploys; the attempt id exists only for tracing and never enters the key. Once the attempt id gets in, every retry counts as new work - worse than having no idempotency at all.\n\nOn your edge case: TTL expiry must not free capacity. Expiry is a state transition, reserved -&gt; unresolved, and unresolved still holds the slot, so another worker cannot acquire it while reconciliation is in flight. The reconciler asks the sink \"did this key land?\" and only a terminal answer releases the budget. The cost is that someone has to own the unresolved queue - and that queue is usually the part nobody budgets for.\n\nWhich is actually how I got to this article. I keep meeting teams with solid retry logic and no owner for the unresolved cases. Different question, and I would rather hear your answer than guess: how does your team check a bot before it goes live? Not the tooling - the actual process. Who signs off, and what do they look at? I am collecting how teams really do this, and 15 minutes on a call would be worth more than a thread. hi@aerlonlabs.com if you are up for it."
+ },
+ {
+  "id": "3khhp",
+  "user": "innokentyb",
+  "name": "Kent Bodrov",
+  "created_at": "2026-11-09T11:16:11Z",
+  "depth": 5,
+  "text": "That unresolved queue needs an owner and a decision deadline, not just a TTL. For a launch review I would want someone accountable for the scope, a forced timeout with an external read-back, a recovery owner, and an explicit stop condition. How do you decide when an unresolved item needs human intervention rather than another reconciliation attempt?"
+ },
+ {
   "id": "3kdpo",
   "user": "gonzalogjuka",
   "name": "Gonzalo Gjuka",
@@ -78,5 +102,21 @@
   "created_at": "2026-11-08T13:00:02Z",
   "depth": 1,
   "text": "Same shape, and the 100 s server-side wait is the part I would underline. The limit answered in milliseconds about a number it owns, then the resource layer answered a minute and a half later about a different number. Two systems, two clocks, the same word.\n\nThe version I ended up with: a limit has three properties, and reading only the first is how it gets trusted. What it counts, who owns the counter, and when the count is evaluated. Your quota counts entitlement, owned by the tenancy, evaluated at request time. Host capacity is a different counter, owned by the scheduler, evaluated at placement time. \"2 available\" is true in the first and irrelevant in the second.\n\nIn mine, limit_turns counts turns taken, and what actually bites is spend inside a single turn, which no turn cap sees. A limit can be perfectly enforced and still fail to bound the thing you were afraid of.\n\nDoes the OCI error distinguish quota-exhausted from host-exhausted? If both come back as the same string, a retry policy cannot tell \"wait and it will work\" from \"the host may never have it\", and --max-retries 0 is the only honest setting."
+ },
+ {
+  "id": "3kfi2",
+  "user": "gonzalogjuka",
+  "name": "Gonzalo Gjuka",
+  "created_at": "2026-11-08T14:39:26Z",
+  "depth": 2,
+  "text": "Yes, and that part the API gets right. The limit comes back as HTTP 400: LimitExceeded for Oracle's limit on the tenancy, QuotaExceeded for an admin's quota on the compartment. Oracle's API error table marks both \"Retry: No\". Host capacity comes back as a 500 with the message \"Out of host capacity.\", and 500s sit in the retry-with-backoff class. A retry policy can split on status: never retry the 400s, loop on that 500. My loop also matches the message, not just the status, so any other 500 shows up in the log instead of passing for capacity."
+ },
+ {
+  "id": "3kgif",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-09T02:05:20Z",
+  "depth": 3,
+  "text": "That answers the question I was circling: 400 vs 500 splits the retry policy cleanly, and matching the message as well as the status is the part most implementations skip. The 500 bucket is the dangerous one, because \"transiently unavailable\" and \"may never have it\" arrive with the same status. Your log line turns a silent misclassification into something you can actually count.\n\nSame question I just asked Kent, and I would rather ask you than guess: when your team ships something that can fail this way, what does the pre-launch check actually look like? Not the tooling - who signs off, and what do they inspect before it faces customers? I am collecting how teams really do this, and 15 minutes on a call beats a thread. hi@aerlonlabs.com if you are up for it."
  }
 ]

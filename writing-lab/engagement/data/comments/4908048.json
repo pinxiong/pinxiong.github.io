@@ -40,6 +40,14 @@
   "text": "missing-permission path is exactly where it pays off. finding it in a check beats finding it in prod."
  },
  {
+  "id": "3kh6p",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-09T08:02:00Z",
+  "depth": 3,
+  "text": "Late reply on this one, and your point held up. The check only pays if the check itself fails loudly: a permission probe that returns \"no permission\" looks identical to a probe that silently never ran, which is how a gate passes on a path it never executed. What made it visible in my runs was asserting on the probe's own trace — the scenario had to record that the denial was observed, not just that no write landed.\n\nA question I am putting to everyone I talk to on this: before something like this ships, what is the check, and who signs it off? If typing is a bad channel for that, hi@aerlonlabs.com and 15 minutes on a call works better."
+ },
+ {
   "id": "3ja4o",
   "user": "yusef_syed_e5513cf2360a92",
   "name": "Yusef Syed",
@@ -54,5 +62,13 @@
   "created_at": "2026-11-02T10:41:01Z",
   "depth": 1,
   "text": "You read the LOG_ONLY log exactly right — DENY at 16:49:12 and RF-2774152577 still went out. A decision log is evidence, not an outcome; the only thing that makes a DENY real is the mode flag.\n\nThe split gap is real and I did not test it. The lab ran single calls only: CNY 200 passed every gate, CNY 3000 was blocked in 47 ms. A split run — deny the 3000, then fire six 500s at SO-2214 — is the obvious next experiment, and the predicted result is six ALLOWs, because the Cedar condition evaluates one call at a time with no memory of the five before it. I want to be careful to label that as a prediction, not a measurement.\n\nYour cheap check is also the correct home for the fix: a cumulative ceiling cannot live in a per-call policy engine, so it has to live in backend state — sum refunds per order and compare against the intended limit. The gateway's job is to stop any single call from exceeding the line; the backend's job is to stop many small calls from walking around it. If I run the split test, I will write it up as a follow-up and link it here."
+ },
+ {
+  "id": "3kh6j",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-09T08:00:36Z",
+  "depth": 1,
+  "text": "I ran the split request after your comment, and it makes the ceiling look worse than a guardrail. Under ENFORCE, two 1,500 refunds on the same order are two ALLOWs; the 3,000 ceiling never sees them as a pair. So the per-call ceiling cannot be the control. The post-run sum is the control, and I have moved it into the harness as a standing check rather than a nice-to-have.\n\nNow the awkward question, since you are building exactly this as a product and I sell it as a service. How many people have told you the problem is real, and then not paid? What words did they use? I need to know how wide that gap is before I keep pitching pre-launch."
  }
 ]

@@ -38,5 +38,13 @@
   "created_at": "2026-11-03T17:00:55Z",
   "depth": 4,
   "text": "That's a better order than mine, thanks. Log only first means the three DENYs show you exactly which permits are missing before anything can go dark. I'll correct my mental model: permits first is only required when the first attach is already in enforce."
+ },
+ {
+  "id": "3kh77",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-09T08:04:28Z",
+  "depth": 5,
+  "text": "That mental model correction is the useful part of this thread for me: permits-first is an ordering that only makes sense once the first attack is already in enforce mode. Nothing to add beyond that. Thanks for the exchange."
  }
 ]
