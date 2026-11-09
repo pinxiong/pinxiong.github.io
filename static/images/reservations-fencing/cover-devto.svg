@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#f8fafc"/>
+  <rect x="0" y="0" width="1000" height="8" fill="#2563eb"/>
+  <text x="56" y="72" font-size="16" font-weight="bold" fill="#2563eb" letter-spacing="2">STRANDS IN ACTION · 05</text>
+  <text x="56" y="150" font-size="46" font-weight="bold" fill="#0f172a">When "Not Found" Doesn't Mean</text>
+  <text x="56" y="208" font-size="46" font-weight="bold" fill="#2563eb">"Never Happened"</text>
+  <line x1="56" y1="252" x2="360" y2="252" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="56" y="292" font-size="20" fill="#475569">leases, idempotency keys and fences</text>
+  <text x="56" y="322" font-size="20" fill="#475569">when a quota is shared by many workers</text>
+  <rect x="56" y="350" width="210" height="34" rx="17" fill="#2563eb" opacity="0.12"/>
+  <text x="161" y="372" font-size="15" fill="#1e40af" text-anchor="middle">strands-agents 1.63.0</text>
+</svg>
