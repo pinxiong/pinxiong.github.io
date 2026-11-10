@@ -6,7 +6,6 @@
 
 ## 待写
 
-- [2026-11-10] **两半合起来跑：fence + authoritative 状态机同时启用** —— UC05 正文自认边界："I verified each half separately, not the combination." 目前证明的是「目的地 put-if-absent 挡住重复写」与「保留 outcome_unknown 直到终态」各自成立，没有证明两者组合下 early capacity release 与 wasted retry 是否收敛。需要一组真并发实验 + 两种失败注入。来源：`feedback/2026-11-10-uc05-feedback.md` 出口 B（作者自认边界，非读者追问）。
 - [2026-11-10] **cancel-on-death 与 per-attempt id：崩溃的 attempt 与慢的 attempt 能否区分** —— UC05 正文自认边界："Cancelling the id on death is a separate mechanism, and this experiment does not cover it." 正文已指出「所有 worker 共用一个永久 identity 时，crashed 与 slow 不可区分」，但没有实验。适合做「一次 identity 设计错了会怎样」的对照实验。
 - [2026-11-10] **落盘 session 的安全边界：明文 JSON 该怎么放** —— UC04 Builder Center dextheking（11-09 17:51）："The session files sit on disk as plain JSON and anyone with disk access can read the full transcript. Where do you put that directory in a deployed agent, and do you encrypt it or wipe it, or is local disk the wrong place once real user data flows through it?" 这是 UC04 评论里唯一指向部署安全而非记忆机制的缺口，尚未回复。此前因「BC 评论正文抓不到」被漏掉，本次补采原文后登记。
 
@@ -20,6 +19,8 @@
 - [2026-11-08] **配额、实际容量与服务端等待：客户端限制管不到的一层** —— UC03《The Limits That Don't Limit》Gonzalo Gjuka。OCI 配额可用但主机容量不足、客户端重试设置无法缩短首次服务端等待的实例，把文章的「限额只约束它计数的东西」扩展到了云资源供给，适合做一次跨系统对照实测。
 
 ## 已成文 / 已闭环
+
+- [2026-11-10] **两半合起来跑：fence + authoritative 状态机同时启用** —— UC05 正文自认边界："I verified each half separately, not the combination."；BC 读者 Benjamin Kincses 11-10 追问组合下「fence 拒绝 late commit 而 witness 仍 hold outcome_unknown」会不会等一个永不到来的终态。已产出 `outreach/uc05-comments/probe_fence_witness.py`（10 ms 轮询 janitor + 3.2 s 上限，6 组 × 5 次真实时钟）与 `evidence/fence-witness-combined.txt`：无竞争写者时 fence 拒绝 0 次、等价于 witness 单跑；注入绕过 reservation 的写者后，article 的 has_effect 优先顺序不读 A 终态故不卡（但早释放 5/5），终态集合含 fenced 则 2.41 s 正常结算，仅含 committed 则 capacity_released=0/5、queued_job_started=0/5、timed_out=5/5，即 capacity 泄漏而非 retry 卡死。回复稿 `reply-benjamin-combined-bc.md` 经两个独立 agent 复审全项 PASS。来源：`feedback/2026-11-10-uc05-feedback.md` 出口 B + BC 评论 `3LuVoa3aEnI6ODVdrEJvGgaa56h`。若扩成文章素材已齐。
 
 - [2026-11-08] 预留配额的崩溃边界：outcome_unknown 与 unused 分离、按外部幂等键对账后才归还容量 —— UC03 Mayank Raj。已产出 `outreach/uc03-comments/reservation_crash.py` 与三种情形证据（naive 重复写 + 容量误归还；reconcile 不重复；崩溃于副作用前不泄漏配额），回复经独立 agent 两轮验证 PASS。若扩成文章素材已齐。
 
