@@ -1,7 +1,7 @@
 # Medium 发布手册 · UC05 · When "Not Found" Doesn't Mean "Never Happened"
 
-> 系列：strands-in-action 第 5 篇 ｜ 状态：主站 / Builder Center / Dev.to 已上线（2026-11-09 21:30 窗口），Medium 待手动 Import
-> 日期：2026-11-10
+> 系列：strands-in-action 第 5 篇 ｜ 状态：**四渠道全部上线**（主站 / Builder Center / Dev.to 于 2026-11-09 21:30 窗口发布；Medium 于 2026-11-10 手动 Import 完成）
+> 日期：2026-11-10（Medium URL 当日回填）
 
 **线上地址**
 
@@ -10,7 +10,7 @@
 | 主站（canonical） | https://xiongpin.dev/posts/reservations-fencing/ |
 | AWS Builder Center | https://builder.aws.com/content/3Ls8Su63RbuSKR3yys1j9t6US1p/when-not-found-doesnt-mean-never-happened |
 | Dev.to | https://dev.to/aws-builders/when-not-found-doesnt-mean-never-happened-2eie |
-| Medium | `<MEDIUM_URL>` — 发布后回填本行与 `reservations-fencing-slack.md` |
+| Medium | https://medium.com/@pinxiong.cn/when-not-found-doesnt-mean-never-happened-1bc3e54bd912 |
 
 Medium 只能手动操作，约 5 分钟。按下面 7 步走。
 
@@ -109,3 +109,5 @@ Medium 最多 5 个，按上面顺序填，前两个权重最高。
 
 1. 打开线上文章，确认标题下方显示的是你选的 subtitle、封面是 16:9 那张、canonical 指回 xiongpin.dev；
 2. 把 Medium URL 回填到本文件顶部表格、`reservations-fencing-slack.md` 的 `<MEDIUM_URL>` 占位，以及 `strands-in-action/PIPELINE_STATE.md` 的 Medium 台账行。
+
+**本篇执行结果（2026-11-10）**：Medium URL 由 Pin 提供，已回填本表、`reservations-fencing-slack.md`（A 版与 C 版）、`PIPELINE_STATE.md` 的 Medium 台账行及 `usecases/05-reservations-fencing/publish/README.md`。`medium.com` 在本机网络不可达，未做页面抓取核验；subtitle / 封面 / canonical 三项请以 Medium 线上页面为准确认一次。

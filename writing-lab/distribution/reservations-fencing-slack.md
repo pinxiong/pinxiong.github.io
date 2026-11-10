@@ -1,7 +1,7 @@
-# Slack 分享文案 · UC05 · When "Not Found" Doesn't Mean "Never Happened"（已发布）
+# Slack 分享文案 · UC05 · When "Not Found" Doesn't Mean "Never Happened"（四渠道全部上线）
 
 > 母版：https://xiongpin.dev/posts/reservations-fencing/
-> 主站 / BC / Dev.to 已回填；Medium 发布后回填 `<MEDIUM_URL>`。
+> 四渠道链接已全部回填（主站 / BC / Dev.to / Medium，Medium 于 2026-11-10 回填）。
 > 系列：strands-in-action · 第 5 篇。
 
 ---
@@ -18,7 +18,7 @@ A lease expiry proves only that a worker stopped reporting. In five real-clock r
 Blog: https://xiongpin.dev/posts/reservations-fencing/
 AWS Builder Center: https://builder.aws.com/content/3Ls8Su63RbuSKR3yys1j9t6US1p/when-not-found-doesnt-mean-never-happened
 Dev.to: https://dev.to/aws-builders/when-not-found-doesnt-mean-never-happened-2eie
-Medium: <MEDIUM_URL>
+Medium: https://medium.com/@pinxiong.cn/when-not-found-doesnt-mean-never-happened-1bc3e54bd912
 
 Happy to hear your feedback.
 ```
@@ -33,14 +33,26 @@ New post: *When "Not Found" Doesn't Mean "Never Happened"*. Five real-clock runs
 https://builder.aws.com/content/3Ls8Su63RbuSKR3yys1j9t6US1p/when-not-found-doesnt-mean-never-happened
 ```
 
+## C. 全渠道短版（一句话 + 四条链接）
+
+```text
+New post: *When "Not Found" Doesn't Mean "Never Happened"*. Five real-clock runs, five duplicate writes. A lease expiry tells you a worker stopped reporting, not that nothing happened; hold the reservation in outcome_unknown until the destination reports a terminal state.
+
+Blog: https://xiongpin.dev/posts/reservations-fencing/
+AWS Builder Center: https://builder.aws.com/content/3Ls8Su63RbuSKR3yys1j9t6US1p/when-not-found-doesnt-mean-never-happened
+Dev.to: https://dev.to/aws-builders/when-not-found-doesnt-mean-never-happened-2eie
+Medium: https://medium.com/@pinxiong.cn/when-not-found-doesnt-mean-never-happened-1bc3e54bd912
+```
+
 ---
 
 ## 使用提示
 
-- A 版把主站与 Builder Center 放前两位，与 UC01–04 口径一致；只想发一个链接用 B 版。
+- A 版把主站与 Builder Center 放前两位，四渠道顺序与 UC04 一致；只想发一个链接用 B 版；想一次贴全四条链接但不要长段落，用 C 版。要主推 Medium，把 B 版的 BC 链接换成 Medium 链接即可。
 - Slack 语法：`*加粗*`；长链接可换成 `<URL|Read on AWS Builder Center>` 形式。
 - 这是第 5 篇，不是终篇，不要写 "the last post"；结尾预告的是多智能体编排，可以带一句 "next up is orchestration"。
-- 链接均为平台原生 URL，无 utm；Medium 若带 `?postPublishedType=initial` 查询串，去掉再发。
+- 四个链接均为平台原生 URL，无 utm，已全部回填；分享时若 Medium 带 `?postPublishedType=initial` 查询串，去掉再发。
+- 链接可达性：主站 / Dev.to / BC 于 2026-11-10 复核为 HTTP 200；`medium.com` 在本机网络不可达，Medium URL 由 Pin 提供，未做页面抓取核验。
 - 数字出处（全部来自 `strands-in-action/usecases/05-reservations-fencing/evidence/`）：
   - 5/5 重复写、容量误归还 —— `lease-crash-boundary.txt`，`SUMMARY trials=5 duplicate_writes_total=5 capacity_returned_while_effect_exists=5/5`
   - 1.003s / 1.407s / 2.405s 时间线 —— `delayed-commit-race.txt`，naive 模式 `SUMMARY trials=5 duplicate_writes_total=5 early_capacity_release=5/5`
