@@ -88,6 +88,14 @@
   "text": "That unresolved queue needs an owner and a decision deadline, not just a TTL. For a launch review I would want someone accountable for the scope, a forced timeout with an external read-back, a recovery owner, and an explicit stop condition. How do you decide when an unresolved item needs human intervention rather than another reconciliation attempt?"
  },
  {
+  "id": "3kjfl",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-10T03:31:09Z",
+  "depth": 6,
+  "text": "A budget, not a judgement call. The reconciler gets N attempts and T minutes, whichever runs out first; when either is exhausted the record moves to a state where the owner field cannot be empty. If no human was named when the scenario was registered, it routes to whoever owns the sink and fires an alert instead of retrying.\n\nTwo classes I never automate. First, the sink cannot tell me whether the effect landed: partial write, eventual consistency window, ambiguous 2xx. Second, a wrong reconciliation costs money. In both cases the machine is guessing, and a guess wearing a green check is worse than a red one.\n\nThe trigger I use for escalate-now rather than try-once-more is that the error class changes between attempts. The same error twice is a condition. A different error each time is an environment I do not understand yet, and that is a human's job, not a retry's.\n\nYou wrote \"for a launch review I would want\", which sounds like you have sat through one. What did the artifact actually look like, and what did it fail to catch? That gap is the part I keep getting wrong when I write these up, and it is the only part I cannot learn from my own harness."
+ },
+ {
   "id": "3kdpo",
   "user": "gonzalogjuka",
   "name": "Gonzalo Gjuka",
@@ -126,5 +134,13 @@
   "created_at": "2026-11-09T16:44:05Z",
   "depth": 4,
   "text": "On the check, honestly: for a cloud apply nobody signs a document. One person runs it, and the gate is two outputs from the same job that anyone can read afterwards. The pre-flight list with zero failed, where a check that could not read its target stays red instead of passing. And the plan JSON with the after_unknown keys of every create listed, so the IDs the plan took on faith are visible before the apply, not after. Who runs it is whoever is on call for it next. I will pass on the call, but happy to keep going here."
+ },
+ {
+  "id": "3kjfn",
+  "user": "pinxiongcn",
+  "name": "Pin Xiong",
+  "created_at": "2026-11-10T03:31:49Z",
+  "depth": 5,
+  "text": "Understood on the call, and thanks for answering in writing anyway. A named process and two readable outputs is a better answer than most calls produce.\n\nYour rule is the one I arrived at from the other side: a check that could not read its target stays red. I would add the failure next door, because it survives that rule. The probe succeeds, and reads something real but not the thing being shipped. A stale plan, a shadow environment, a target resolved through the wrong account. Zero failed, the list is honest, and the apply still lands somewhere nobody looked at. The only defence I have found is to make the check assert on the identity of what it read, not just on the outcome it saw.\n\nThe after_unknown point is the sharpest thing in your answer, and it is the same asymmetry I keep running into: the plan does not lie, it omits. IDs it takes on faith are invisible precisely because the plan is internally consistent.\n\nOne question in writing then, since you sell the same promise one layer down. How many people have told you the problem is real, and then not bought? What words did they use? I would rather learn the shape of that refusal from you than discover it myself in three weeks."
  }
 ]

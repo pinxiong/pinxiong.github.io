@@ -1,11 +1,12 @@
-# Engagement dashboard — 2026-11-10T08:04:45+08:00
+# Engagement dashboard — 2026-11-10T21:31:09+08:00
 
 | article | series | published | devto views | devto reactions | devto comments | BC likes | BC comments |
 |---|---|---|---|---|---|---|---|
-| [When "Not Found" Doesn't Mean "Never Happened"](https://dev.to/aws-builders/when-not-found-doesnt-mean-never-happened-2eie) | strands-in-action | 2026-11-09 | 10 | 0 | 0 | 47 | 4 |
-| [It Remembers Across Restarts — and Forgets Mid-Conversatio](https://dev.to/aws-builders/it-remembers-across-restarts-and-forgets-mid-conversation-1ehh) | strands-in-action | 2026-11-07 | 22 | 4 | 7 | 159 | 14 |
-| [The Limits That Don't Limit](https://dev.to/aws-builders/the-limits-that-dont-limit-2o4j) | strands-in-action | 2026-11-06 | 91 | 22 | 16 | 20 | 10 |
-| [The Tools That Got Replaced](https://dev.to/aws-builders/the-tools-that-got-replaced-2hod) | strands-in-action | 2026-11-05 | 39 | 1 | 0 | 17 | 2 |
+| [Testing async side effects in an LLM agent harness: ticket](https://dev.to/pinxiongcn/testing-async-side-effects-in-an-llm-agent-harness-tickets-retries-and-exactly-once-5c93) | other | 2026-11-10 | 0 | 0 | 0 | — | — |
+| [When "Not Found" Doesn't Mean "Never Happened"](https://dev.to/aws-builders/when-not-found-doesnt-mean-never-happened-2eie) | strands-in-action | 2026-11-09 | 30 | 0 | 0 | 99 | 11 |
+| [It Remembers Across Restarts — and Forgets Mid-Conversatio](https://dev.to/aws-builders/it-remembers-across-restarts-and-forgets-mid-conversation-1ehh) | strands-in-action | 2026-11-07 | 22 | 4 | 7 | 160 | 14 |
+| [The Limits That Don't Limit](https://dev.to/aws-builders/the-limits-that-dont-limit-2o4j) | strands-in-action | 2026-11-06 | 91 | 22 | 18 | 20 | 10 |
+| [The Tools That Got Replaced](https://dev.to/aws-builders/the-tools-that-got-replaced-2hod) | strands-in-action | 2026-11-05 | 49 | 1 | 0 | 17 | 2 |
 | [How the Strands Agent Loop Actually Works](https://dev.to/aws-builders/how-the-strands-agent-loop-actually-works-2m17) | strands-in-action | 2026-11-04 | 17 | 0 | 0 | 11 | None |
 | [How to red-team an AI support bot before launch: a 30-scen](https://dev.to/pinxiongcn/i-red-teamed-my-own-support-bot-with-30-scenarios-it-failed-7-heres-the-harness-39e7) | other | 2026-11-02 | 88 | 2 | 6 | — | — |
 | [Two specialists, one orchestrator, one catalog](https://dev.to/aws-builders/two-specialists-one-orchestrator-one-catalog-10g8) | agentcore | 2026-11-01 | 25 | 1 | 2 | 9 | None |

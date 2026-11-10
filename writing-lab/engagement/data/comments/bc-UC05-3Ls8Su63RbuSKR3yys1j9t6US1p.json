@@ -1,5 +1,61 @@
 [
  {
+  "id": "3LuiKca449nY6P0dQXJjqMYfO2n",
+  "user": "purvajain30",
+  "name": "Purva Jain",
+  "created_at": "2026-11-10T11:31:30+00:00",
+  "likes": 0,
+  "text": "👍"
+ },
+ {
+  "id": "3LuVoa3aEnI6ODVdrEJvGgaa56h",
+  "user": "dextheking",
+  "name": "Benjamin Kincses",
+  "created_at": "2026-11-10T09:48:35+00:00",
+  "likes": 0,
+  "text": "The fence and the witness were run separately. What breaks if you run both at once? If the fence rejects the late commit and the witness still holds the slot in outcome\\_unknown, does the retry wait for a terminal state that never arrives, or does the fence rejection count as terminal?"
+ },
+ {
+  "id": "3LuMyy6sQ6YDBeAyypxndJ6JOyT",
+  "user": "muks04",
+  "name": "Saurabh Arup Mukherjee",
+  "created_at": "2026-11-10T08:35:57+00:00",
+  "likes": 0,
+  "text": "Interesting One!"
+ },
+ {
+  "id": "3Lu4mBbe9UBxGDlrlBnxlqqtLmy",
+  "user": "muddu",
+  "name": "Mohammed Mudasser",
+  "created_at": "2026-11-10T06:06:15+00:00",
+  "likes": 0,
+  "text": "Nice"
+ },
+ {
+  "id": "3LtzXfqlVOVRWageWivxaCXHkwF",
+  "user": "muhammadtalhakhan06",
+  "name": "Muhammad Talha Khan",
+  "created_at": "2026-11-10T05:23:12+00:00",
+  "likes": 0,
+  "text": "Really Interesting!"
+ },
+ {
+  "id": "3Ltg1G82BLfPwkdkWGSPZhfSUsL",
+  "user": "robinkumar",
+  "name": "Robin kumar",
+  "created_at": "2026-11-10T02:42:40+00:00",
+  "likes": 1,
+  "text": "Interesting engineering problem. Lease expiration should not be treated as proof that an operation never completed. A worker may lose its lease while an earlier operation is still in flight, creating opportunities for duplicate writes or stale commits.\n\nI would address this using idempotency keys, fencing tokens, and conditional writes to prevent outdated workers from modifying newer state. Reconciliation should also verify the actual operation state before retrying.\n\nThe key takeaway is that distributed systems must distinguish between failure to observe completion and actual failure of the operation. Designing for delayed execution and duplicate delivery is essential for consistency."
+ },
+ {
+  "id": "3LtfZst0Kn9E6d2JQgSqH64Wza3",
+  "user": "rutujaa07",
+  "name": "Rutuja Gophane",
+  "created_at": "2026-11-10T02:39:03+00:00",
+  "likes": 0,
+  "text": "Great"
+ },
+ {
   "id": "3LtMS8FCVVMME035xz3T5mPdxrZ",
   "user": "polyber",
   "name": "polyber",
