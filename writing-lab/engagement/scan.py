@@ -4,7 +4,8 @@
 Channels:
   devto  full stats (views / reactions / comments) + comment text, via Forem API
   bc     likesCount + commentsCount, scraped from the embedded JSON in the
-         public Builder Center page (comment TEXT is JS-only, not scraped)
+         public Builder Center page; comment TEXT comes from the public
+         content-service endpoint /cs/v2/comments/public (no auth needed)
   medium not collected: medium.com is unreachable from this network. Manual.
   site   static Hugo, no engagement metrics.
 
@@ -12,8 +13,9 @@ Writes:
   data/history.jsonl      one row per article per channel per run
   data/latest.json        last snapshot, used for diffing
   data/dashboard.md       human-readable table
-  data/comments/<id>.json all known Dev.to comments per article
-  data/new-comments.md    comments discovered in THIS run only (empty = none)
+  data/comments/<id>.json              all known Dev.to comments per article
+  data/comments/bc-<uc>-<id>.json      all BC top-level comments per article
+  data/new-comments.md                 comments discovered in THIS run only (empty = none)
 
 No third-party dependencies. Never prints secrets.
 """
@@ -36,10 +38,13 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
 SELF = "pinxiongcn"  # own Dev.to username: my own replies are not new work
 
 
-def fetch(url: str, api_key: str | None = None, timeout: int = 60) -> str | None:
+def fetch(url: str, api_key: str | None = None, timeout: int = 60,
+          extra_headers: dict | None = None) -> str | None:
     headers = {"User-Agent": UA}
     if api_key:
         headers["api-key"] = api_key
+    if extra_headers:
+        headers.update(extra_headers)
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers=headers)
@@ -63,6 +68,34 @@ def flatten_comments(nodes, out, depth=0):
             "text": re.sub(r"<[^>]+>", "", n.get("body_html", "")).strip(),
         })
         flatten_comments(n.get("children") or [], out, depth + 1)
+
+
+BC_COMMENTS_API = "https://api.builder.aws.com/cs/v2/comments/public"
+
+
+def bc_comments(bc_id: str) -> list[dict] | None:
+    """Public Builder Center comment text. No auth; top-level comments only."""
+    url = (f"{BC_COMMENTS_API}?contentId=/content/{bc_id}"
+           "&contentType=ARTICLE&sortBy=NEWEST&pageSize=100")
+    raw = fetch(url, timeout=25, extra_headers={
+        "Accept": "application/json", "Origin": "https://builder.aws.com"})
+    if not raw:
+        return None
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        return None
+    out = []
+    for c in data.get("comments", []):
+        au = c.get("author") or {}
+        created = c.get("createdAt")
+        when = (dt.datetime.fromtimestamp(created / 1000, dt.timezone.utc)
+                .isoformat(timespec="seconds")) if created else ""
+        out.append({"id": c.get("commentId"), "user": au.get("alias"),
+                    "name": au.get("preferredName"), "created_at": when,
+                    "likes": c.get("likesCount"),
+                    "text": (c.get("markdownDescription") or "").strip()})
+    return out
 
 
 def main() -> int:
@@ -130,11 +163,38 @@ def main() -> int:
                              "views": None, "reactions": bc["likes"],
                              "comments": bc["comments"]})
                 old_bc = (previous.get(slug, {}).get("bc") or {}).get("comments")
-                if bc["comments"] is not None and old_bc is not None and bc["comments"] > old_bc:
-                    new_notes.append(
-                        f"### Builder Center · {a['title']}\n"
-                        f"- url: {bc['url']}\n- comment count {old_bc} -> {bc['comments']}\n"
-                        f"- comment text is JS-only: read it in a real browser before replying.\n")
+                cfile = DATA / "comments" / f"bc-{reg.get('uc') or 'x'}-{bc_id}.json"
+                baseline = not cfile.exists()
+                known = set()
+                if not baseline:
+                    try:
+                        known = {c["id"] for c in json.loads(cfile.read_text())}
+                    except (json.JSONDecodeError, KeyError, TypeError):
+                        baseline = True  # tolerate older raw-API-shaped files
+                count_moved = (bc["comments"] is not None and old_bc is not None
+                               and bc["comments"] != old_bc)
+                if baseline or count_moved:
+                    comments = bc_comments(bc_id)
+                    if comments is not None:
+                        cfile.write_text(json.dumps(comments, ensure_ascii=False, indent=1))
+                        # First run only builds a baseline; historical comments are not news.
+                        if not baseline:
+                            fresh = [c for c in comments
+                                     if c["id"] not in known and c["user"] != SELF]
+                            for c in fresh:
+                                new_notes.append(
+                                    f"### Builder Center · {a['title']}\n"
+                                    f"- url: {bc['url']}\n"
+                                    f"- author: {c['name']} (@{c['user']})\n"
+                                    f"- at: {c['created_at']}\n\n{c['text']}\n")
+                            if not fresh and bc["comments"] and old_bc is not None \
+                                    and bc["comments"] > old_bc:
+                                new_notes.append(
+                                    f"### Builder Center · {a['title']}\n"
+                                    f"- url: {bc['url']}\n"
+                                    f"- comment count {old_bc} -> {bc['comments']}; "
+                                    f"no new top-level comment (likely a reply). "
+                                    f"Read /cs/childrenComments before replying.\n")
 
         snapshot[slug] = {
             "title": a["title"], "published_at": a.get("published_at"),

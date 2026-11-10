@@ -1,0 +1,58 @@
+[
+ {
+  "id": "3Lrh1cIDgbf9tJWOnpNOr6b7yg2",
+  "user": "dextheking",
+  "name": "Benjamin Kincses",
+  "created_at": "2026-11-09T09:51:19+00:00",
+  "likes": 0,
+  "text": "The session files sit on disk as plain JSON and anyone with disk access can read the full transcript. Where do you put that directory in a deployed agent, and do you encrypt it or wipe it, or is local disk the wrong place once real user data flows through it?"
+ },
+ {
+  "id": "3LoTjyt9J1LF212YxQGN9lxKxz8",
+  "user": "rutujaa07",
+  "name": "Rutuja Gophane",
+  "created_at": "2026-11-08T06:32:39+00:00",
+  "likes": 0,
+  "text": "Intresting"
+ },
+ {
+  "id": "3LoH7zEamdOS0APhE13UA0UcfMt",
+  "user": "mayankraj",
+  "name": "Mayank Raj",
+  "created_at": "2026-11-08T04:48:56+00:00",
+  "likes": 0,
+  "text": "The fourteen-stored/six-visible trace makes this much easier to reason about than a generic 'memory' abstraction. One boundary I'd tighten in the manifest example: project an allowlist of application-owned fields into the prompt rather than serializing the whole state dict.\n\nIf tool output or user-controlled text later enters state, that bridge can promote untrusted content into the system prompt. Do you see the manifest as a small set of typed invariants, with the rest retrieved only when needed?"
+ },
+ {
+  "id": "3LnoHbtq0eJo5CCydCs0bI9NNaP",
+  "user": "robinkumar",
+  "name": "Robin kumar",
+  "created_at": "2026-11-08T00:51:45+00:00",
+  "likes": 2,
+  "text": "This highlights an important challenge in AI agent architecture: maintaining consistent context across sessions and conversations. Persisting session data is not enough if the model cannot reliably retrieve and utilize the relevant conversation history. Effective memory management requires a combination of short-term context handling, persistent storage, intelligent retrieval, and context-window optimization. Reliable memory should ensure both continuity across restarts and consistency throughout an active conversation."
+ },
+ {
+  "id": "3Ln6vGyVKafaG6XTcVsklL2WfpY",
+  "user": "muhammadtalhakhan06",
+  "name": "Muhammad Talha Khan",
+  "created_at": "2026-11-07T18:55:13+00:00",
+  "likes": 1,
+  "text": "Great Work"
+ },
+ {
+  "id": "3LmqYeybNECmVnelCgVtLUZqCSN",
+  "user": "devcore",
+  "name": "CoreDev",
+  "created_at": "2026-11-07T16:40:39+00:00",
+  "likes": 1,
+  "text": "Great"
+ },
+ {
+  "id": "3LmFvVIunixo15mB5k6YYGA6pyv",
+  "user": "muks04",
+  "name": "Saurabh Arup Mukherjee",
+  "created_at": "2026-11-07T11:39:26+00:00",
+  "likes": 2,
+  "text": "Nice. Could you also like my content and follow. Thanks!"
+ }
+]

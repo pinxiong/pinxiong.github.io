@@ -6,6 +6,10 @@
 
 ## 待写
 
+- [2026-11-10] **两半合起来跑：fence + authoritative 状态机同时启用** —— UC05 正文自认边界："I verified each half separately, not the combination." 目前证明的是「目的地 put-if-absent 挡住重复写」与「保留 outcome_unknown 直到终态」各自成立，没有证明两者组合下 early capacity release 与 wasted retry 是否收敛。需要一组真并发实验 + 两种失败注入。来源：`feedback/2026-11-10-uc05-feedback.md` 出口 B（作者自认边界，非读者追问）。
+- [2026-11-10] **cancel-on-death 与 per-attempt id：崩溃的 attempt 与慢的 attempt 能否区分** —— UC05 正文自认边界："Cancelling the id on death is a separate mechanism, and this experiment does not cover it." 正文已指出「所有 worker 共用一个永久 identity 时，crashed 与 slow 不可区分」，但没有实验。适合做「一次 identity 设计错了会怎样」的对照实验。
+- [2026-11-10] **落盘 session 的安全边界：明文 JSON 该怎么放** —— UC04 Builder Center dextheking（11-09 17:51）："The session files sit on disk as plain JSON and anyone with disk access can read the full transcript. Where do you put that directory in a deployed agent, and do you encrypt it or wipe it, or is local disk the wrong place once real user data flows through it?" 这是 UC04 评论里唯一指向部署安全而非记忆机制的缺口，尚未回复。此前因「BC 评论正文抓不到」被漏掉，本次补采原文后登记。
+
 - [2026-11-09] **unresolved 队列的治理五项：scope owner / decision deadline / forced timeout + external read-back / recovery owner / 何时停止自动 reconciliation 转人工** —— UC03《The Limits That Don't Limit》Kent Bodrov 18:30 追问。UC05 正文 17:00 已定稿，未覆盖这五项；周复盘（20:20）曾建议补节后再发，用户拍板按原计划 11-09 21:30 发布，本轮不补进正文。转为发布后的反馈出口：在评论回复里正面回答，并作为下一篇候选素材。
 
 - [2026-11-07] **manifest 注入的 token 与 TTFT 成本实测** —— UC04《It Remembers Across Restarts》Reid Marlow。他主张每轮注入固定 manifest；我回复里承认「这部分没测过，不能算免费」。这是一个公开承认过的实证缺口，补上就是一篇完整的实测文：注入 vs 加大窗口 vs 摘要器，三者的 token 与延迟对照。

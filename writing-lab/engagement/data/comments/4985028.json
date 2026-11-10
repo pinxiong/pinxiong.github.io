@@ -118,5 +118,13 @@
   "created_at": "2026-11-09T02:05:20Z",
   "depth": 3,
   "text": "That answers the question I was circling: 400 vs 500 splits the retry policy cleanly, and matching the message as well as the status is the part most implementations skip. The 500 bucket is the dangerous one, because \"transiently unavailable\" and \"may never have it\" arrive with the same status. Your log line turns a silent misclassification into something you can actually count.\n\nSame question I just asked Kent, and I would rather ask you than guess: when your team ships something that can fail this way, what does the pre-launch check actually look like? Not the tooling - who signs off, and what do they inspect before it faces customers? I am collecting how teams really do this, and 15 minutes on a call beats a thread. hi@aerlonlabs.com if you are up for it."
+ },
+ {
+  "id": "3kick",
+  "user": "gonzalogjuka",
+  "name": "Gonzalo Gjuka",
+  "created_at": "2026-11-09T16:44:05Z",
+  "depth": 4,
+  "text": "On the check, honestly: for a cloud apply nobody signs a document. One person runs it, and the gate is two outputs from the same job that anyone can read afterwards. The pre-flight list with zero failed, where a check that could not read its target stays red instead of passing. And the plan JSON with the after_unknown keys of every create listed, so the IDs the plan took on faith are visible before the apply, not after. Who runs it is whoever is on call for it next. I will pass on the call, but happy to keep going here."
  }
 ]
