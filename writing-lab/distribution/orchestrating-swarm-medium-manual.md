@@ -70,6 +70,8 @@ Originally published at https://xiongpin.dev/posts/orchestrating-swarm/ on 2026-
 
 上传：`pinxiong.github.io/static/images/orchestrating-swarm/cover-medium.png`（**1400×788，16:9**，源 SVG 同目录 `cover-medium.svg`，viewBox 直接就是 `0 0 1400 788`，无需再校尺寸，上传后目视整图未裁即可）。
 
+> **2026-11-11 封面风格统一**：本篇与 UC05 的封面已从白底细线排版改回 UC01–UC04 的深蓝渐变基准（`#0b2547 → #14407c`，右侧机制图三件套）。Medium 还没 Import，用当前这个新文件即可。主站 / Dev.to 已同步新图；**BC 线上头图是上传到平台资产库的旧白底 `cove.webp`，不会自动更新**，需要在 BC 后台单独重传同一个 `cover-medium.png`。
+
 ---
 
 ## 第 5 步：标签（5 个，与前三篇同口径）

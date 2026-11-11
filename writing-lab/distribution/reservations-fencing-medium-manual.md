@@ -72,7 +72,7 @@ Originally published at https://xiongpin.dev/posts/reservations-fencing/ on 2026
 
 上传后在 Medium 的 "Change thumbnail" 里确认显示的是整张图、三行标题文字没被裁掉。
 
-> **注意**：BC 线上 2026-11-09 上传的是当时的 1400×735（1.90:1）版本，已在平台上正常显示、不会自动更新。本地 `cover-medium.png` 已于 2026-11-10 重做成 16:9；**Medium 用这个新文件即可，不必回 BC 重传**。
+> **2026-11-11 封面风格统一**：本篇与 UC06 的封面已从白底细线排版改回 UC01–UC04 的深蓝渐变基准（`#0b2547 → #14407c`，右侧机制图三件套），尺寸仍是 1400×788。本地文件与源 SVG 已更新，主站 / Dev.to 会自动或已同步。**BC 线上头图是上传到平台资产库的旧白底 `cove.webp`，不会自动更新**；Medium 本篇已于 11-10 Import，头图同样要在后台 "Change thumbnail" 换成这个新的 `cover-medium.png`。两处都用同一个文件，别再从浏览器缓存里拿旧图。
 
 ---
 
