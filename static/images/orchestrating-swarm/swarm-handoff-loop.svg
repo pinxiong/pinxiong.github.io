@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="1200" height="520" fill="#ffffff"/>
+  <text x="60" y="56" font-size="26" font-weight="bold" fill="#0f172a">The whole loop, from swarm.py</text>
+  <text x="60" y="86" font-size="18" fill="#64748b">no scheduler, no route table: one node at a time, one field decides</text>
+
+  <!-- node box -->
+  <rect x="60" y="150" width="250" height="120" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="185" y="196" font-size="20" font-weight="bold" fill="#1e3a8a" text-anchor="middle">run current node</text>
+  <text x="185" y="226" font-size="16" fill="#475569" text-anchor="middle">the model may call</text>
+  <text x="185" y="250" font-size="16" fill="#475569" text-anchor="middle">handoff_to_agent</text>
+
+  <!-- decision -->
+  <polygon points="480,150 610,210 480,270 350,210" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+  <text x="480" y="204" font-size="17" font-weight="bold" fill="#0f172a" text-anchor="middle">handoff_node</text>
+  <text x="480" y="226" font-size="17" font-weight="bold" fill="#0f172a" text-anchor="middle">set?</text>
+
+  <!-- node to decision -->
+  <line x1="310" y1="210" x2="348" y2="210" stroke="#0f172a" stroke-width="2.5"/>
+  <polygon points="344,202 344,218 356,210" fill="#0f172a"/>
+
+  <!-- branch lines -->
+  <polyline points="610,210 655,210 655,164 700,164" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="696,156 696,172 708,164" fill="#2563eb"/>
+  <text x="664" y="152" font-size="16" fill="#2563eb">yes</text>
+
+  <polyline points="610,210 655,210 655,256 700,256" fill="none" stroke="#b91c1c" stroke-width="2.5"/>
+  <polygon points="696,248 696,264 708,256" fill="#b91c1c"/>
+  <text x="664" y="286" font-size="16" fill="#b91c1c">no</text>
+
+  <!-- yes branch -->
+  <rect x="710" y="124" width="250" height="80" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="835" y="158" font-size="18" font-weight="bold" fill="#1e3a8a" text-anchor="middle">current_node = target</text>
+  <text x="835" y="184" font-size="15" fill="#475569" text-anchor="middle">applied after the turn ends</text>
+
+  <!-- no branch -->
+  <rect x="710" y="216" width="250" height="80" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+  <text x="835" y="250" font-size="18" font-weight="bold" fill="#991b1b" text-anchor="middle">COMPLETED, break</text>
+  <text x="835" y="276" font-size="15" fill="#7f1d1d" text-anchor="middle">nobody asked for help</text>
+
+  <!-- loop back from the yes branch -->
+  <path d="M835 124 L835 112 L185 112 L185 148" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <polygon points="177,144 193,144 185,156" fill="#2563eb"/>
+
+  <!-- note -->
+  <rect x="60" y="366" width="900" height="86" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="84" y="400" font-size="17" fill="#334155">The same text is appended to every node prompt:</text>
+  <text x="84" y="428" font-size="17" fill="#0f172a" font-weight="bold">"If you don't hand off to another agent, the swarm will consider the task complete."</text>
+
+  <text x="60" y="492" font-size="15" fill="#64748b">Left branch: swarm.py:932. Right branch: swarm.py:954-957. One node stream runs at a time, so nothing overlaps.</text>
+</svg>

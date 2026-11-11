@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="1400" height="788" fill="#f8fafc"/>
+  <rect x="0" y="0" width="1400" height="10" fill="#2563eb"/>
+  <text x="90" y="150" font-size="24" font-weight="bold" fill="#2563eb" letter-spacing="3">STRANDS IN ACTION · 06</text>
+
+  <text x="90" y="290" font-size="72" font-weight="bold" fill="#0f172a">Nobody Decides</text>
+  <text x="90" y="385" font-size="72" font-weight="bold" fill="#0f172a">Who Goes</text>
+  <text x="90" y="480" font-size="72" font-weight="bold" fill="#2563eb">Next</text>
+
+  <line x1="90" y1="540" x2="720" y2="540" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="90" y="596" font-size="28" fill="#475569">the routing decision is one tool call</text>
+  <text x="90" y="636" font-size="28" fill="#475569">silence ends the swarm, not the task</text>
+
+  <rect x="90" y="686" width="250" height="44" rx="22" fill="#2563eb" opacity="0.12"/>
+  <text x="215" y="715" font-size="18" fill="#1e40af" text-anchor="middle">strands-agents 1.63.0</text>
+
+  <!-- three nodes, one question mark where a controller would sit -->
+  <rect x="900" y="215" width="360" height="76" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="1080" y="262" font-size="26" fill="#1e3a8a" text-anchor="middle">researcher</text>
+
+  <rect x="900" y="345" width="360" height="76" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="1080" y="392" font-size="26" fill="#1e3a8a" text-anchor="middle">calculator</text>
+
+  <rect x="900" y="475" width="360" height="76" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="1080" y="522" font-size="26" fill="#1e3a8a" text-anchor="middle">writer</text>
+
+  <!-- handoff arrows -->
+  <line x1="1010" y1="291" x2="1010" y2="345" stroke="#2563eb" stroke-width="3"/>
+  <polygon points="1002,341 1018,341 1010,353" fill="#2563eb"/>
+  <line x1="1150" y1="421" x2="1150" y2="475" stroke="#2563eb" stroke-width="3"/>
+  <polygon points="1142,471 1158,471 1150,483" fill="#2563eb"/>
+
+  <text x="1030" y="325" font-size="19" fill="#64748b">handoff_to_agent</text>
+  <text x="1170" y="455" font-size="19" fill="#64748b">handoff_to_agent</text>
+
+  <!-- no controller -->
+  <circle cx="1080" cy="672" r="32" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="1080" y="684" font-size="32" font-weight="bold" fill="#94a3b8" text-anchor="middle">?</text>
+  <text x="1080" y="736" font-size="20" fill="#94a3b8" text-anchor="middle">no scheduler: one field decides</text>
+</svg>

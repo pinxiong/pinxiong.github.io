@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica Neue, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#f8fafc"/>
+  <rect x="0" y="0" width="1000" height="8" fill="#2563eb"/>
+  <text x="60" y="86" font-size="18" font-weight="bold" fill="#2563eb" letter-spacing="3">STRANDS IN ACTION · 06</text>
+  <text x="60" y="170" font-size="52" font-weight="bold" fill="#0f172a">Nobody Decides</text>
+  <text x="60" y="232" font-size="52" font-weight="bold" fill="#0f172a">Who Goes</text>
+  <text x="60" y="294" font-size="52" font-weight="bold" fill="#2563eb">Next</text>
+  <line x1="60" y1="322" x2="470" y2="322" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="60" y="362" font-size="20" fill="#475569">the routing decision is one tool call</text>
+
+  <rect x="720" y="120" width="220" height="48" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="830" y="151" font-size="17" fill="#1e3a8a" text-anchor="middle">researcher</text>
+  <rect x="720" y="192" width="220" height="48" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="830" y="223" font-size="17" fill="#1e3a8a" text-anchor="middle">calculator</text>
+  <rect x="720" y="264" width="220" height="48" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="830" y="295" font-size="17" fill="#1e3a8a" text-anchor="middle">writer</text>
+  <line x1="770" y1="168" x2="770" y2="192" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="890" y1="240" x2="890" y2="264" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="830" cy="356" r="20" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="830" y="364" font-size="22" font-weight="bold" fill="#94a3b8" text-anchor="middle">?</text>
+</svg>
