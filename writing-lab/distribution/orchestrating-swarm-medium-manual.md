@@ -1,6 +1,6 @@
 # Medium 发布手册 · UC06 · Orchestrating Agents: Nobody Decides Who Goes Next
 
-> 系列：strands-in-action 第 6 篇 ｜ 状态：**主站 / Dev.to / BC 已于 2026-11-11 21:30 窗口发布；Medium 待手动 Import**
+> 系列：strands-in-action 第 6 篇 ｜ 状态：**主站 / Dev.to / BC 已于 2026-11-11 21:30 窗口发布（21:36 / 21:37 / ≈21:50 GMT+8）；Medium 待手动 Import**
 > 日期：2026-11-11（发布当档产出，Medium URL 待回填）
 
 **线上地址**
@@ -8,8 +8,8 @@
 | 渠道 | 链接 |
 |---|---|
 | 主站（canonical） | https://xiongpin.dev/posts/orchestrating-swarm/ |
-| AWS Builder Center | <BC_URL>（发布后回填） |
-| Dev.to | <DEVTO_URL>（发布后回填） |
+| AWS Builder Center | https://builder.aws.com/content/3Lxn0RS1k0tiClcigN1xz5c0hH9 |
+| Dev.to | https://dev.to/aws-builders/orchestrating-agents-nobody-decides-who-goes-next-2cg4 |
 | Medium | <MEDIUM_URL>（手动 Import 后回填） |
 
 Medium 只能手动操作，约 5 分钟。按下面 7 步走。
