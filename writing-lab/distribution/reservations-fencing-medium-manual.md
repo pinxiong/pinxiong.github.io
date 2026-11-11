@@ -72,7 +72,16 @@ Originally published at https://xiongpin.dev/posts/reservations-fencing/ on 2026
 
 上传后在 Medium 的 "Change thumbnail" 里确认显示的是整张图、三行标题文字没被裁掉。
 
-> **2026-11-11 封面风格统一**：本篇与 UC06 的封面已从白底细线排版改回 UC01–UC04 的深蓝渐变基准（`#0b2547 → #14407c`，右侧机制图三件套），尺寸仍是 1400×788。本地文件与源 SVG 已更新，主站 / Dev.to 会自动或已同步。**BC 线上头图是上传到平台资产库的旧白底 `cove.webp`，不会自动更新**；Medium 本篇已于 11-10 Import，头图同样要在后台 "Change thumbnail" 换成这个新的 `cover-medium.png`。两处都用同一个文件，别再从浏览器缓存里拿旧图。
+> **2026-11-11 封面风格统一 + 全渠道收口**：本篇与 UC06 的封面已从白底细线排版改回 UC01–UC04 的深蓝渐变基准（`#0b2547 → #14407c`，右侧机制图三件套），尺寸 1400×788。主站、Dev.to、**BC 线上头图都已换成新深蓝图并逐页核验**（BC hero = `3LxyHNUWwUnbcWU2R6QDmG9F4WM/cove.webp`，见 `PIPELINE_STATE.md`）。
+>
+> **Medium 是唯一剩余的人工项**（Medium 没有 API，自动化浏览器里编辑器不初始化，只能人工点）：
+>
+> 1. 打开 <https://medium.com/p/1bc3e54bd912/edit>（或文章页 ⋯ → Edit story）。
+> 2. 选中正文第一张图，也就是当前头图 `1*uqaDy968kYeyCJQUuZtTmA.png`（旧白底）；用图片菜单的 Replace / Change thumbnail，或直接删掉这张再在原位置插入。
+> 3. 上传 `/Users/pinxiong/Documents/Important/pinxiong.github.io/static/images/reservations-fencing/cover-medium.png`（新的深蓝图，别从浏览器缓存拿旧文件）。
+> 4. 点 **Save and publish**，回到文章页确认 og:image 不再是 `1*uqaDy...`。
+>
+> 只换头图，不动正文其它段落、subtitle、标签和 canonical。
 
 ---
 
