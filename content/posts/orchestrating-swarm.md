@@ -7,7 +7,7 @@ tags: ["ai", "agents"]
 images: ["/images/orchestrating-swarm/cover.png"]
 cover:
   image: "/images/orchestrating-swarm/cover.png"
-  alt: "Cover: Orchestrating Agents, Nobody Decides Who Goes Next, part of the Strands Agents SDK series"
+  alt: "Swarm handoff chain: researcher and calculator each call handoff_to_agent, the writer stays silent, and with no scheduler the runtime ends the task"
 ---
 
 > Verified on 2026-11-11 against `strands-agents` 1.63.0, Python 3.11 and Bedrock in

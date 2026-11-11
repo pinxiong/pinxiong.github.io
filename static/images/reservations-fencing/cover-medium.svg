@@ -1,16 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" font-family="Helvetica Neue, Arial, sans-serif">
-  <rect width="1400" height="788" fill="#f8fafc"/>
-  <rect x="0" y="0" width="1400" height="10" fill="#2563eb"/>
-  <text x="90" y="155" font-size="24" font-weight="bold" fill="#2563eb" letter-spacing="3">STRANDS IN ACTION · 05</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" width="1400" height="788" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgDark5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2547"/>
+      <stop offset="1" stop-color="#14407c"/>
+    </linearGradient>
+    <marker id="covArr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7db4ff"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="788" fill="url(#bgDark5)"/>
+<g transform="scale(0.875)">
+  <circle cx="1520" cy="60" r="320" fill="#16407a"/>
+  <circle cx="40" cy="880" r="260" fill="#103258"/>
+  <rect x="110" y="104" width="300" height="40" rx="20" fill="#1d4ed8"/>
+  <text x="260" y="130" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">STRANDS IN ACTION · 05</text>
+  <!-- title -->
+  <text x="108" y="316" font-size="68" font-weight="800" fill="#ffffff">When "Not Found"</text>
+  <text x="108" y="400" font-size="68" font-weight="800" fill="#ffffff">Doesn't Mean</text>
+  <text x="108" y="484" font-size="68" font-weight="800" fill="#7db4ff">"Never Happened"</text>
+  <!-- subtitle -->
+  <text x="110" y="556" font-size="25" fill="#c3d6f2">Leases, idempotency keys and fences, when a quota</text>
+  <text x="110" y="592" font-size="25" fill="#c3d6f2">is shared by many workers.</text>
+  <!-- footer -->
+  <text x="110" y="796" font-family="ui-monospace, Menlo, monospace" font-size="19" fill="#8fb3e3">strands-agents 1.63.0 · every claim verified by running it</text>
 
-  <text x="90" y="285" font-size="72" font-weight="bold" fill="#0f172a">When "Not Found"</text>
-  <text x="90" y="380" font-size="72" font-weight="bold" fill="#0f172a">Doesn't Mean</text>
-  <text x="90" y="475" font-size="72" font-weight="bold" fill="#2563eb">"Never Happened"</text>
+  <!-- right visual: the delayed commit race, trial 1 of 5 -->
+  <rect x="950" y="150" width="470" height="180" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="985" y="190" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">expiry  1.003s  capacity released</text>
+  <text x="985" y="222" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">retry   1.407s  commit lands</text>
+  <text x="985" y="254" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">old     2.405s  commit lands again</text>
+  <text x="985" y="286" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#ffffff">effects=2  duplicates=1</text>
+  <text x="985" y="316" font-size="13" fill="#5f83b8" font-family="ui-monospace, Menlo, monospace">naive reconciler, trial 1 of 5</text>
 
-  <line x1="90" y1="535" x2="470" y2="535" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="90" y="590" font-size="28" fill="#475569">leases, idempotency keys and fences</text>
-  <text x="90" y="630" font-size="28" fill="#475569">when a quota is shared by many workers</text>
+  <line x1="1185" y1="330" x2="1185" y2="412" stroke="#7db4ff" stroke-width="2.5" marker-end="url(#covArr5)"/>
 
-  <rect x="90" y="680" width="250" height="44" rx="22" fill="#2563eb" opacity="0.12"/>
-  <text x="215" y="709" font-size="18" fill="#1e40af" text-anchor="middle">strands-agents 1.63.0</text>
+  <rect x="950" y="420" width="225" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1062" y="464" font-size="30" font-weight="700" fill="#9cc2ff" text-anchor="middle">5</text>
+  <text x="1062" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">duplicate writes, naive</text>
+
+  <rect x="1195" y="420" width="255" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1322" y="464" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">0</text>
+  <text x="1322" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">duplicates, terminal state</text>
+
+  <!-- takeaway chip -->
+  <rect x="950" y="576" width="470" height="92" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1185" y="616" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">"Not found" is not an outcome</text>
+  <text x="1185" y="646" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#8fb3e3" text-anchor="middle">hold the reservation until a terminal state</text>
+
+</g>
 </svg>

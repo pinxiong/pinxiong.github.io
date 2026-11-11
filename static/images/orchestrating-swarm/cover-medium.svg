@@ -1,40 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" font-family="Helvetica Neue, Arial, sans-serif">
-  <rect width="1400" height="788" fill="#f8fafc"/>
-  <rect x="0" y="0" width="1400" height="10" fill="#2563eb"/>
-  <text x="90" y="150" font-size="24" font-weight="bold" fill="#2563eb" letter-spacing="3">STRANDS IN ACTION · 06</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" width="1400" height="788" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgDark6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2547"/>
+      <stop offset="1" stop-color="#14407c"/>
+    </linearGradient>
+    <marker id="covArr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7db4ff"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="788" fill="url(#bgDark6)"/>
+<g transform="scale(0.875)">
+  <circle cx="1520" cy="60" r="320" fill="#16407a"/>
+  <circle cx="40" cy="880" r="260" fill="#103258"/>
+  <rect x="110" y="104" width="300" height="40" rx="20" fill="#1d4ed8"/>
+  <text x="260" y="130" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">STRANDS IN ACTION · 06</text>
+  <!-- title -->
+  <text x="108" y="316" font-size="68" font-weight="800" fill="#ffffff">Nobody Decides</text>
+  <text x="108" y="400" font-size="68" font-weight="800" fill="#ffffff">Who Goes</text>
+  <text x="108" y="484" font-size="68" font-weight="800" fill="#7db4ff">Next</text>
+  <!-- subtitle -->
+  <text x="110" y="556" font-size="25" fill="#c3d6f2">The routing decision is one tool call.</text>
+  <text x="110" y="592" font-size="25" fill="#c3d6f2">Silence ends the swarm, not the task.</text>
+  <!-- footer -->
+  <text x="110" y="796" font-family="ui-monospace, Menlo, monospace" font-size="19" fill="#8fb3e3">strands-agents 1.63.0 · every claim verified by running it</text>
 
-  <text x="90" y="290" font-size="72" font-weight="bold" fill="#0f172a">Nobody Decides</text>
-  <text x="90" y="385" font-size="72" font-weight="bold" fill="#0f172a">Who Goes</text>
-  <text x="90" y="480" font-size="72" font-weight="bold" fill="#2563eb">Next</text>
+  <!-- right visual: a handoff chain with no scheduler -->
+  <rect x="950" y="150" width="470" height="180" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="985" y="190" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">researcher &#8594; handoff_to_agent</text>
+  <text x="985" y="222" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">calculator &#8594; handoff_to_agent</text>
+  <text x="985" y="254" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">writer     &#8594; silence</text>
+  <text x="985" y="286" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#ffffff">no scheduler, no route table</text>
+  <text x="985" y="316" font-size="13" fill="#5f83b8" font-family="ui-monospace, Menlo, monospace">three agents, one shared task</text>
 
-  <line x1="90" y1="540" x2="720" y2="540" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="90" y="596" font-size="28" fill="#475569">the routing decision is one tool call</text>
-  <text x="90" y="636" font-size="28" fill="#475569">silence ends the swarm, not the task</text>
+  <line x1="1185" y1="330" x2="1185" y2="412" stroke="#7db4ff" stroke-width="2.5" marker-end="url(#covArr6)"/>
 
-  <rect x="90" y="686" width="250" height="44" rx="22" fill="#2563eb" opacity="0.12"/>
-  <text x="215" y="715" font-size="18" fill="#1e40af" text-anchor="middle">strands-agents 1.63.0</text>
+  <rect x="950" y="420" width="225" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1062" y="464" font-size="30" font-weight="700" fill="#9cc2ff" text-anchor="middle">3</text>
+  <text x="1062" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">agents, one shared task</text>
 
-  <!-- three nodes, one question mark where a controller would sit -->
-  <rect x="900" y="215" width="360" height="76" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="1080" y="262" font-size="26" fill="#1e3a8a" text-anchor="middle">researcher</text>
+  <rect x="1195" y="420" width="255" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1322" y="464" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">0</text>
+  <text x="1322" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">orchestrators in the runtime</text>
 
-  <rect x="900" y="345" width="360" height="76" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="1080" y="392" font-size="26" fill="#1e3a8a" text-anchor="middle">calculator</text>
+  <!-- takeaway chip -->
+  <rect x="950" y="576" width="470" height="92" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1185" y="616" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">silence ends the swarm</text>
+  <text x="1185" y="646" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#8fb3e3" text-anchor="middle">completed means nobody asked for help</text>
 
-  <rect x="900" y="475" width="360" height="76" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="1080" y="522" font-size="26" fill="#1e3a8a" text-anchor="middle">writer</text>
-
-  <!-- handoff arrows -->
-  <line x1="1010" y1="291" x2="1010" y2="345" stroke="#2563eb" stroke-width="3"/>
-  <polygon points="1002,341 1018,341 1010,353" fill="#2563eb"/>
-  <line x1="1150" y1="421" x2="1150" y2="475" stroke="#2563eb" stroke-width="3"/>
-  <polygon points="1142,471 1158,471 1150,483" fill="#2563eb"/>
-
-  <text x="1030" y="325" font-size="19" fill="#64748b">handoff_to_agent</text>
-  <text x="1170" y="455" font-size="19" fill="#64748b">handoff_to_agent</text>
-
-  <!-- no controller -->
-  <circle cx="1080" cy="672" r="32" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 6"/>
-  <text x="1080" y="684" font-size="32" font-weight="bold" fill="#94a3b8" text-anchor="middle">?</text>
-  <text x="1080" y="736" font-size="20" fill="#94a3b8" text-anchor="middle">no scheduler: one field decides</text>
+</g>
 </svg>

@@ -1,21 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica Neue, Arial, sans-serif">
-  <rect width="1000" height="420" fill="#f8fafc"/>
-  <rect x="0" y="0" width="1000" height="8" fill="#2563eb"/>
-  <text x="60" y="86" font-size="18" font-weight="bold" fill="#2563eb" letter-spacing="3">STRANDS IN ACTION · 06</text>
-  <text x="60" y="170" font-size="52" font-weight="bold" fill="#0f172a">Nobody Decides</text>
-  <text x="60" y="232" font-size="52" font-weight="bold" fill="#0f172a">Who Goes</text>
-  <text x="60" y="294" font-size="52" font-weight="bold" fill="#2563eb">Next</text>
-  <line x1="60" y1="322" x2="470" y2="322" stroke="#cbd5e1" stroke-width="2"/>
-  <text x="60" y="362" font-size="20" fill="#475569">the routing decision is one tool call</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 672" width="1600" height="672" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgDark6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2547"/>
+      <stop offset="1" stop-color="#14407c"/>
+    </linearGradient>
+    <marker id="covArr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7db4ff"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="672" fill="url(#bgDark6)"/>
+  <circle cx="1560" cy="-40" r="280" fill="#16407a"/>
+  <circle cx="30" cy="700" r="220" fill="#103258"/>
+  <rect x="110" y="72" width="280" height="36" rx="18" fill="#1d4ed8"/>
+  <text x="250" y="96" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">STRANDS IN ACTION · 06</text>
+  <!-- title -->
+  <text x="108" y="200" font-size="54" font-weight="800" fill="#ffffff">Nobody Decides</text>
+  <text x="108" y="272" font-size="54" font-weight="800" fill="#ffffff">Who Goes</text>
+  <text x="108" y="344" font-size="54" font-weight="800" fill="#7db4ff">Next</text>
+  <!-- subtitle -->
+  <text x="110" y="402" font-size="23" fill="#c3d6f2">The routing decision is one tool call.</text>
+  <text x="110" y="436" font-size="23" fill="#c3d6f2">Silence ends the swarm, not the task.</text>
+  <!-- footer -->
+  <text x="110" y="596" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">strands-agents 1.63.0 · every claim verified by running it</text>
+  <g transform="translate(410, 40) scale(0.72)">
+  <!-- right visual: a handoff chain with no scheduler -->
+  <rect x="950" y="150" width="470" height="180" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="985" y="190" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">researcher &#8594; handoff_to_agent</text>
+  <text x="985" y="222" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">calculator &#8594; handoff_to_agent</text>
+  <text x="985" y="254" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">writer     &#8594; silence</text>
+  <text x="985" y="286" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#ffffff">no scheduler, no route table</text>
+  <text x="985" y="316" font-size="13" fill="#5f83b8" font-family="ui-monospace, Menlo, monospace">three agents, one shared task</text>
 
-  <rect x="720" y="120" width="220" height="48" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="830" y="151" font-size="17" fill="#1e3a8a" text-anchor="middle">researcher</text>
-  <rect x="720" y="192" width="220" height="48" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="830" y="223" font-size="17" fill="#1e3a8a" text-anchor="middle">calculator</text>
-  <rect x="720" y="264" width="220" height="48" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
-  <text x="830" y="295" font-size="17" fill="#1e3a8a" text-anchor="middle">writer</text>
-  <line x1="770" y1="168" x2="770" y2="192" stroke="#2563eb" stroke-width="2.5"/>
-  <line x1="890" y1="240" x2="890" y2="264" stroke="#2563eb" stroke-width="2.5"/>
-  <circle cx="830" cy="356" r="20" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 5"/>
-  <text x="830" y="364" font-size="22" font-weight="bold" fill="#94a3b8" text-anchor="middle">?</text>
+  <line x1="1185" y1="330" x2="1185" y2="412" stroke="#7db4ff" stroke-width="2.5" marker-end="url(#covArr6)"/>
+
+  <rect x="950" y="420" width="225" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1062" y="464" font-size="30" font-weight="700" fill="#9cc2ff" text-anchor="middle">3</text>
+  <text x="1062" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">agents, one shared task</text>
+
+  <rect x="1195" y="420" width="255" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1322" y="464" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">0</text>
+  <text x="1322" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">orchestrators in the runtime</text>
+
+  <!-- takeaway chip -->
+  <rect x="950" y="576" width="470" height="92" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1185" y="616" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">silence ends the swarm</text>
+  <text x="1185" y="646" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#8fb3e3" text-anchor="middle">completed means nobody asked for help</text>
+</g>
 </svg>
