@@ -142,5 +142,13 @@
   "created_at": "2026-11-10T03:31:49Z",
   "depth": 5,
   "text": "Understood on the call, and thanks for answering in writing anyway. A named process and two readable outputs is a better answer than most calls produce.\n\nYour rule is the one I arrived at from the other side: a check that could not read its target stays red. I would add the failure next door, because it survives that rule. The probe succeeds, and reads something real but not the thing being shipped. A stale plan, a shadow environment, a target resolved through the wrong account. Zero failed, the list is honest, and the apply still lands somewhere nobody looked at. The only defence I have found is to make the check assert on the identity of what it read, not just on the outcome it saw.\n\nThe after_unknown point is the sharpest thing in your answer, and it is the same asymmetry I keep running into: the plan does not lie, it omits. IDs it takes on faith are invisible precisely because the plan is internally consistent.\n\nOne question in writing then, since you sell the same promise one layer down. How many people have told you the problem is real, and then not bought? What words did they use? I would rather learn the shape of that refusal from you than discover it myself in three weeks."
+ },
+ {
+  "id": "3kl65",
+  "user": "gonzalogjuka",
+  "name": "Gonzalo Gjuka",
+  "created_at": "2026-11-10T16:43:14Z",
+  "depth": 6,
+  "text": "Fair question, and the honest answer is that I do not have that refusal yet. Access is by request, so nobody has reached a buy decision I can quote. What I have are the refusals from threads, and they came in three shapes. \"Most tools still ask for one big credential up front\": they wanted a key per provider they could revoke on its own, and we do not have that, it is one read-only credential per provider per org. \"Can it run in CI?\": no, the pre-flight only runs in the app, there is no API. \"Does it check quotas?\": no, and I said so. Nobody said the problem was not real. They said the thing I had was one layer short of where their pain lived.\n\nOn the identity point, you caught a real gap. Our inventory is reduced to counts per region from whichever credential the org connected, and the check never prints which tenancy or account those counts came from. Connect the wrong account and the list is honest and useless. Putting the identity in the output is the fix, and it is cheap."
  }
 ]
