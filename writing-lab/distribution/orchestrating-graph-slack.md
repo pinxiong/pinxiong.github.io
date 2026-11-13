@@ -17,7 +17,7 @@ New post in the Strands Agents series: *Orchestrating Agents: The Graph Is Yours
 A Strands graph takes the routing decision away from the model: an edge fires when a Python predicate returns True. I ran the same task as the previous swarm post on a graph, and the sharp edges showed up in the traces. The predicate was evaluated three times per fork while the model-call counters never moved, because it only reads text the model already wrote. A join with two parents ran twice, started before the slower parent finished, and saw only the first parent's output. With no cap set, a cycle warns that it is unbounded; with a cap of six it stops as FAILED after exactly six node executions. Two same-batch nodes really overlapped in wall-clock time, which the swarm never did. And the pruning described in the source did not match either failure I injected: a raising tool left the node COMPLETED, while a hook cancellation aborted the whole graph. Every number came out of a run against strands-agents 1.63.0, and the scripts and raw evidence are in the repo.
 
 AWS Builder Center: https://builder.aws.com/content/<BC_ID>/orchestrating-agents-the-graph-is-yours-the-judgment-isnt
-Dev.to: https://dev.to/aws-builders/<DEVTO_ID>
+Dev.to: https://dev.to/aws-builders/orchestrating-agents-the-graph-is-yours-the-judgment-isnt-16dk
 Medium: <MEDIUM_URL>
 
 Happy to hear your feedback.
@@ -39,7 +39,7 @@ https://builder.aws.com/content/<BC_ID>/orchestrating-agents-the-graph-is-yours-
 New post: *Orchestrating Agents: The Graph Is Yours, the Judgment Isn't*. A predicate, not a judge. A join that ran twice. A cycle with no default limit.
 
 AWS Builder Center: https://builder.aws.com/content/<BC_ID>/orchestrating-agents-the-graph-is-yours-the-judgment-isnt
-Dev.to: https://dev.to/aws-builders/<DEVTO_ID>
+Dev.to: https://dev.to/aws-builders/orchestrating-agents-the-graph-is-yours-the-judgment-isnt-16dk
 Medium: <MEDIUM_URL>
 ```
 
@@ -48,7 +48,7 @@ Medium: <MEDIUM_URL>
 ## 使用提示
 
 - A 版以 Builder Center 开头，链接块只放 **BC / Dev.to / Medium 三条**；主站 Blog 按 Pin 口径不进 Slack，canonical 仍指回主站，读者从平台文内链接回流即可。只想发一个链接用 B 版；想一次贴全三条链接但不要长段落，用 C 版。
-- 发布后把 `https://builder.aws.com/content/<BC_ID>/orchestrating-agents-the-graph-is-yours-the-judgment-isnt` / `https://dev.to/aws-builders/<DEVTO_ID>` 换成真实链接，手动 Import 完成后把 `<MEDIUM_URL>` 换成 Medium 真实 URL；同时回填 Medium 手册顶部表格、`PIPELINE_STATE.md` 台账、`usecases/07-graph/publish/README.md`。
+- 发布后把 `https://builder.aws.com/content/<BC_ID>/orchestrating-agents-the-graph-is-yours-the-judgment-isnt` / `https://dev.to/aws-builders/orchestrating-agents-the-graph-is-yours-the-judgment-isnt-16dk` 换成真实链接，手动 Import 完成后把 `<MEDIUM_URL>` 换成 Medium 真实 URL；同时回填 Medium 手册顶部表格、`PIPELINE_STATE.md` 台账、`usecases/07-graph/publish/README.md`。
 
 ## 数字出处（逐条指向 `usecases/07-graph/evidence/`）
 
