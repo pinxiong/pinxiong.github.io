@@ -11,5 +11,6 @@ Thumbs.db
 .vscode/
 
 # Private writing workspace (must stay local, repo is public)
+# 禁止 git add -f：日报、手册、Slack 文案、复盘、.venv 一律不公开
 writing-lab/
 outputs/
