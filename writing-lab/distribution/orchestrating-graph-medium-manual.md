@@ -8,7 +8,7 @@
 | 渠道 | 链接 |
 |---|---|
 | 主站（canonical） | https://xiongpin.dev/posts/orchestrating-graph/ |
-| AWS Builder Center | <BC_URL>（发布后回填） |
+| AWS Builder Center | https://builder.aws.com/content/3M3UfdK6svKCg1nD2c3m1x9OnqZ/orchestrating-agents-the-graph-is-yours-the-judgment-isnt（发布后回填） |
 | Dev.to | https://dev.to/aws-builders/orchestrating-agents-the-graph-is-yours-the-judgment-isnt-16dk |
 | Medium | <MEDIUM_URL>（手动 Import 后回填） |
 
