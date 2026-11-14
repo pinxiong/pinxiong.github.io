@@ -28,7 +28,7 @@ fingerprintAlgorithm = "sha512"
   showScrollToTop = true
 
 [homepage]
-  layout = "page"
+  layout = "intro"
   showRecent = true
   showRecentItems = 10
   showMoreLink = true

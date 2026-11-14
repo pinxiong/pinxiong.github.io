@@ -3,12 +3,27 @@
 
   Differences from upstream:
   - No author bio: the card shows the byline label and the name only.
+  - A small circular portrait sits to the left of the name.
   - The name links to the About page, which carries the full description.
-  - Author image/social links are untouched (image unset; links render as before).
 
   Keep in sync with the theme version when upgrading Blowfish.
 */}}
-<div class="flex author">
+{{ $img := "" }}
+{{ with .Site.Params.Author.image }}
+  {{ with resources.Get . }}
+    {{ $img = .Fill "96x96 Center q92" }}
+  {{ end }}
+{{ end }}
+<div class="flex author items-center gap-3">
+  {{ with $img }}
+    <img
+      src="{{ .RelPermalink }}"
+      width="48"
+      height="48"
+      alt="{{ $.Site.Params.Author.name | default `Author` }}"
+      class="h-12 w-12 shrink-0 rounded-full object-cover"
+      loading="lazy">
+  {{ end }}
   <div class="place-self-center">
     {{ with .Site.Params.Author.name | markdownify }}
       <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">

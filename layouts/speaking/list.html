@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <section class="talk-index">
+    <header class="talk-index-head">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="talk-index-lede">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ $pages := .Pages.ByDate.Reverse }}
+    {{ if $pages }}
+      {{ range $pages.GroupByDate "2006" }}
+        <div class="talk-year">
+          <h2 class="talk-year-label">{{ .Key }}</h2>
+          {{ range .Pages }}
+            {{ $page := . }}
+            <div class="talk-card">
+              {{ with .Params.cover }}
+                <a class="talk-card-thumb" href="{{ $page.RelPermalink }}">
+                  <img src="{{ . }}" alt="" loading="lazy">
+                </a>
+              {{ end }}
+              <div class="talk-card-body">
+                <div class="talk-card-meta">
+                  {{ with .Params.event }}{{ . }}{{ end }}
+                  <span class="talk-card-sep">·</span>
+                  {{ .Date.Format "2 Jan 2006" }}
+                  {{ with .Params.location }}<span class="talk-card-sep">·</span>{{ . }}{{ end }}
+                </div>
+                <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ with .Params.subtitle }}<p class="talk-card-sub">{{ . }}</p>{{ end }}
+                {{ with .Params.summary }}<p class="talk-card-summary">{{ . }}</p>{{ end }}
+                {{ with .Params.talkTime }}<div class="talk-card-slot">{{ . }}</div>{{ end }}
+                {{ with .Params.brochureUrl }}
+                  <a class="talk-card-ext" href="{{ . }}" target="_blank" rel="noopener">Event guide ↗</a>
+                {{ end }}
+                {{ with .Params.eventUrl }}
+                  <a class="talk-card-ext" href="{{ . }}" target="_blank" rel="noopener">Speakers page ↗</a>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ else }}
+      <p class="talk-empty">No talks published yet.</p>
+    {{ end }}
+  </section>
+{{ end }}

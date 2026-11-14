@@ -360,3 +360,432 @@
 .chroma span {
   font-weight: normal !important;
 }
+
+/* --------------------------------------------------------------------------
+   Speaking archive — a quiet, Medium-like index of talks.
+   Reuses the reading palette so the section does not feel bolted on.
+   -------------------------------------------------------------------------- */
+
+.talk-index {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.talk-index-head h1 {
+  font-family: inherit;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  color: var(--reading-ink);
+}
+
+.talk-index-lede {
+  font-family: var(--font-reading);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--reading-ink-muted);
+  margin: 0 0 3rem;
+}
+
+.talk-year + .talk-year {
+  margin-top: 3rem;
+}
+
+.talk-year-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--reading-ink-muted);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 0 1.5rem;
+}
+
+.dark .talk-year-label {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.talk-card {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.dark .talk-card {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.talk-card h3 a {
+  color: var(--reading-ink);
+  text-decoration: none;
+}
+
+.talk-card h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.talk-card-thumb {
+  text-decoration: none;
+}
+
+.talk-card-ext {
+  display: inline-block;
+  margin-top: 0.6rem;
+  margin-left: 0.6rem;
+  font-size: 0.8125rem;
+  color: var(--reading-ink-muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 1px;
+}
+
+.dark .talk-card-ext {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.talk-card-ext:hover {
+  color: var(--reading-ink);
+  border-bottom-color: currentColor;
+}
+
+.talk-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 2rem;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.dark .talk-links {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.talk-links a {
+  color: var(--reading-ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dark .talk-links a {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.talk-links a:hover {
+  border-bottom-color: currentColor;
+}
+
+.talk-card-thumb {
+  flex: 0 0 auto;
+  width: 11rem;
+  height: 7.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.talk-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.talk-card-body {
+  min-width: 0;
+}
+
+.talk-card-meta {
+  font-size: 0.8125rem;
+  color: var(--reading-ink-muted);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.talk-card-sep {
+  padding: 0 0.3rem;
+}
+
+.talk-card-body h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem;
+  color: var(--reading-ink);
+}
+
+.talk-card-sub {
+  font-size: 0.95rem;
+  color: var(--reading-ink-muted);
+  margin: 0 0 0.5rem;
+}
+
+.talk-card-summary {
+  font-family: var(--font-reading);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--reading-ink-muted);
+  margin: 0;
+}
+
+.talk-card-slot {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--reading-ink-muted);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+
+.dark .talk-card-slot {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Detail page ------------------------------------------------------------------ */
+
+.talk-hero {
+  margin: 0 0 1.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.talk-hero img {
+  width: 100%;
+  display: block;
+}
+
+.talk-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 2rem;
+  padding: 1.25rem 0;
+  margin: 0 0 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9375rem;
+}
+
+.dark .talk-facts {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.talk-facts > div {
+  color: var(--reading-ink);
+}
+
+.talk-facts span {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--reading-ink-muted);
+  margin-bottom: 0.15rem;
+}
+
+.talk-facts a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .talk-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .talk-card-thumb {
+    width: 100%;
+    height: 10rem;
+  }
+
+  .talk-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .talk-index {
+    padding: 2rem 1rem 4rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Homepage masthead: identity left, portrait right.
+   The portrait is a background-free cutout, so it sits on the page itself
+   instead of a white plate that would glare in dark mode. The bottom edge is
+   masked into a soft fade because the source crop stops mid-body.
+   -------------------------------------------------------------------------- */
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 33rem) auto;
+  align-items: start;
+  justify-content: center;
+  gap: 3.5rem;
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 0.25rem 0 3.25rem;
+}
+
+.intro-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--reading-ink-muted);
+  margin: 0 0 0.85rem;
+}
+
+.intro-name {
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--reading-ink);
+  margin: 0 0 1.1rem;
+}
+
+.intro-claim {
+  font-family: var(--font-reading);
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--reading-ink);
+  max-width: 32rem;
+  margin: 0 0 1rem;
+}
+
+.intro-standfirst {
+  font-family: var(--font-reading);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--reading-ink-muted);
+  max-width: 32rem;
+  margin: 0 0 1.85rem;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.intro-btn {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.72rem 1.15rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.intro-btn--primary {
+  background: var(--reading-ink);
+  color: #ffffff;
+}
+
+.intro-btn--primary:hover {
+  background: #000000;
+}
+
+.dark .intro-btn--primary {
+  background: #e6e6e6;
+  color: #151515;
+}
+
+.dark .intro-btn--primary:hover {
+  background: #ffffff;
+}
+
+.intro-btn--ghost {
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  color: var(--reading-ink);
+}
+
+.intro-btn--ghost:hover {
+  border-color: var(--reading-ink);
+}
+
+.dark .intro-btn--ghost {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.dark .intro-btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Portrait medallion.
+   The source is the original studio photo, white backdrop and all — no cut-out.
+   The circle comes from the CSS mask only, so the photo keeps its own
+   background and never shows the patched edges that a keyline removal leaves
+   behind. A hairline ring closes the shape on both light and dark pages:
+   white-on-white needs an edge, and a bright disc on dark needs a boundary. */
+
+.intro-portrait {
+  margin: 0;
+  align-self: start;
+  width: 17rem;
+  height: 17rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 18px 40px -22px rgba(0, 0, 0, 0.32);
+}
+
+.dark .intro-portrait {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 20px 44px -20px rgba(0, 0, 0, 0.85);
+}
+
+.intro-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+
+@media (max-width: 1120px) and (min-width: 861px) {
+  .intro-portrait {
+    width: 13.5rem;
+    height: 13.5rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .intro-portrait {
+    order: -1;
+    justify-self: start;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .intro-name {
+    font-size: 2.125rem;
+  }
+
+  .intro-claim {
+    font-size: 1.1875rem;
+  }
+}

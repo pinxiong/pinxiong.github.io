@@ -1,0 +1,42 @@
+{{/* Homepage masthead: identity on the left, portrait on the right.
+
+     Text comes from front matter rather than .Content so the layout owns the
+     typography (an eyebrow, a claim, a standfirst, two actions) instead of
+     fighting whatever markdown renders. */}}
+{{ $p := .Params }}
+<article class="intro">
+  <div class="intro-copy">
+    {{ with $p.eyebrow }}
+      <p class="intro-eyebrow">{{ . }}</p>
+    {{ end }}
+    <h1 class="intro-name">{{ .Site.Params.Author.name | default .Title }}</h1>
+    {{ with $p.claim }}
+      <p class="intro-claim">{{ . }}</p>
+    {{ end }}
+    {{ with $p.standfirst }}
+      <p class="intro-standfirst">{{ . }}</p>
+    {{ end }}
+    <div class="intro-actions">
+      {{ with $p.ctaPrimary }}
+        <a class="intro-btn intro-btn--primary" href="{{ .href | relLangURL }}">{{ .label }}</a>
+      {{ end }}
+      {{ with $p.ctaSecondary }}
+        <a class="intro-btn intro-btn--ghost" href="{{ .href | relLangURL }}">{{ .label }}</a>
+      {{ end }}
+    </div>
+  </div>
+  {{ with $p.portrait }}
+    <figure class="intro-portrait">
+      <img
+        src="{{ . | relURL }}"
+        alt="{{ $.Site.Params.Author.name | default $.Title }}"
+        width="700"
+        height="880"
+        loading="eager"
+        fetchpriority="high">
+    </figure>
+  {{ end }}
+</article>
+{{ with .Content }}
+  <div class="intro-extra prose dark:prose-invert">{{ . }}</div>
+{{ end }}
