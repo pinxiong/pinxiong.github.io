@@ -63,12 +63,22 @@ The talk deliberately keeps the failures in. A report that only shows the wins i
 
 ## Photos from the session
 
-{{< gallery >}}
-  <img src="/images/speaking/aws-community-day-2026/talk-stage-02.jpg" class="grid-w50" alt="Presenting the 13-step refactoring flow on stage">
-  <img src="/images/speaking/aws-community-day-2026/talk-stage-03.jpg" class="grid-w50" alt="Answering questions with the demo laptop at the podium">
-  <img src="/images/speaking/aws-community-day-2026/speaker-01.jpg" class="grid-w50" alt="Portrait on stage before the session">
-  <img src="/images/speaking/aws-community-day-2026/portrait-namecard.jpg" class="grid-w50" alt="Speaker name card at the Community Day table">
-{{< /gallery >}}
+Three frames, three distances: the room, the talk, and the table.
+
+<div class="talk-photos">
+  <figure class="talk-photos-wide">
+    <img src="/images/speaking/aws-community-day-2026/group-photo-01.jpg" alt="Speakers, volunteers and attendees of AWS Community Day Shenzhen 2026 gathered in the auditorium, holding the User Group 上海 and User Group 深圳 banners">
+    <figcaption>The room. Around 600 developers in the hall, with the Shanghai and Shenzhen User Group banners up front.</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/speaking/aws-community-day-2026/talk-stage-02.jpg" alt="Running the refactoring demo from the podium laptop during the session">
+    <figcaption>The talk. Running the 13-step refactor live from the podium laptop.</figcaption>
+  </figure>
+  <figure>
+    <img src="/images/speaking/aws-community-day-2026/portrait-namecard.jpg" alt="At the speaker table before the session, name card on the desk">
+    <figcaption>The table. At the speaker desk before the session — <span class="nowrap">熊聘</span> on the card.</figcaption>
+  </figure>
+</div>
 
 ## Slides and recording
 

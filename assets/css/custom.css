@@ -789,3 +789,52 @@
     font-size: 1.1875rem;
   }
 }
+
+/* Session photo set.
+   Three frames at three distances — the room, the talk, the table. Ratios are
+   baked into the files (3:2 wide, 4:5 for the pair), so the grid never has to
+   cover-crop and no subject gets sliced to make the columns line up. */
+
+.talk-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+.talk-photos figure {
+  margin: 0;
+}
+
+.talk-photos-wide {
+  grid-column: 1 / -1;
+}
+
+.talk-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.talk-photos figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--reading-ink-muted);
+}
+
+@media (max-width: 640px) {
+  .talk-photos {
+    gap: 0.65rem;
+  }
+
+  .talk-photos figcaption {
+    font-size: 0.75rem;
+  }
+}
+
+/* keep short CJK names from breaking mid-word inside captions */
+.nowrap {
+  white-space: nowrap;
+}
