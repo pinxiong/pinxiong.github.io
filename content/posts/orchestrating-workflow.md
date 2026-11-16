@@ -1,7 +1,7 @@
 ---
 title: "Orchestrating Agents: Less Freedom for the Model, More Certainty for You"
 date: 2026-11-16
-draft: true
+draft: false
 description: "In a Strands workflow, a Python dependency check fixes the order, but upstream results arrive as plain text. Nine real runs on strands-agents-tools 0.8.11 show a timeout that never fires, a failure reported as 100 percent success, a restart that replays zero steps, and 3944 tokens recorded only as text."
 tags: ["ai", "agents"]
 images: ["/images/orchestrating-workflow/cover.png"]
