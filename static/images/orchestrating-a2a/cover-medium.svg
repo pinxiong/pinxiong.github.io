@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 788" width="1400" height="788" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgDark9" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2547"/>
+      <stop offset="1" stop-color="#14407c"/>
+    </linearGradient>
+    <marker id="covArr9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7db4ff"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="788" fill="url(#bgDark9)"/>
+<g transform="scale(0.875)">
+  <circle cx="1520" cy="60" r="320" fill="#16407a"/>
+  <circle cx="40" cy="880" r="260" fill="#103258"/>
+  <rect x="110" y="104" width="300" height="40" rx="20" fill="#1d4ed8"/>
+  <text x="260" y="130" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2.5">STRANDS IN ACTION · 09</text>
+  <!-- title -->
+  <text x="108" y="316" font-size="68" font-weight="800" fill="#ffffff">Your Agent</text>
+  <text x="108" y="400" font-size="68" font-weight="800" fill="#ffffff">Leaves the</text>
+  <text x="108" y="484" font-size="68" font-weight="800" fill="#7db4ff">Process</text>
+  <!-- subtitle -->
+  <text x="110" y="556" font-size="25" fill="#c3d6f2">Two processes, one port, and no typed result.</text>
+  <text x="110" y="592" font-size="25" fill="#c3d6f2">A timeout can leave the remote write already done.</text>
+  <!-- footer -->
+  <text x="110" y="796" font-family="ui-monospace, Menlo, monospace" font-size="19" fill="#8fb3e3">strands-agents 1.63.0 · every claim verified by running it</text>
+
+  <!-- right visual: the token ledger stops at the process boundary -->
+  <rect x="950" y="150" width="470" height="180" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="985" y="190" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">local agent   2313 tokens</text>
+  <text x="985" y="222" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">remote agent  2369 tokens</text>
+  <text x="985" y="254" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#8fb3e3">caller result 0 tokens</text>
+  <text x="985" y="286" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#ffffff">tool raised   still completed</text>
+  <text x="985" y="316" font-size="13" fill="#5f83b8" font-family="ui-monospace, Menlo, monospace">strands-agents 1.63.0, a2a-sdk 0.3.26</text>
+
+  <line x1="1185" y1="330" x2="1185" y2="412" stroke="#7db4ff" stroke-width="2.5" marker-end="url(#covArr9)"/>
+
+  <rect x="950" y="420" width="225" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1062" y="464" font-size="30" font-weight="700" fill="#9cc2ff" text-anchor="middle">0</text>
+  <text x="1062" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">tokens visible to the caller</text>
+
+  <rect x="1195" y="420" width="255" height="96" rx="12" fill="#1a4a8f" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1322" y="464" font-size="30" font-weight="700" fill="#ffffff" text-anchor="middle">2369</text>
+  <text x="1322" y="492" font-size="13.5" fill="#9cc2ff" text-anchor="middle">tokens spent remotely</text>
+
+  <!-- takeaway chip -->
+  <rect x="950" y="576" width="470" height="92" rx="14" fill="#123a6b" stroke="#4f8ff7" stroke-width="2"/>
+  <text x="1185" y="616" font-size="21" font-weight="600" fill="#ffffff" text-anchor="middle">the agent left, the evidence stayed</text>
+  <text x="1185" y="646" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#8fb3e3" text-anchor="middle">receipt + idempotency key + readback</text>
+
+</g>
+</svg>
