@@ -13,7 +13,7 @@ I'm **Pin Xiong**. **Apache Dubbo Committer, AWS Community Builder, and speaker.
 
 Not the demo. The system that is already live, has no documentation, and cannot be allowed to fail.
 
-{{< figure src="/images/speaking/aws-community-day-2026/speaker-01.jpg" alt="Pin Xiong speaking at AWS Community Day Shenzhen 2026" caption="AWS Community Day Shenzhen, October 2026." >}}
+{{< figure src="/images/speaking/aws-community-day-2026/speaker-01.webp" alt="Pin Xiong speaking at AWS Community Day Shenzhen 2026" caption="AWS Community Day Shenzhen, October 2026." >}}
 
 ## What I work on
 
